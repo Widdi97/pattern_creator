@@ -7,8 +7,8 @@ import matplotlib.patches as patches
 
 # @nb.njit
 def circle(t, x0, y0, r):
-    x = r * np.cos(2 * np.pi * t +0.1) + x0
-    y = r * np.sin(2 * np.pi * t +0.1) + y0
+    x = r * np.cos(2 * np.pi * t) + x0
+    y = r * np.sin(2 * np.pi * t) + y0
     return x, y
 
 @nb.njit
@@ -88,31 +88,16 @@ class Pattern:
         y2 = self.y_ax[rec_coords[3]] + self.step_size / 2
         return np.array([x1, y1, x2, y2])
         
-    def add_parametrized_shape(self, parametrization, *args, boolean_operation="add"):
+    def add_parametrized_shape(self, parametrization, *args):
         self.shapes.append([parametrization, args])
         res = []
         parametrization_ = lambda t: parametrization(t, *args)
         for y in self.y_ax:
             res.append(points_in_closed_curve(self.x_ax, y, parametrization_))
         res = np.array(res, dtype=bool)
-        if boolean_operation == "add":
-            self.pattern = self.pattern | res
-        elif boolean_operation == "subtract":
-            self.pattern = self.pattern & ~res
+        self.pattern = self.pattern | res
         self.rects_updated = False
         self.pat_file_string_updated = False
-        
-    # def subtract_parametrized_shape(self, parametrization, *args):
-    #     self.shapes.append([parametrization, args])
-    #     res = []
-    #     parametrization_ = lambda t: parametrization(t, *args)
-    #     for y in self.y_ax:
-    #         res.append(points_in_closed_curve(self.x_ax, y, parametrization_))
-    #     res = np.array(res, dtype=bool)
-    #     self.pattern = self.pattern & ~res  # Use bitwise AND to subtract the shape
-    #     self.rects_updated = False
-    #     self.pat_file_string_updated = False
-
         
     def rectangulize(self):
         rects = rectangulize(self.pattern)
@@ -122,17 +107,13 @@ class Pattern:
         self.rects = translated_rects
         self.rects_updated = True
         
-    def export_pattern(self, complete=False, export=False, offsetx=0, offsety=0):
+    def export_pattern(self, complete=False, export=False):
         if not self.rects_updated:
             self.rectangulize()
         if not self.pat_file_string_updated:
             pat_string = ""
             for rect in self.rects:
                 rounded_rect = np.round(rect).astype(int)
-                rounded_rect[0] += offsetx
-                rounded_rect[1] += offsety
-                rounded_rect[2] += offsetx
-                rounded_rect[3] += offsety
                 pat_string += "RECT " + str(rounded_rect[0]) + ", " + str(rounded_rect[1]) + ", " + str(rounded_rect[2]) + ", " + str(rounded_rect[3]) + "\n"
             # if complete:
             #     pat_string = self.pattern_header + pat_string + "\nEND"
