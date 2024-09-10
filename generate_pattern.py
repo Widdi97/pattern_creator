@@ -136,7 +136,7 @@ class Pattern:
         return header
 
 class Lattice:
-    def __init__(self, a1, a2, x_size, y_size, shapes_with_args=[], b_vecs=[]):
+    def __init__(self, a1, a2, x_size, y_size, step_size, shapes_with_args=[], b_vecs=[]):
         self.a1 = a1
         self.a2 = a2
         
@@ -147,29 +147,43 @@ class Lattice:
         
         self.x_size = x_size
         self.y_size = y_size
+        self.step_size = step_size
         
         self.find_x_y_aligned_unit_cell()
         self.plot_lattice_vecs()
+        self.generate_bulk_unit_cell()
         
-    def find_x_y_aligned_unit_cell(self, max_steps=20, tolerance=1e-9):
+    def find_x_y_aligned_unit_cell(self, max_steps=20, tolerance=1e-4):
         # search on x axis
+        x_result_found = False
         for nx in range(1, max_steps):
-            mx = - nx * self.a2[1] / self.a1[1]
-            if mx%1 < tolerance:
-                mx_r = round(mx)
-                self.A_x = np.array([- mx * self.a1[0] - nx * self.a2[0], 0])
-                print(f"mx = {mx_r}, nx = {nx}")
+            if self.a1[1] == 0:
+                mx = - 1
+                self.A_x = np.array([self.a1[0], 0])
                 break
+            else:
+                mx = - nx * self.a2[1] / self.a1[1]
+                if abs(round(mx) - mx) < tolerance:
+                    mx_r = round(mx)
+                    self.A_x = np.array([- mx * self.a1[0] - nx * self.a2[0], 0])
+                    print(f"mx = {mx_r}, nx = {nx}")
+                    x_result_found = True
+                    break
+        
         # search on y axis
+        y_result_found = False
         for ny in range(1, max_steps):
             my = - ny * self.a2[0] / self.a1[0]
-            if my%1 < tolerance:
+            if abs(round(my) - my) < tolerance:
                 my_r = round(my)
                 self.A_y = np.array([0, my * self.a1[1] + ny * self.a2[1]])
-                # print(f"my = {my_r}, ny = {ny}")
+                print(f"my = {my_r}, ny = {ny}")
+                y_result_found = True
                 break
+        bulk_uc_found = (not x_result_found) or (not y_result_found)
+        if not bulk_uc_found:
+            raise Exception("lattice structure can't be reduced to a larger rectangular lattice. Implement the structure using a single pattern.")
         
-    
     def plot_lattice_vecs(self):
         #plot maximum allowed lattice vector box
         plt.plot([0, (self.x_size * self.e1)[0]], [0, (self.x_size * self.e1)[1]], linestyle=":", color="grey")
@@ -197,9 +211,13 @@ class Lattice:
                     lattice_vecs.append(vec)
                     plt.plot([0, vec[0]], [0, vec[1]], marker="o", linestyle="", color="k")
         
-        
         plt.axis("equal")
         plt.show()
+        
+    def generate_bulk_unit_cell(self):
+        
+        pattern = Pattern(self.A_x[0], self.A_y[1], self.step_size)
+        self.bulk_pattern = pattern
         
 
 if __name__ == "__main__":
@@ -218,8 +236,11 @@ if __name__ == "__main__":
     # print(pattern.export_pattern())
     
     #%% test lattice class
-    a1_ = np.array([1, 0.25])
-    a2_ = np.array([0.25, 1])
-    x_size_ = 10
-    y_size_ = 8
-    lattice = Lattice(a1_, a2_, x_size_, y_size_)
+    a = 6e3
+    # a1_ = a * np.array([1, 0])
+    # a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
+    # a1_ = a * np.array([0, 1 / 5])
+    # a2_ = a * np.array([1, 0])
+    x_size_ = 10 * a
+    y_size_ = 8 * a
+    lattice = Lattice(a1_, a2_, x_size_, y_size_, 250, [[circle, 0, 0, 3e3]])
