@@ -148,16 +148,26 @@ class Lattice:
         self.x_size = x_size
         self.y_size = y_size
         
-        self.plot_lattice_vecs()
         self.find_x_y_aligned_unit_cell()
+        self.plot_lattice_vecs()
         
-    def find_x_y_aligned_unit_cell(self, max_steps=20, tolerance=0.01):
-        for n in range(max_steps, - (max_steps + 1), -1):
-            if n != 0:
-                m = - n * self.a2[1] / self.a1[1]
-                if m%1 < tolerance:
-                    print("found solution in y:", m, n)
-                print(m, m%1)
+    def find_x_y_aligned_unit_cell(self, max_steps=20, tolerance=1e-9):
+        # search on x axis
+        for nx in range(1, max_steps):
+            mx = - nx * self.a2[1] / self.a1[1]
+            if mx%1 < tolerance:
+                mx_r = round(mx)
+                self.A_x = np.array([- mx * self.a1[0] - nx * self.a2[0], 0])
+                print(f"mx = {mx_r}, nx = {nx}")
+                break
+        # search on y axis
+        for ny in range(1, max_steps):
+            my = - ny * self.a2[0] / self.a1[0]
+            if my%1 < tolerance:
+                my_r = round(my)
+                self.A_y = np.array([0, my * self.a1[1] + ny * self.a2[1]])
+                # print(f"my = {my_r}, ny = {ny}")
+                break
         
     
     def plot_lattice_vecs(self):
@@ -173,6 +183,8 @@ class Lattice:
         plt.plot([0, self.e1[0]], [0, self.e1[1]], color="r")
         plt.plot([0, self.e2[0]], [0, self.e2[1]], color="r")
         
+        plt.plot([0, self.A_x[0]], [0, self.A_x[1]])
+        plt.plot([0, self.A_y[0]], [0, self.A_y[1]])
         
         lattice_vecs = []
         # iterate x direction (parallel to a1)
@@ -193,21 +205,21 @@ class Lattice:
 if __name__ == "__main__":
     #%% test pattern class
     
-    pattern = Pattern(3e4, 2.5e4, 250)
-    pattern.add_parametrized_shape(circle, 8e3, 18e3, 3e3)
-    pattern.add_parametrized_shape(ellipse, 8e3, 14e3, 0.15e4, 0.4e4, -40 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 5e3, 17e3, 0.1e4, 0.3e4, 90 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 17e3, 6e3, 1e3, 3e3, 0 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 14e3, 4e3, 1.2e3, 3e3, 90 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 22e3, 11e3, 2.2e3, 5e3, -50 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 1.5e4, 1.1e4, 0.4e4, 1e4, 90 / 180 * np.pi, boolean_operation="subtract")
-    pattern.add_parametrized_shape(polygon,1.2e4, 1.17e4, 1.6e4, 1.27e4, 2.2e4, 1.64e4, 2.2e4, 2.1e4, 1.72e4,2.35e4)
-    pattern.visualize()
-    print(pattern.export_pattern())
+    # pattern = Pattern(3e4, 2.5e4, 250)
+    # pattern.add_parametrized_shape(circle, 8e3, 18e3, 3e3)
+    # pattern.add_parametrized_shape(ellipse, 8e3, 14e3, 0.15e4, 0.4e4, -40 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 5e3, 17e3, 0.1e4, 0.3e4, 90 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 17e3, 6e3, 1e3, 3e3, 0 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 14e3, 4e3, 1.2e3, 3e3, 90 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 22e3, 11e3, 2.2e3, 5e3, -50 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 1.5e4, 1.1e4, 0.4e4, 1e4, 90 / 180 * np.pi, boolean_operation="subtract")
+    # pattern.add_parametrized_shape(polygon,1.2e4, 1.17e4, 1.6e4, 1.27e4, 2.2e4, 1.64e4, 2.2e4, 2.1e4, 1.72e4,2.35e4)
+    # pattern.visualize()
+    # print(pattern.export_pattern())
     
     #%% test lattice class
-    # a1_ = np.array([1, 1e-9])
-    # a2_ = np.array([0.25, 1.234])
-    # x_size_ = 5
-    # y_size_ = 4
-    # lattice = Lattice(a1_, a2_, x_size_, y_size_)
+    a1_ = np.array([1, 0.25])
+    a2_ = np.array([0.25, 1])
+    x_size_ = 10
+    y_size_ = 8
+    lattice = Lattice(a1_, a2_, x_size_, y_size_)
