@@ -17,25 +17,16 @@ def ellipse(t, x0, y0, ra, rb, phi):
     y = y0 + ra * np.sin(phi) * np.cos(2 * np.pi * t) + rb * np.cos(phi) * np.sin(2 * np.pi * t)
     return x, y
 
+@nb.njit
+def polygon(t, *args):
+    if len(args) < 6:
+        raise Exception("At least 3 knot points are requiered")
+    if len(args)%2 ==1:
+        raise Exception("Lengt of knot points incorrect")
+    args = list(args)
+    args = args + args[:2]
+    return np.array([args[::2], args[1::2]])
 
-# @nb.njit
-def rectangle_point(t, x0, y0, x1, y1):
-    if 0 <= t and t < 0.25:
-        return x0 + (x1 - x0) * 4 * t, y0
-    elif 0.25 <= t and t < 0.5:
-        return x1, y0 + (y1 - y0) * 4 * (t - 0.25)
-    elif 0.5 <= t and t < 0.75:
-        return x1 - (x1 - x0) * 4 * (t - 0.5), y1
-    elif 0.75 <= t and t <= 1:
-        return x0, y1 - (y1 - y0)  * 4 * (t - 0.75)
-
-# @nb.njit
-def rectangle(t, x0, y0, x1, y1):
-    if type(t) == float or type(t) == np.float64:
-        # print(type(t), t)
-        return rectangle_point(t, x0, y0, x1, y1)
-    else:
-        return [rectangle_point(t_, x0, y0, x1, y1) for t_ in t]
 
 class Pattern:
     def __init__(self, x_size, y_size, step_size, pattern_name="pattern_name", increment=1, dwell_time=100):
@@ -210,7 +201,7 @@ if __name__ == "__main__":
     pattern.add_parametrized_shape(ellipse, 14e3, 4e3, 1.2e3, 3e3, 90 / 180 * np.pi)
     pattern.add_parametrized_shape(ellipse, 22e3, 11e3, 2.2e3, 5e3, -50 / 180 * np.pi)
     pattern.add_parametrized_shape(ellipse, 1.5e4, 1.1e4, 0.4e4, 1e4, 90 / 180 * np.pi, boolean_operation="subtract")
-    # pattern.add_parametrized_shape(rectangle, 1e4, 0.5e3, 1.7e4, 2e3)
+    pattern.add_parametrized_shape(polygon,1.2e4, 1.17e4, 1.6e4, 1.27e4, 2.2e4, 1.64e4, 2.2e4, 2.1e4, 1.72e4,2.35e4)
     pattern.visualize()
     print(pattern.export_pattern())
     
