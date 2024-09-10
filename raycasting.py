@@ -5,15 +5,16 @@ import numba as nb
 # @nb.njit
 def points_in_closed_curve(x, y, curve, num_samples=100):
     # Initialize the count of intersections
-    # is_inside = (0 * np.array(x))
     is_inside = np.zeros(x.shape)#, dtype=nb.u1
     
     # Create a range of t values from 0 to 1
     t_values = np.linspace(0, 1, num_samples)
-    x1, y1 = curve(0.0)
+    xy_pts = np.array(curve(t_values)).T
+    
     # Iterate through each t value
-    for t in t_values[1:]:
-        x2, y2 = curve(t)
+    for ii in range(1, len(xy_pts)):
+        x1, y1 = xy_pts[ii-1]
+        x2, y2 = xy_pts[ii]
 
         # Check if the ray from (x, y) intersects the curve segment (x1, y1) to (x2, y2)
         # Check if y is between y1 and y2
@@ -31,8 +32,6 @@ def points_in_closed_curve(x, y, curve, num_samples=100):
             # if x >= x_intersect:
             # is_inside = is_inside * (1 - isbigger) + (1 - is_inside) * isbigger
             is_inside = is_inside + isbigger - 2 * isbigger * is_inside
-        x1 = x2
-        y1 = y2
     return is_inside
 
 if __name__ == "__main__":
