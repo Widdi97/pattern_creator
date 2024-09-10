@@ -160,6 +160,7 @@ class Lattice:
             if self.a1[1] == 0:
                 mx = - 1
                 self.A_x = np.array([self.a1[0], 0])
+                x_result_found = True
                 break
             else:
                 mx = - nx * self.a2[1] / self.a1[1]
@@ -173,6 +174,11 @@ class Lattice:
         # search on y axis
         y_result_found = False
         for ny in range(1, max_steps):
+            # if self.a2[0] == 0:
+            #     my = - 1
+            #     self.A_y = np.array([0, self.a2[1]])
+            #     break
+            # else:
             my = - ny * self.a2[0] / self.a1[0]
             if abs(round(my) - my) < tolerance:
                 my_r = round(my)
@@ -180,7 +186,7 @@ class Lattice:
                 print(f"my = {my_r}, ny = {ny}")
                 y_result_found = True
                 break
-        bulk_uc_found = (not x_result_found) or (not y_result_found)
+        bulk_uc_found = not ((not x_result_found) or (not y_result_found))
         if not bulk_uc_found:
             raise Exception("lattice structure can't be reduced to a larger rectangular lattice. Implement the structure using a single pattern.")
         
@@ -239,8 +245,8 @@ if __name__ == "__main__":
     a = 6e3
     # a1_ = a * np.array([1, 0])
     # a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
-    # a1_ = a * np.array([0, 1 / 5])
-    # a2_ = a * np.array([1, 0])
+    a1_ = a * np.array([1, 1 / 4])
+    a2_ = a * np.array([1/2, 1])
     x_size_ = 10 * a
     y_size_ = 8 * a
     lattice = Lattice(a1_, a2_, x_size_, y_size_, 250, [[circle, 0, 0, 3e3]])
