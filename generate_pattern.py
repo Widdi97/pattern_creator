@@ -243,10 +243,10 @@ if __name__ == "__main__":
     
     #%% test lattice class
     a = 6e3
-    # a1_ = a * np.array([1, 0])
-    # a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
-    a1_ = a * np.array([1, 1 / 4])
-    a2_ = a * np.array([1/2, 1])
+    a1_ = a * np.array([1, 0])
+    a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
+    # a1_ = a * np.array([1, 1 / 4])
+    # a2_ = a * np.array([1/2, 1])
     x_size_ = 10 * a
     y_size_ = 8 * a
     lattice = Lattice(a1_, a2_, x_size_, y_size_, 250, [[circle, 0, 0, 3e3]])
