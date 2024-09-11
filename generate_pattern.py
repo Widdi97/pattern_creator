@@ -30,16 +30,19 @@ def polygon(t, *args):
 
 class Pattern:
     def __init__(self, x_size, y_size, step_size, pattern_name="pattern_name", increment=1, dwell_time=100):
+        if type(step_size) == float or type(step_size) == int:
+            step_size = np.array([step_size, step_size])
         self.step_size = step_size
+            
         self.x_size = x_size
         self.y_size = y_size
         self.pattern_name = pattern_name
         self.increment = increment
         self.dwell_time = dwell_time
         self.pattern_header = self.generate_pattern_header()
-        self.pat_shape = np.array([int(y_size / step_size), int(x_size / step_size)])
-        self.x_ax = step_size * np.arange(self.pat_shape[1])
-        self.y_ax = step_size * np.arange(self.pat_shape[0])
+        self.pat_shape = np.array([int(y_size / step_size[1]), int(x_size / step_size[0])])
+        self.x_ax = step_size[0] * np.arange(self.pat_shape[1])
+        self.y_ax = step_size[1] * np.arange(self.pat_shape[0])
         self.XY_meshgrid = np.meshgrid(self.x_ax, self.y_ax)
         self.pattern = np.zeros(shape=self.pat_shape, dtype=dtype)
         self.shapes = []
@@ -73,10 +76,10 @@ class Pattern:
         plt.show()
         
     def translate_coords(self, rec_coords):
-        x1 = self.x_ax[rec_coords[0]] - self.step_size / 2
-        y1 = self.y_ax[rec_coords[1]] - self.step_size / 2
-        x2 = self.x_ax[rec_coords[2]] + self.step_size / 2
-        y2 = self.y_ax[rec_coords[3]] + self.step_size / 2
+        x1 = self.x_ax[rec_coords[0]] - self.step_size[0] / 2
+        y1 = self.y_ax[rec_coords[1]] - self.step_size[1] / 2
+        x2 = self.x_ax[rec_coords[2]] + self.step_size[0] / 2
+        y2 = self.y_ax[rec_coords[3]] + self.step_size[1] / 2
         return np.array([x1, y1, x2, y2])
         
     def add_parametrized_shape(self, parametrization, *args, boolean_operation="add"):
@@ -136,7 +139,7 @@ class Pattern:
         return header
 
 class Lattice:
-    def __init__(self, a1, a2, x_size, y_size, step_size, shapes_with_args=[], b_vecs=[]):
+    def __init__(self, a1, a2, x_size, y_size, step_size, shapes_with_args=[], b_vecs=np.array([[0, 0]])):
         self.a1 = a1
         self.a2 = a2
         
@@ -148,6 +151,9 @@ class Lattice:
         self.x_size = x_size
         self.y_size = y_size
         self.step_size = step_size
+        
+        self.shapes_with_args = shapes_with_args
+        self.b_vecs = b_vecs
         
         self.find_x_y_aligned_unit_cell()
         self.plot_lattice_vecs()
@@ -189,6 +195,11 @@ class Lattice:
         bulk_uc_found = not ((not x_result_found) or (not y_result_found))
         if not bulk_uc_found:
             raise Exception("lattice structure can't be reduced to a larger rectangular lattice. Implement the structure using a single pattern.")
+        else:
+            self.m_xy = np.round(np.array([- mx, - my])).astype(int)
+            self.n_xy = np.round(np.array([- nx, - ny])).astype(int)
+            self.m_xy.sort()
+            self.n_xy.sort()
         
     def plot_lattice_vecs(self):
         #plot maximum allowed lattice vector box
@@ -203,33 +214,58 @@ class Lattice:
         plt.plot([0, self.e1[0]], [0, self.e1[1]], color="r")
         plt.plot([0, self.e2[0]], [0, self.e2[1]], color="r")
         
-        plt.plot([0, self.A_x[0]], [0, self.A_x[1]])
-        plt.plot([0, self.A_y[0]], [0, self.A_y[1]])
-        
         lattice_vecs = []
         # iterate x direction (parallel to a1)
-        for ii in range(-10, 10):
-            for jj in range(-10, 10):
+        for ii in range(-100, 100):
+            for jj in range(-100, 100):
                 vec = ii * self.a1 + jj * self.a2
                 xs = np.dot(vec, self.e1)
                 ys = np.dot(vec, self.e2)
                 if 0 <= xs and xs <= self.x_size and 0 <= ys and ys <= self.y_size:
                     lattice_vecs.append(vec)
-                    plt.plot([0, vec[0]], [0, vec[1]], marker="o", linestyle="", color="k")
+                    plt.plot(*vec, marker="o", linestyle="", color="k")
+        
+        # plot larger rectangular UC vectors
+        plt.plot([0, self.A_x[0]], [0, self.A_x[1]])
+        plt.plot([0, self.A_y[0]], [0, self.A_y[1]])
+        
+        # plot all lattice points inside of the larger UC
+        for ii in range(-100, 100):
+            for jj in range(-100, 100):
+                vec = ii * self.a1 + jj * self.a2
+                if 0 <= vec[0] <= self.A_x[0] and 0 <= vec[1] <= self.A_y[1]:
+                    plt.plot(*vec, marker="o", linestyle="", color="b")
+        
         
         plt.axis("equal")
         plt.show()
         
     def generate_bulk_unit_cell(self):
-        
         pattern = Pattern(self.A_x[0], self.A_y[1], self.step_size)
         self.bulk_pattern = pattern
+        
+        for ii in range(-100, 100):
+            for jj in range(-100, 100):
+                vec = ii * self.a1 + jj * self.a2
+                
+                #check if vec is inside of the rectangular UC
+                if 0 <= vec[0] <= self.A_x[0] and 0 <= vec[1] <= self.A_y[1]:
+                    for b_idx, basis_vec in enumerate(self.b_vecs):
+                        center = vec + basis_vec
+                        shape, *args = self.shapes_with_args[b_idx]
+                        args[0] += center[0] - self.step_size / 2
+                        args[1] += center[1] - self.step_size / 2
+                        pattern.add_parametrized_shape(shape, *args)
+                
+        
+        
+        
         
 
 if __name__ == "__main__":
     #%% test pattern class
     
-    # pattern = Pattern(3e4, 2.5e4, 250)
+    # pattern = Pattern(3e4, 2.5e4, np.array([300, 250]))
     # pattern.add_parametrized_shape(circle, 8e3, 18e3, 3e3)
     # pattern.add_parametrized_shape(ellipse, 8e3, 14e3, 0.15e4, 0.4e4, -40 / 180 * np.pi)
     # pattern.add_parametrized_shape(ellipse, 5e3, 17e3, 0.1e4, 0.3e4, 90 / 180 * np.pi)
@@ -242,11 +278,12 @@ if __name__ == "__main__":
     # print(pattern.export_pattern())
     
     #%% test lattice class
-    a = 6e3
-    a1_ = a * np.array([1, 0])
-    a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
+    # a = 1
+    # # a1_ = a * np.array([1, 0])
+    # # a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
     # a1_ = a * np.array([1, 1 / 4])
     # a2_ = a * np.array([1/2, 1])
-    x_size_ = 10 * a
-    y_size_ = 8 * a
-    lattice = Lattice(a1_, a2_, x_size_, y_size_, 250, [[circle, 0, 0, 3e3]])
+    # x_size_ = 10 * a
+    # y_size_ = 8 * a
+    # lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.1 * a, [[circle, 0, 0, 0.4 * a]])
+    # lattice.bulk_pattern.visualize()
