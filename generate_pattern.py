@@ -139,7 +139,8 @@ class Pattern:
         return header
 
 class Lattice:
-    def __init__(self, a1, a2, x_size, y_size, max_step_size, shapes_with_args=[], b_vecs=np.array([0, 0])):
+    def __init__(self, a1, a2, x_size, y_size, max_step_size, shapes_with_args=[], b_vecs=np.array([0, 0]),
+                 pattern_name="pattern", increment=2, dwell_time=200):
         self.a1 = a1
         self.a2 = a2
         
@@ -155,9 +156,15 @@ class Lattice:
         self.shapes_with_args = shapes_with_args
         self.b_vecs = b_vecs
         
+        self.increment = increment
+        self.pattern_name = pattern_name
+        self.dwell_time = dwell_time
+        
+        
         self.find_x_y_aligned_unit_cell()
         self.plot_lattice_vecs()
-        self.generate_bulk_unit_cell()
+        self.generate_unit_cells()
+        self.generate_patterns()
         
     def find_x_y_aligned_unit_cell(self, max_steps=20, tolerance=1e-4):
         # search on x axis
@@ -200,6 +207,15 @@ class Lattice:
             self.n_xy = np.round(np.array([- nx, - ny])).astype(int)
             self.m_xy.sort()
             self.n_xy.sort()
+            
+    def check_ecp_array_compatability(self):
+        return self.a1[1] == 0.0
+        
+    def find_x_y_UC_lattice_size(self):
+        if not self.check_ecp_array_compatability():
+            raise Exception("ECP periodicity function only supportet for a1 || x-axis 😢.")
+        self.x_ruc_steps = self.x_size // self.A_x[0]
+        self.y_ruc_steps = self.y_size // self.A_y[1]
         
     def plot_lattice_vecs(self):
         #plot maximum allowed lattice vector box
@@ -244,14 +260,15 @@ class Lattice:
         tol = max(self.A_x[0], self.A_y[1]) * 1e-7 + offset
         return (- tol <= vec[0] <= self.A_x[0] + tol) and (- tol <= vec[1] <= self.A_y[1] + tol)
         
-    def generate_bulk_unit_cell(self):
+    def generate_unit_cells(self):
         # calculate step sizes for x and y
-        # x_steps = 
         x_step_size = self.A_x[0] / np.ceil(self.A_x[0] / self.max_step_size)
         y_step_size = self.A_y[1] / np.ceil(self.A_y[1] / self.max_step_size)
         self.step_size = np.array([x_step_size, y_step_size])
         
-        self.patterns = [[Pattern(self.A_x[0], self.A_y[1], self.step_size) for ii in range(3)] for jj in range(3)]
+        self.patterns = [[Pattern(self.A_x[0], self.A_y[1], self.step_size, pattern_name=self.pattern_name,
+                                  increment=self.increment, dwell_time=self.dwell_time) for ii in range(3)] for jj in range(3)]
+        
         
         for ii in range(-25, 25):
             for jj in range(-25, 25):
@@ -266,14 +283,53 @@ class Lattice:
                                 #check if vec is inside of the rectangular UC
                                 center = vec + uc_shift
                                 shape, *args = self.shapes_with_args[b_idx]
-                                args[0] += center[0] - self.step_size[0] / 2
-                                args[1] += center[1] - self.step_size[1] / 2
-                                self.patterns[1-k][1-l].add_parametrized_shape(shape, *args)
+                                def shape_shifted(t, delta_x, delta_y, *args):
+                                    pts = np.array(shape(t, *args))
+                                    pts[0] += delta_x
+                                    pts[1] += delta_y
+                                    return pts
+                                self.patterns[1-k][1-l].add_parametrized_shape(shape_shifted, center[0] - self.step_size[0] / 2,
+                                                                               center[1] - self.step_size[1] / 2,*args)
         for k in range(3):
             for l in range(3):
                 self.patterns[k][l].visualize()
-        # self.patterns[1][1].visualize()
+
+    def generate_patterns(self):
+        pat_str = ""
+        if self.check_ecp_array_compatability():
+            self.find_x_y_UC_lattice_size()
         
+        names = []
+        for k in range(-1, 2):
+            for l in range(-1, 2):
+                if k == 0:
+                    nx = self.x_ruc_steps
+                else:
+                    nx = 1
+                if l == 0:
+                    ny = self.y_ruc_steps
+                else:
+                    ny = 1
+                name = self.pattern_name + f"_x_{-k}_y_{-l}"
+                names.append(name)
+                subpat_str = "D " + name
+                # check, if pattern is not a corner and if so, add ecp periodicity
+                is_corner = (abs(k) + abs(l) == 2)
+                if not is_corner:
+                    subpat_str += ", " + str(int(self.A_x[0])) + ", " + str(int(self.A_y[1]))
+                    subpat_str += ", " + str(int(nx)) + ", " + str(int(ny))
+                subpat_str += f"\nI {self.increment}\nC {self.dwell_time}\n"
+                offsetx = - k*self.A_x[0] + self.A_x[0] + (k == -1) * self.A_x[0] * (self.x_ruc_steps - 1)
+                offsety = - l*self.A_y[1] + self.A_y[1] + (l == -1) * self.A_y[1] * (self.y_ruc_steps - 1) + is_corner * self.A_y[1]
+                subpat_str += self.patterns[1-k][1-l].export_pattern(complete=False, offsetx=round(offsetx),
+                                                                     offsety=round(offsety)) + "END\n\n\n"
+                pat_str += subpat_str
+        draw_latt_str = ""
+        for name in names:
+            draw_latt_str += f"draw({name})\n"
+        self.pat_str = pat_str
+        self.draw_latt_str = draw_latt_str
+            
         
         
         
@@ -294,25 +350,26 @@ if __name__ == "__main__":
     # # print(pattern.export_pattern())
     
     #%% test lattice class
-    # weird lattice
-    a = 1
-    a1_ = a * np.array([1, 1 / 4])
-    a2_ = a * np.array([1/2, 1])
+    # # weird lattice
+    # a = 2000
+    # a1_ = a * np.array([1, 0])
+    # a2_ = a * np.array([1/4, 1])
+    # x_size_ = 20 * a
+    # y_size_ = 16 * a
+    # lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.4 * a]])
+    # print(lattice.pat_str)
+    
+    
+    # kagome 
+    a = 2000
+    a1_ = a * np.array([1, 0])
+    a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
+    
+    b1_ = np.array([0, 0])
+    b2_ = a1_ / 2
+    b3_ = a2_ / 2
+    bs = np.array([b1_, b2_, b3_])
     x_size_ = 10 * a
     y_size_ = 8 * a
-    lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.3 * a]])
-    
-    
-    # # kagome 
-    # a = 1
-    # a1_ = a * np.array([1, 0])
-    # a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
-    
-    # b1_ = np.array([0, 0])
-    # b2_ = a1_ / 2
-    # b3_ = a2_ / 2
-    # bs = np.array([b1_, b2_, b3_])
-    # x_size_ = 10 * a
-    # y_size_ = 8 * a
-    # lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.3 * a] for b in bs], bs)
+    lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.3 * a] for b in bs], bs)
     
