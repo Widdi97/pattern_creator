@@ -330,7 +330,17 @@ class Lattice:
         self.pat_str = pat_str
         self.draw_latt_str = draw_latt_str
             
-        
+class Text:
+    def __init__(self, resolution, font, x_size, y_size, step_size,
+                 pattern_name="pattern_name", increment=1, dwell_time=100):
+        self.resolution = resolution
+        self.font = font
+        self.x_size = x_size
+        self.y_size = y_size
+        self.step_size = step_size
+        self.pattern_name = pattern_name
+        self.increment = increment
+        self.dwell_time = dwell_time
         
         
 
@@ -360,16 +370,17 @@ if __name__ == "__main__":
     # print(lattice.pat_str)
     
     
-    # kagome 
-    a = 2000
-    a1_ = a * np.array([1, 0])
-    a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
+    # # kagome 
+    # a = 2000
+    # a1_ = a * np.array([1, 0])
+    # a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
     
-    b1_ = np.array([0, 0])
-    b2_ = a1_ / 2
-    b3_ = a2_ / 2
-    bs = np.array([b1_, b2_, b3_])
-    x_size_ = 10 * a
-    y_size_ = 8 * a
-    lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.3 * a] for b in bs], bs)
+    # b1_ = np.array([0, 0])
+    # b2_ = a1_ / 2
+    # b3_ = a2_ / 2
+    # bs = np.array([b1_, b2_, b3_])
+    # x_size_ = 10 * a
+    # y_size_ = 8 * a
+    # lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.3 * a] for b in bs], bs)
     
+    #%% test text
