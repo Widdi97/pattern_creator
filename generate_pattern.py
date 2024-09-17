@@ -4,6 +4,7 @@ from rectangulize import rectangulize, dtype
 from raycasting import points_in_closed_curve
 import numba as nb
 import matplotlib.patches as patches
+from PIL import Image, ImageDraw, ImageFont
 
 # @nb.njit
 def circle(t, x0, y0, r):
@@ -21,7 +22,7 @@ def ellipse(t, x0, y0, ra, rb, phi):
 def polygon(t, *args):
     if len(args) < 6:
         raise Exception("At least 3 knot points are requiered")
-    if len(args)%2 ==1:
+    if len(args)%2 == 1:
         raise Exception("Lengt of knot points incorrect")
     args = list(args)
     args = args + args[:2]
@@ -331,16 +332,42 @@ class Lattice:
         self.draw_latt_str = draw_latt_str
             
 class Text:
-    def __init__(self, resolution, font, x_size, y_size, step_size,
-                 pattern_name="pattern_name", increment=1, dwell_time=100):
-        self.resolution = resolution
+    def __init__(self, step_size=150, fontsize=10000, font="arial.ttf", increment=1, dwell_time=100):
         self.font = font
-        self.x_size = x_size
-        self.y_size = y_size
+        self.fontsize = fontsize # nm
         self.step_size = step_size
-        self.pattern_name = pattern_name
+        self.img_steps = fontsize // step_size
         self.increment = increment
         self.dwell_time = dwell_time
+        
+    def generate_text_pattern(self, string):
+        img_size_x = round(self.img_steps * 1.5) * len(string)
+        img_size_y = round(self.img_steps * 1.5)
+        image = Image.new('L', (img_size_x, img_size_y), color=255)  # 'L' mode for grayscale
+        draw = ImageDraw.Draw(image)
+        
+        # Load the font with the specified font size
+        font = ImageFont.truetype(self.font, size=self.img_steps)#ImageFont.load_default() if font_path is None else ImageFont.truetype(font_path, size=font_size)
+        
+        # Use textbbox to get the bounding box of the text
+        bbox = draw.textbbox((0, 0), string, font=font)
+        text_width, text_height = bbox[2] - bbox[0], bbox[3] - bbox[1]
+        
+        # Calculate position to center the text
+        position = ((img_size_x - text_width) // 2, (img_size_y - text_height) // 2)
+        
+        # Draw the character on the image
+        draw.text(position, string, font=font, fill=0)  # Fill with black (0)
+        
+        # Convert the image to a NumPy array and set True for black pixels (part of the character)
+        bool_arr = np.array(image) < 128
+        
+        plt.matshow(bool_arr)
+        
+        # find borders
+        
+        
+        return bool_arr
         
         
 
@@ -360,14 +387,14 @@ if __name__ == "__main__":
     # # print(pattern.export_pattern())
     
     #%% test lattice class
-    # # weird lattice
-    # a = 2000
-    # a1_ = a * np.array([1, 0])
-    # a2_ = a * np.array([1/4, 1])
-    # x_size_ = 20 * a
-    # y_size_ = 16 * a
-    # lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.4 * a]])
-    # print(lattice.pat_str)
+    # weird lattice
+    a = 2000
+    a1_ = a * np.array([1, 0])
+    a2_ = a * np.array([1/4, 1])
+    x_size_ = 20 * a
+    y_size_ = 16 * a
+    lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.4 * a]])
+    print(lattice.pat_str)
     
     
     # # kagome 
@@ -384,3 +411,35 @@ if __name__ == "__main__":
     # lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.3 * a] for b in bs], bs)
     
     #%% test text
+    
+    # text = Text(font="arial.ttf")
+    # text.generate_text_pattern("A2g", )
+    
+    #%% generate right and up arrow
+    
+    # right arrow
+    resolution = 0.25e3
+    w1 = 1e3
+    w2 = 3e3
+    size = 20e3
+    frac = 0.6
+    
+    
+    points = np.array([[size / 10, size / 2 - w1],
+                        [size / 10, size / 2 + w1],
+                        [size * frac, size / 2 + w1],
+                        [size * frac, size / 2 + w2],
+                        [9 * size / 10, size / 2],
+                        [size * frac, size / 2 - w2],
+                        [size * frac, size / 2 - w1]])
+    points[:,0] += resolution / 2
+    points[:,1] += resolution / 2
+    
+    
+    pattern_r = Pattern(size, size, resolution)
+    pattern_r.add_parametrized_shape(polygon, *points.flatten())
+    pattern_r.visualize()
+    
+    pattern_u = Pattern(size, size, resolution)
+    pattern_u.add_parametrized_shape(polygon, *points[:,::-1].flatten())
+    pattern_u.visualize()

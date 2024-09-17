@@ -11,7 +11,7 @@ pixel_res = 25
 #%% square lattice
 
 
-overlaps_sq = [0.97, 1.02, 1.07]
+overlaps_sq = [0.97, 1.05, 1.1]
 d_pillars_sq = [1800, 2100]
 
 
@@ -32,7 +32,7 @@ for v in overlaps_sq:
 
 #%% triangular lattice
 
-overlaps_tri = [0.97, 1.02, 1.07]
+overlaps_tri = [0.97, 1.05, 1.1]
 d_pillars_tri = [1800, 2100]
 
 for v in overlaps_tri:
