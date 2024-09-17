@@ -53,12 +53,12 @@ a0 = v0 * d
 axy = a0 / np.sqrt(2)
 
 
-dvs = [-0.16, -0.08, 0.0, 0.08, 0.16]
-N = 4
-
+dvs = [-0.18, -0.09, 0.0, 0.09, 0.18]
 str_ = ""
 
-for dv_idx, dv in enumerate([0]):
+# add short chains
+N = 5
+for dv_idx, dv in enumerate(dvs):
     width = (d + axy) * 1.1
     height = 2 * axy
     
@@ -69,7 +69,7 @@ for dv_idx, dv in enumerate([0]):
     y_c = pattern_bulk.y_ax[-1] / 2
     
     
-    bulk_str = f"D ssh_1d_bulk_{dv_idx}, 123, {pattern_bulk.y_ax[-1] + pixel_res}, 1, {N}"
+    bulk_str = f"D ssh_1d_short_bulk_{dv_idx+1}, 123, {pattern_bulk.y_ax[-1] + pixel_res}, 1, {N-1}"
     bulk_str += "\nI 2\nC 200\n"
     for i in range(-1, 2):
         pattern_bulk.add_parametrized_shape(circle, x_c + axy / 2, i * ay_num + y_c - ay_num / 4 - dv * ay_num / 4, d / 2)
@@ -78,7 +78,7 @@ for dv_idx, dv in enumerate([0]):
     bulk_str += pattern_bulk.export_pattern(offsetx=1000,offsety=1000)
     bulk_str += "END\n\n\n"
     
-    top_str = f"D ssh_1d_top_{dv_idx}"
+    top_str = f"D ssh_1d_short_top_{dv_idx+1}"
     top_str += "\nI 2\nC 200\n"
     i = -1
     pattern_top = Pattern(width, height, pixel_res)
@@ -86,10 +86,57 @@ for dv_idx, dv in enumerate([0]):
     pattern_top.add_parametrized_shape(circle, x_c + axy / 2, 0 * ay_num + y_c - ay_num / 4 - dv * ay_num / 4, d / 2)
     pattern_top.add_parametrized_shape(circle, x_c - axy / 2, i * ay_num + y_c + ay_num / 4 + dv * ay_num / 4, d / 2)
     pattern_top.visualize()
-    top_str += pattern_top.export_pattern(offsetx=1000,offsety=1000 + (N + 1) * ay_num)
+    top_str += pattern_top.export_pattern(offsetx=1000,offsety=1000 + N * ay_num)
     top_str += "END\n\n\n"
     
-    bot_str = f"D ssh_1d_bot_{dv_idx}"
+    bot_str = f"D ssh_1d_short_bot_{dv_idx+1}"
+    bot_str += "\nI 2\nC 200\n"
+    i = 1
+    pattern_bot = Pattern(width, height, pixel_res)
+    pattern_bot.add_parametrized_shape(circle, x_c + axy / 2, i * ay_num + y_c - ay_num / 4 - dv * ay_num / 4, d / 2)
+    pattern_bot.add_parametrized_shape(circle, x_c - axy / 2, i * ay_num + y_c + ay_num / 4 + dv * ay_num / 4, d / 2)
+    pattern_bot.add_parametrized_shape(circle, x_c - axy / 2, 0 * ay_num + y_c + ay_num / 4 + dv * ay_num / 4, d / 2)
+    pattern_bot.visualize()
+    bot_str += pattern_bot.export_pattern(offsetx=1000,offsety=1000)
+    bot_str += "END\n\n\n"
+    
+    str_ = str_ + bulk_str + top_str + bot_str
+
+
+# add long chains
+N = 20
+for dv_idx, dv in enumerate(dvs):
+    width = (d + axy) * 1.1
+    height = 2 * axy
+    
+    
+    pattern_bulk = Pattern(width, height, pixel_res)
+    ay_num = pattern_bulk.y_ax[-1] + pixel_res
+    x_c = pattern_bulk.x_ax[-1] / 2
+    y_c = pattern_bulk.y_ax[-1] / 2
+    
+    
+    bulk_str = f"D ssh_1d_long_bulk_{dv_idx+1}, 123, {pattern_bulk.y_ax[-1] + pixel_res}, 1, {N-1}"
+    bulk_str += "\nI 2\nC 200\n"
+    for i in range(-1, 2):
+        pattern_bulk.add_parametrized_shape(circle, x_c + axy / 2, i * ay_num + y_c - ay_num / 4 - dv * ay_num / 4, d / 2)
+        pattern_bulk.add_parametrized_shape(circle, x_c - axy / 2, i * ay_num + y_c + ay_num / 4 + dv * ay_num / 4, d / 2)
+    pattern_bulk.visualize()
+    bulk_str += pattern_bulk.export_pattern(offsetx=1000,offsety=1000)
+    bulk_str += "END\n\n\n"
+    
+    top_str = f"D ssh_1d_long_top_{dv_idx+1}"
+    top_str += "\nI 2\nC 200\n"
+    i = -1
+    pattern_top = Pattern(width, height, pixel_res)
+    pattern_top.add_parametrized_shape(circle, x_c + axy / 2, i * ay_num + y_c - ay_num / 4 - dv * ay_num / 4, d / 2)
+    pattern_top.add_parametrized_shape(circle, x_c + axy / 2, 0 * ay_num + y_c - ay_num / 4 - dv * ay_num / 4, d / 2)
+    pattern_top.add_parametrized_shape(circle, x_c - axy / 2, i * ay_num + y_c + ay_num / 4 + dv * ay_num / 4, d / 2)
+    pattern_top.visualize()
+    top_str += pattern_top.export_pattern(offsetx=1000,offsety=1000 + N * ay_num)
+    top_str += "END\n\n\n"
+    
+    bot_str = f"D ssh_1d_long_bot_{dv_idx+1}"
     bot_str += "\nI 2\nC 200\n"
     i = 1
     pattern_bot = Pattern(width, height, pixel_res)
@@ -104,3 +151,8 @@ for dv_idx, dv in enumerate([0]):
     
     # str_ += pattern.export_pattern(offsetx=offsets[0], offsety=offsets[1])
 print(str_)
+
+
+file = open("ssh_chains.pat", "w")
+file.write(str_)
+file.close()

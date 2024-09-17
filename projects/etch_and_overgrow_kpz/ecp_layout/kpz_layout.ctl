@@ -15,9 +15,11 @@ y = 0
 stage
 
 ; place fields
-for m = 1 to 55
+;for m = 1 to 55
+for m = 1 to 10
 x = 0
-for n = 1 to 30
+;for n = 1 to 30
+for n = 1 to 6
 stage
 
 ; draw characters and arrows
@@ -58,20 +60,39 @@ draw(large_square)
 +y = 355
 stage
 
-; draw 1D ssh chains
 
-+x = 260
-+y = -335
-stage
-draw(ssh_1d_bulk_0)
-draw(ssh_1d_top_0)
-draw(ssh_1d_bot_0)
-+x = -260
-+y = 335
+; ==========draw 1D ssh chains
+sfile = ssh_chains
++x = 250
++y = -325
 stage
 
+; ==========short ssh chains
+for s = 1 to 5
+idraw(ssh_1d_short_bulk_, s)
+idraw(ssh_1d_short_top_, s)
+idraw(ssh_1d_short_bot_, s)
++x = 15
+stage
+next s
++x = -75
 
-; draw all lattices
+; ==========long ssh chains
+for s = 1 to 5
+idraw(ssh_1d_long_bulk_, s)
+idraw(ssh_1d_long_top_, s)
+idraw(ssh_1d_long_bot_, s)
++x = 15
+stage
+next s
++x = -75
+
++x = -250
++y = 325
+stage
+
+
+; ==========draw all lattices
 sfile = patterns
 
 ; ====== SQ Lattice 1
