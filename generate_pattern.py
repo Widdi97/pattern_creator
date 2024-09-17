@@ -320,8 +320,8 @@ class Lattice:
                     subpat_str += ", " + str(int(self.A_x[0])) + ", " + str(int(self.A_y[1]))
                     subpat_str += ", " + str(int(nx)) + ", " + str(int(ny))
                 subpat_str += f"\nI {self.increment}\nC {self.dwell_time}\n"
-                offsetx = - k*self.A_x[0] + self.A_x[0] + (k == -1) * self.A_x[0] * (self.x_ruc_steps - 1) + self.A_x[0]
-                offsety = - l*self.A_y[1] + self.A_y[1] + (l == -1) * self.A_y[1] * (self.y_ruc_steps - 1) + is_corner * self.A_y[1] + self.A_y[1]
+                offsetx = - k * self.A_x[0] + self.A_x[0] + (k == -1) * self.A_x[0] * (self.x_ruc_steps - 1) + self.A_x[0]
+                offsety = - l * self.A_y[1] + self.A_y[1] + (l == -1) * self.A_y[1] * (self.y_ruc_steps - 1) + is_corner * self.A_y[1] + self.A_y[1]
                 subpat_str += self.patterns[1-k][1-l].export_pattern(complete=False, offsetx=round(offsetx),
                                                                      offsety=round(offsety)) + "END\n\n\n"
                 pat_str += subpat_str
