@@ -1,0 +1,40 @@
+
+D Semenoff_left, 5700, 3290, 5, 18
+I 2
+C 200
+Circle 12700, 7000, 800
+Circle 14600, 7000, 1000
+Circle 9850, 8645, 800
+Circle 11750, 8645, 1000
+END
+
+D Semenoff_edge_left, 5700, 3290, 1, 18
+I 2
+C 200
+Circle 38350, 8645, 800
+Circle 40250, 8645, 1000
+Circle 41200, 7000, 800
+END
+
+D Semenoff_right, 5700, 3290, 5, 18
+I 2
+C 200
+
+Circle 46900, 7000, 1000
+Circle 48800, 7000, 800
+Circle 44050, 8645, 1000
+Circle 45950, 8645, 800
+END
+
+D Semenoff_edge_right, 5700, 3290, 1, 18
+I 2
+C 200
+Circle 43100, 7000, 800
+END
+
+D marker
+I 2
+C 200
+Circle 42150, 6290, 1250
+Circle 42150, 71881, 1250
+END
