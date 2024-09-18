@@ -6,7 +6,12 @@
 ; variable pillar diameters: 1.8, 2.1um
 ; variable pillar overlaps: 0.97, 1.05, 1.1
 
-; ========= draw rings ==========
+; Fragen:
+; - IF statements möglich? -> Viertelkreis
+; - Bedeutung des roten Rechtecks im .pat file
+; - Exposure time realistisch?
+; - 
+
 current = 25000
 
 origin = 0, 0
@@ -15,11 +20,11 @@ y = 0
 stage
 
 ; place fields
-;for m = 1 to 55
-for m = 1 to 10
+for m = 1 to 55
+;for m = 1 to 10
 x = 0
-;for n = 1 to 30
-for n = 1 to 6
+for n = 1 to 30
+;for n = 1 to 6
 stage
 
 ; draw characters and arrows
@@ -53,18 +58,27 @@ stage
 draw(overlap_series)
 
 
+;+x = 70
+;stage
+;draw(large_square)
+;+x = -185
+;+y = 355
+;stage
+
+sfile = split_square
 +x = 70
 stage
-draw(large_square)
+draw(split_square)
 +x = -185
 +y = 355
 stage
 
 
+sfile = other_patterns
 ; ==========draw 1D ssh chains
 sfile = ssh_chains
 +x = 250
-+y = -325
++y = -340
 stage
 
 ; ==========short ssh chains
@@ -78,6 +92,9 @@ next s
 +x = -75
 
 ; ==========long ssh chains
++x = 75
++y = -20
+stage
 for s = 1 to 5
 idraw(ssh_1d_long_bulk_, s)
 idraw(ssh_1d_long_top_, s)
@@ -86,9 +103,49 @@ idraw(ssh_1d_long_bot_, s)
 stage
 next s
 +x = -75
++x = -75
++y = 20
 
 +x = -250
-+y = 325
++y = 340
+stage
+
+
+; ==========draw zigzigzagzag chains
+sfile = zigzigzagzag
+
++x = 395
++y = -383
+stage
+draw(dred_1um924_1um1_1um0_use)
++x = 15
+stage
+draw(dred_1um924_1um1_0um975_use)
++x = 15
+stage
+draw(dred_1um924_1um1_0um95_use)
++x = 15
+stage
+draw(dred_1um924_1um05_0um975_use)
++x = 15
+stage
+draw(dred_1um924_1um05_0um95_use)
++x = 15
+stage
+draw(dred_1um924_1um05_0um925_use)
++x = 15
+stage
+draw(dred_1um924_1um0_0um925_use)
++x = 15
+stage
+draw(dred_1um924_1um0_0um9_use)
++x = 15
+stage
+draw(dred_1um924_1um0_0um875_use)
++x = -120
+
++x = -395
++y = 383
 stage
 
 

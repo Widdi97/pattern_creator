@@ -44,7 +44,7 @@ pixel_res = 25
 
 #%% 1d ssh chains
 
-pixel_res = 100
+pixel_res = 25
 
 d = 1.8e3
 v0 = 1.05
@@ -53,7 +53,7 @@ a0 = v0 * d
 axy = a0 / np.sqrt(2)
 
 
-dvs = [-0.18, -0.09, 0.0, 0.09, 0.18]
+dvs = [-0.25, -0.125, 0.0, 0.125, 0.25]
 str_ = ""
 
 # add short chains
@@ -153,6 +153,9 @@ for dv_idx, dv in enumerate(dvs):
 print(str_)
 
 
-file = open("ssh_chains.pat", "w")
-file.write(str_)
-file.close()
+# file = open("ssh_chains.pat", "w")
+# file.write(str_)
+# file.close()
+
+#%% elliptical micropillar chains
+
