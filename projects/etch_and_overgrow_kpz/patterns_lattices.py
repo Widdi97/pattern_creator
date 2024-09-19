@@ -35,6 +35,8 @@ for v in overlaps_sq:
 overlaps_tri = [0.97, 1.05, 1.1]
 d_pillars_tri = [1800, 2100]
 
+a_ecp = 130000
+
 for v in overlaps_tri:
     for d_pillar in d_pillars_tri:
         name = f"triangular_v{v}_d{d_pillar}"

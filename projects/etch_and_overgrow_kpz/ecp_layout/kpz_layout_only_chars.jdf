@@ -1,0 +1,24 @@
+
+JOB 'EBL', 2 
+
+; Pattern converted from file: C:/Users/simon/OneDrive/Desktop/Uni/Promotion/Code/pattern_creator/projects/etch_and_overgrow_kpz/ecp_layout/kpz_layout_only_chars.ctl
+
+PATH MINI 
+  ARRAY (0, 1, 0) / (0, 1, 0) 
+    ASSIGN P(1) -> ( (*,*), SHOT01) 
+  AEND 
+PEND 
+
+LAYER 1 
+
+P(1) 'kpz_layout_only_chars.v30'
+
+SHOT01: MODULAT ((0, 0)) 
+
+SHOT A, 4 
+
+RESIST 976
+
+STDCUR 2 
+
+END 
