@@ -1,0 +1,14 @@
+draw(test_x_1_y_1)
+draw(test_x_1_y_0)
+draw(test_x_1_y_-1)
+draw(test_x_0_y_1)
+draw(test_x_0_y_0)
+draw(test_x_0_y_-1)
+draw(test_x_-1_y_1)
+draw(test_x_-1_y_0)
+draw(test_x_-1_y_-1)
+
+
+
+
+

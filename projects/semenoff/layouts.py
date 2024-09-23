@@ -57,25 +57,28 @@ pixel_res = 75
 # d_pillars_sq = [2400]
 # onsite_diff = [0.8]
 
-overlaps_sq = [0.9, 1.00, 1.05] # Overlap larger pillar
-d_pillars_sq = [2000, 2200] # Diameter
-onsite_diff = [0.75, 0.85] #Percentage smaller to larger
+overlaps_sq = [0.9, 1.00, 1.1] # Overlap larger pillar
+d_pillars_sq = [2000, 2400] # Diameter
+onsite_diff = [0.70, 0.8] #Percentage smaller to larger
 
-unit_cells_x = 5
-unit_cells_y = 18
+unit_cells_x = 6 
+unit_cells_y = 20
+x_in = 0
+y_in = 0.7
 offset = 3000
-increment = 2
-dwell_time = 200
+latt_inc = (500*1e3 - offset )/4.3
+increment = 16
+dwell_time = 100
 
 pat_str = ""
 cntrl_str = ""
 
+
 for v in overlaps_sq:
-    for d_pillar in d_pillars_sq:
-        for d_onsite in onsite_diff: 
+    for d_onsite in onsite_diff: 
+        for d_pillar in d_pillars_sq:
             
-            name = f"semenoff_v{v}_d{d_pillar}_diff{d_onsite}_l"
-            
+          
             d1 = d_pillar
             d2 = d_pillar  * d_onsite
                         
@@ -97,11 +100,11 @@ for v in overlaps_sq:
             pat_str += "I " + str(int(increment)) + "\n"
             pat_str += "C " + str(int(dwell_time)) + "\n"
             
-            pat_str += "Circle "+str(int(offset+a1_[0]))+", "+str(int(offset+a1_[1]))+", "+str(int(d1/2)) + "\n"
-            pat_str += "Circle "+str(int(offset+a1_[0]+b2_[0]))+", "+str(int(offset+a1_[1]+b2_[1]))+", "+str(int(d2/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset+a1_[0]))+", "+str(int(latt_inc*y_in+offset+a1_[1]))+", "+str(int(d1/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset+a1_[0]+b2_[0]))+", "+str(int(latt_inc*y_in+offset+a1_[1]+b2_[1]))+", "+str(int(d2/2)) + "\n"
             
-            pat_str += "Circle "+str(int(offset+a2_[0]))+", "+str(int(offset+ a2_[1]))+", "+str(int(d1/2)) + "\n"
-            pat_str += "Circle "+str(int(offset+a2_[0]+b2_[0]))+", "+str(int(offset+ a2_[1]+b2_[1]))+", "+str(int(d2/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset+a2_[0]))+", "+str(int(latt_inc*y_in+offset+ a2_[1]))+", "+str(int(d1/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset+a2_[0]+b2_[0]))+", "+str(int(latt_inc*y_in+offset+ a2_[1]+b2_[1]))+", "+str(int(d2/2)) + "\n"
             pat_str +=  "END" + "\n"
             
             cntrl_str += f"draw({name})\n"
@@ -114,9 +117,9 @@ for v in overlaps_sq:
             pat_str += "I " + str(int(increment)) + "\n"
             pat_str += "C " + str(int(dwell_time)) + "\n"
             
-            pat_str += "Circle "+str(int(offset+a1_[0]*unit_cells_x + a2_[0]))+", "+str(int(offset+a1_[1]*unit_cells_x+ a2_[1]))+", "+str(int(d1/2)) + "\n"
-            pat_str += "Circle "+str(int(offset+a1_[0]*unit_cells_x+b2_[0] + a2_[0]))+", "+str(int(offset+a1_[1]*unit_cells_x+b2_[1]+ a2_[1]))+", "+str(int(d2/2)) + "\n"
-            pat_str += "Circle "+str(int(offset+a1_[0]*(unit_cells_x+1)))+", "+str(int(offset+a1_[1]*(unit_cells_x+1)))+", "+str(int(d1/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset+a1_[0]*unit_cells_x + a2_[0]))+", "+str(int(latt_inc*y_in+offset+a1_[1]*unit_cells_x+ a2_[1]))+", "+str(int(d1/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset+a1_[0]*unit_cells_x+b2_[0] + a2_[0]))+", "+str(int(latt_inc*y_in+offset+a1_[1]*unit_cells_x+b2_[1]+ a2_[1]))+", "+str(int(d2/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset+a1_[0]*(unit_cells_x+1)))+", "+str(int(latt_inc*y_in+offset+a1_[1]*(unit_cells_x+1)))+", "+str(int(d1/2)) + "\n"
             pat_str +=  "END" + "\n"
             
             cntrl_str += f"draw({name})\n"
@@ -134,11 +137,11 @@ for v in overlaps_sq:
             pat_str += "I " + str(int(increment)) + "\n"
             pat_str += "C " + str(int(dwell_time)) + "\n"*2
             
-            pat_str += "Circle "+str(int(offset_x + offset+a1_[0])) + ", " + str(int(offset + a1_[1])) + ", " + str(int(d1/2)) + "\n"
-            pat_str += "Circle "+str(int(offset_x + offset+a1_[0] + b2_[0])) + ", "+str(int(offset + a1_[1] + b2_[1]))+", "+str(int(d2/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset_x + offset+a1_[0])) + ", " + str(int(latt_inc*y_in+offset + a1_[1])) + ", " + str(int(d1/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset_x + offset+a1_[0] + b2_[0])) + ", "+str(int(latt_inc*y_in+offset + a1_[1] + b2_[1]))+", "+str(int(d2/2)) + "\n"
             
-            pat_str += "Circle "+str(int(offset_x + offset+a2_[0]))+", "+str(int(offset+ a2_[1]))+", "+str(int(d1/2)) + "\n"
-            pat_str += "Circle "+str(int(offset_x + offset+a2_[0]+b2_[0]))+", "+str(int(offset+ a2_[1]+b2_[1]))+", "+str(int(d2/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset_x + offset+a2_[0]))+", "+str(int(latt_inc*y_in+offset+ a2_[1]))+", "+str(int(d1/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset_x + offset+a2_[0]+b2_[0]))+", "+str(int(latt_inc*y_in+offset+ a2_[1]+b2_[1]))+", "+str(int(d2/2)) + "\n"
             pat_str += "END" + "\n"
             
             cntrl_str += f"draw({name})\n"
@@ -151,7 +154,7 @@ for v in overlaps_sq:
             pat_str += "I " + str(int(increment)) + "\n"
             pat_str += "C " + str(int(dwell_time)) + "\n"
             
-            pat_str += "Circle "+str(int(offset_x + offset + b2_[0] ))+", "+str(int(offset + b2_[1]))+", "+str(int(d2/2)) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset_x + offset + b2_[0] ))+", "+str(int(latt_inc*y_in+offset + b2_[1]))+", "+str(int(d2/2)) + "\n"
             pat_str += "END" + "\n"
             
             cntrl_str += f"draw({name})\n"
@@ -164,19 +167,68 @@ for v in overlaps_sq:
             pat_str += "I " + str(int(increment)) + "\n"
             pat_str += "C " + str(int(dwell_time)) + "\n"
             
-            pat_str += "Circle "+str(int(offset + a1_[0] * (unit_cells_x+1) + a/2)) + ", " + str(int(offset + a_lattice2 - 4000))+", "+str(1250) + "\n"
-            pat_str += "Circle "+str(int(offset + a1_[0] * (unit_cells_x+1) + a/2)) + ", " + str(int(offset + (unit_cells_y+1) * a_lattice2 + 4000 - a_lattice2/2)) + ", " + str(1250) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset + a1_[0] * (unit_cells_x+1) + a/2)) + ", " + str(int(latt_inc*y_in+offset + a_lattice2 - 4000))+", "+str(1250) + "\n"
+            pat_str += "Circle "+str(int(latt_inc*x_in+offset + a1_[0] * (unit_cells_x+1) + a/2)) + ", " + str(int(latt_inc*y_in+offset + (unit_cells_y+1) * a_lattice2 + 4000 - a_lattice2/2)) + ", " + str(1250) + "\n"
             pat_str += "END" + "\n"
             
             cntrl_str += f"draw({name})\n" + "\n"*2
+            x_in +=1
+    x_in = 0
+    y_in +=1
+    
+  
+    
+#%% full semenoff field
+x_in = 0
+unit_cells_x = 13
+unit_cells_y = 20
 
+overlaps_sq = [0.9, 1.00] # Overlap larger pillar
+d_pillar = 2000 # Diameter
+onsite_diff = [0.70, 0.8] #Percentage smaller to larger
+
+for d_onsite in onsite_diff: 
+    for v in overlaps_sq:
+        
+        name = f"semenoff_v{v}_d{d_pillar}_diff{d_onsite}_full"
+        
+        d1 = d_pillar
+        d2 = d_pillar  * d_onsite
+                    
+        a = d_pillar * v 
+        a_lattice1 = 3 * a 
+        a_lattice2 = (3*a/2)  / np.cos(30 / 180 * np.pi)
+        a1_ = a_lattice1  * np.array([1, 0])
+        a2_ = a_lattice2 * np.array([np.cos(30 / 180 * np.pi), np.sin(30 / 180 * np.pi)])
+        b1_ = np.array([0,0]) 
+        b2_ = a1_/3
+        
+        d1 = d_pillar *d_onsite
+        d2 = d_pillar 
+                
+        pat_str += "\n" + "D " + name + ", " + str(int(a_lattice1)) + ", " +  str(int(a_lattice2)) +", " + str(int(unit_cells_x)) + ", " +  str(int(unit_cells_y))+ "\n"
+        pat_str += "I " + str(int(increment)) + "\n"
+        pat_str += "C " + str(int(dwell_time)) + "\n"
+        
+        pat_str += "Circle "+str(int(latt_inc*x_in+offset+a1_[0]))+", "+str(int(latt_inc*y_in+offset+a1_[1]))+", "+str(int(d1/2)) + "\n"
+        pat_str += "Circle "+str(int(latt_inc*x_in+offset+a1_[0]+b2_[0]))+", "+str(int(latt_inc*y_in+offset+a1_[1]+b2_[1]))+", "+str(int(d2/2)) + "\n"
+        
+        pat_str += "Circle "+str(int(latt_inc*x_in+offset+a2_[0]))+", "+str(int(latt_inc*y_in+offset+ a2_[1]))+", "+str(int(d1/2)) + "\n"
+        pat_str += "Circle "+str(int(latt_inc*x_in+offset+a2_[0]+b2_[0]))+", "+str(int(latt_inc*y_in+offset+ a2_[1]+b2_[1]))+", "+str(int(d2/2)) + "\n"
+        pat_str +=  "END" + "\n"
+        
+        cntrl_str += f"draw({name})\n"
+
+        x_in +=1
+        
+y_in +=1
 
 #%% export pattern file
 
-# file = open("semenoff_pat.txt", "w")
-# file.write(pat_str)
-# file.close()
+file = open("semenoff_pat.txt", "w")
+file.write(pat_str)
+file.close()
 
-# file = open("semenoff_draw.txt", "w")
-# file.write(cntrl_str)
-# file.close()
+file = open("semenoff_draw.txt", "w")
+file.write(cntrl_str)
+file.close()
