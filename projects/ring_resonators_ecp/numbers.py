@@ -17,8 +17,8 @@ for idx, s in enumerate(split):
     nbrs_arr = np.array(nbrs_arr)
     dct[idx] = nbrs_arr
 
-def generate_nbr(num, scaling=1, custom_offset=[0, 0]):
-    res = f"D nbr_{num}\nI 16\nC 122\n"
+def generate_nbr(num, scaling=1, custom_offset=[0, 0], name_addition=""):
+    res = f"D nbr{name_addition}_{num}\nI 16\nC 122\n"
     dx_vec = np.array([0, 1, 0, 1, 0]) * - 18000 * scaling
     for offset, char in enumerate(str(num)[::-1]):
         char_lines = dct[int(char)].copy()
@@ -43,6 +43,18 @@ for jj in range(99):
     # print(string)
     all_nbrs += string + "\n\n"
     with open("numbers.pat", "w") as f:
+        f.write(all_nbrs)
+
+all_nbrs = ""
+for jj in range(99):
+    string = generate_nbr(jj, custom_offset=[0, 35000], name_addition="_x")
+    # print(string)
+    all_nbrs += string + "\n\n"
+    
+    string = generate_nbr(jj, name_addition="_y")
+    # print(string)
+    all_nbrs += string + "\n\n"
+    with open("numbers_xy.pat", "w") as f:
         f.write(all_nbrs)
 
 # smaller numbers

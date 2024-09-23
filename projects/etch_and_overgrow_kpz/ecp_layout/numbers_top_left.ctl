@@ -11,23 +11,19 @@ x = 0
 y = 0
 stage
 
-sfile = chars
+sfile = numbers_xy
 
-for m = 1 to 55
+for m = 1 to 50
 x = 0
-for n = 1 to 32
+for n = 1 to 40
 stage
 
-; ========= draw x numbers
-idraw(nbr_, n)
-; ========= draw y numbers
-+y = -35
-stage
-idraw(nbr_, m)
-+y = 35
+; ========= draw numbers
+idraw(nbr_x_, n)
+idraw(nbr_y_, m)
 
 
-+x = 880
++x = -680
 next n
-+y = 500
++y = 530
 next m

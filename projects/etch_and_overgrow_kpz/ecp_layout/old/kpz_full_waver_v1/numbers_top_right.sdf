@@ -6,7 +6,7 @@ MTRL STKR
 #5 
 %4A 
 
-JDF 'kpz_layout_single_field', 1
+JDF 'numbers_top_right', 1
 ACC 100 
 CALPRM 'TEP_60um_2nA' 
 DEFMODE 2 

@@ -13,9 +13,9 @@ stage
 
 sfile = chars
 
-for m = 1 to 55
+for m = 1 to 50
 x = 0
-for n = 1 to 32
+for n = 1 to 40
 stage
 
 ; ========= draw x numbers
@@ -27,7 +27,7 @@ idraw(nbr_, m)
 +y = 35
 
 
-+x = 880
++x = -650
 next n
-+y = 500
++y = 530
 next m
