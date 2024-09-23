@@ -20,16 +20,14 @@ stage
 
 ; ========= draw x numbers
 idraw(nbr_, n)
-
-
 ; ========= draw y numbers
 +y = -35
 stage
 idraw(nbr_, m)
-+x = 60
 +y = 35
 
-+x = 820
+
++x = 880
 next n
 +y = 500
 next m

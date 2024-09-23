@@ -141,7 +141,7 @@ class Pattern:
 
 class Lattice:
     def __init__(self, a1, a2, x_size, y_size, max_step_size, shapes_with_args=[], b_vecs=np.array([0, 0]),
-                 pattern_name="pattern", increment=2, dwell_time=200):
+                 pattern_name="pattern", increment=16, dwell_time=100, global_offsetx=0, global_offsety=0):
         self.a1 = a1
         self.a2 = a2
         
@@ -160,6 +160,8 @@ class Lattice:
         self.increment = increment
         self.pattern_name = pattern_name
         self.dwell_time = dwell_time
+        self.global_offsetx = global_offsetx
+        self.global_offsety = global_offsety
         
         
         self.find_x_y_aligned_unit_cell()
@@ -322,8 +324,8 @@ class Lattice:
                 subpat_str += f"\nI {self.increment}\nC {self.dwell_time}\n"
                 offsetx = - k * self.A_x[0] + self.A_x[0] + (k == -1) * self.A_x[0] * (self.x_ruc_steps - 1) + self.A_x[0]
                 offsety = - l * self.A_y[1] + self.A_y[1] + (l == -1) * self.A_y[1] * (self.y_ruc_steps - 1) + is_corner * self.A_y[1] + self.A_y[1]
-                subpat_str += self.patterns[1-k][1-l].export_pattern(complete=False, offsetx=round(offsetx),
-                                                                     offsety=round(offsety)) + "END\n\n\n"
+                subpat_str += self.patterns[1-k][1-l].export_pattern(complete=False, offsetx=round(offsetx+self.global_offsetx),
+                                                                     offsety=round(offsety+self.global_offsety)) + "END\n\n\n"
                 pat_str += subpat_str
         draw_latt_str = ""
         for name in names:

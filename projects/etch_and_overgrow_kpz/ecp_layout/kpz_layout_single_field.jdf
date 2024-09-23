@@ -5,15 +5,16 @@ JOB 'EBL', 2
 
 PATH MINI 
   ARRAY (0, 1, 0) / (0, 1, 0) 
-    ASSIGN P(1) -> ( (*,*), SHOT01) 
-  AEND 
-PEND 
+    ASSIGN P(1) -> ( (*,*), SHOT02) 
+  AEND
+PEND
 
 LAYER 1 
 
 P(1) 'kpz_layout_single_field.v30'
+P(2) 'kpz_layout_single_field.v30'
 
-SHOT01: MODULAT ((0, 0)) 
+SHOT02: MODULAT ((0, 0)) 
 
 SHOT A, 4 
 

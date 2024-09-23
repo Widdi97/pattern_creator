@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 pat_str = ""
 draw_strs = ""
 pixel_res = 25
+a_ecp = 130000
 
 #%% square lattice
 
@@ -15,8 +16,8 @@ overlaps_sq = [0.97, 1.05, 1.1]
 d_pillars_sq = [1800, 2100]
 
 
-for v in overlaps_sq:
-    for d_pillar in d_pillars_sq:
+for vidx, v in enumerate(overlaps_sq):
+    for didx, d_pillar in enumerate(d_pillars_sq):
         name = f"square_v{v}_d{d_pillar}"
         draw_lattice_str = ""
         
@@ -25,7 +26,8 @@ for v in overlaps_sq:
         a2_ = a * np.array([0, 1])
         x_size_ = 100000
         y_size_ = 100000
-        lattice = Lattice(a1_, a2_, x_size_, y_size_, pixel_res, [[circle, 0, 0, d_pillar / 2]], pattern_name=name)
+        lattice = Lattice(a1_, a2_, x_size_, y_size_, pixel_res, [[circle, 0, 0, d_pillar / 2]],
+                          pattern_name=name, global_offsetx=a_ecp * didx, global_offsety= (2 - vidx) * a_ecp)
         
         pat_str += lattice.pat_str + "\n"*3
         draw_strs += lattice.draw_latt_str + "\n"*5
@@ -35,10 +37,10 @@ for v in overlaps_sq:
 overlaps_tri = [0.97, 1.05, 1.1]
 d_pillars_tri = [1800, 2100]
 
-a_ecp = 130000
 
-for v in overlaps_tri:
-    for d_pillar in d_pillars_tri:
+for vidx, v in enumerate(overlaps_tri):
+    for didx, d_pillar in enumerate(d_pillars_tri):
+        
         name = f"triangular_v{v}_d{d_pillar}"
         draw_lattice_str = ""
         a_latt = v * d_pillar
@@ -50,7 +52,10 @@ for v in overlaps_tri:
         x_size_ = 100000
         y_size_ = 100000
         
-        lattice = Lattice(a1_, a2_, x_size_, y_size_, pixel_res, [[circle, 0, 0, d_pillar / 2]], pattern_name=name)
+        
+        
+        lattice = Lattice(a1_, a2_, x_size_, y_size_, pixel_res, [[circle, 0, 0, d_pillar / 2]],
+                          pattern_name=name, global_offsetx=a_ecp * didx, global_offsety= (2 - vidx) * a_ecp)
         
         pat_str += lattice.pat_str + "\n"*3
         draw_strs += lattice.draw_latt_str + "\n"*5
