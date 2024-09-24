@@ -4,15 +4,15 @@ JOB/W 'EBL', 3,3
 ; Pattern converted from file: C:/Users/simon/OneDrive/Desktop/Uni/Promotion/Code/pattern_creator/projects/etch_and_overgrow_kpz/ecp_layout/kpz_layout_only_chars.ctl
 
 PATH MINI 
-  ARRAY (13470, 1, 0) / (13690, 1, 0) 
+  ARRAY (14120, 1, 0) / (13690, 1, 0) 
     ASSIGN P(1) -> ( (*,*), SHOT01) 
   AEND 
 PEND 
 
 
 PATH MINI 
-  ;ARRAY (990, 40, 650) / (714, 50, -530)
-  ARRAY (990, 2, 650) / (714, 2, -530)
+  ARRAY (885, 40, 680) / (707, 50, -530)
+  ;ARRAY (885, 2, 680) / (707, 2, -530)
     ASSIGN P(2) -> ( (*,*), SHOT02) 
   AEND
 PEND

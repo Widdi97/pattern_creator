@@ -26,9 +26,6 @@ draw(overlap_series)
 ; ==========draw 1D ssh chains
 sfile = ssh_chains_grouped
 
-+x = 180
-+y = -5
-stage
 
 draw(ssh_1d_short_bulk)
 draw(ssh_1d_short_ends)
@@ -38,10 +35,6 @@ draw(ssh_1d_long_ends)
 
 ; ==========draw zigzigzagzag chains
 sfile = zigzigzagzag_shifted
-
-+x = 145
-+y = -23
-stage
 
 draw(1.0_0.875)
 draw(1.0_0.9)
@@ -56,9 +49,6 @@ draw(1.1_1.0)
 ; ==========draw all lattices
 sfile = kpz_lattices
 
-+x = -385
-+y = 105
-stage
 
 ; ====== SQ Lattice 1
 draw(square_v0.97_d1800_x_1_y_1)
@@ -125,9 +115,6 @@ draw(square_v1.1_d2100_x_0_y_-1)
 draw(square_v1.1_d2100_x_-1_y_1)
 draw(square_v1.1_d2100_x_-1_y_0)
 draw(square_v1.1_d2100_x_-1_y_-1)
-
-+x = 290
-stage
 
 ; ====== TRI Lattice 1
 draw(triangular_v0.97_d1800_x_1_y_1)

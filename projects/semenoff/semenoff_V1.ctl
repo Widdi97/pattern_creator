@@ -118,3 +118,5 @@ sfile = other_patterns
 draw(arrow_right)
 draw(arrow_up)
 draw(overlap_series)
+
+END
