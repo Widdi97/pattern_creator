@@ -19,20 +19,29 @@ PEND
 
 
 PATH MINI 
-  ARRAY (-13150, 1, 0) / (13700, 1, 0) 
+  ARRAY (-14490, 1, 0) / (15000, 1, 0) 
     ASSIGN P(3) -> ( (*,*), SHOT03) 
   AEND 
 PEND 
 
+
+PATH MINI 
+  ARRAY (-1030, 45, -600) / (793, 46, -580)
+  ;ARRAY (-1030, 2, -600) / (793, 2, -580)
+    ASSIGN P(4) -> ( (*,*), SHOT02) 
+  AEND
+PEND
 LAYER 1 
 
 P(1) 'numbers_top_right.v30'
 P(2) 'single_field_kpz.v30'
 P(3) 'numbers_top_left.v30'
+P(4) 'semenoff_V1.v30'
 
 SHOT01: MODULAT ((0, 0)) 
 SHOT02: MODULAT ((0, 0)) 
 SHOT03: MODULAT ((0, 0)) 
+SHOT04: MODULAT ((0, 0)) 
 
 SHOT A, 4 
 

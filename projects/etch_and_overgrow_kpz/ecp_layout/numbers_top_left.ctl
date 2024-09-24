@@ -15,7 +15,7 @@ sfile = numbers_xy
 
 for m = 1 to 50
 x = 0
-for n = 1 to 40
+for n = 1 to 48
 stage
 
 ; ========= draw numbers
@@ -23,7 +23,7 @@ idraw(nbr_x_, n)
 idraw(nbr_y_, m)
 
 
-+x = -680
++x = -600
 next n
-+y = 530
++y = 580
 next m
