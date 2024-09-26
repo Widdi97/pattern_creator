@@ -28,3 +28,22 @@ if __name__ == "__main__":
     
     skip_str = generate_skips(max_r, array_steps, a_field)
     print(skip_str)
+
+    
+    #%% top left
+    array_steps = [25, 45]
+    a_field = [1100, 600] # um
+    
+    max_r = 30e3 # um
+    
+    skip_str = generate_skips(max_r, array_steps, a_field)
+    print(skip_str)
+        
+    #%% bottom right
+    array_steps = [48, 50]
+    a_field = [600, 580] # um
+    
+    max_r = 30e3 # um
+    
+    skip_str = generate_skips(max_r, array_steps, a_field)
+    print(skip_str)
