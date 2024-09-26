@@ -113,6 +113,11 @@ draw (arrow_up)
 draw (overlap_series)
 
 
+sfile = numbers_honey_1
+LOOP
+draw(nbr_16)
+
+
 x = 455
 y = 0
 stage

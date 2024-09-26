@@ -12,7 +12,6 @@ x = 0
 y = 0
 stage
 sfile = honey_adiabatic
-
 draw(adiabaticHoney_v_1.2_ds1800_dl2600)
 draw(adiabaticHoney_v_1.2_ds1800_dl2600_marker)
 

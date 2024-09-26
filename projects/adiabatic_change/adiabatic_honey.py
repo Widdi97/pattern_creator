@@ -212,8 +212,8 @@ x_size = 25
 
 #Pat positioning
 x_fix_offset = 2000 + 420000
-y_fix_offset = -5000 + 340000
-y_offset = 10000
+y_fix_offset = -5000 + 300000
+y_offset = 12500
 x_offset = 100000
 
 yindex = 0
