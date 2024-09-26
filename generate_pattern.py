@@ -389,14 +389,14 @@ if __name__ == "__main__":
     # # print(pattern.export_pattern())
     
     #%% test lattice class
-    # weird lattice
-    a = 2000
-    a1_ = a * np.array([1, 0])
-    a2_ = a * np.array([1/4, 1])
-    x_size_ = 20 * a
-    y_size_ = 16 * a
-    lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.4 * a]])
-    print(lattice.pat_str)
+    # # weird lattice
+    # a = 2000
+    # a1_ = a * np.array([1, 0])
+    # a2_ = a * np.array([1/4, 1])
+    # x_size_ = 20 * a
+    # y_size_ = 16 * a
+    # lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.4 * a]])
+    # print(lattice.pat_str)
     
     
     # # kagome 
@@ -414,34 +414,34 @@ if __name__ == "__main__":
     
     #%% test text
     
-    # text = Text(font="arial.ttf")
-    # text.generate_text_pattern("A2g", )
+    text = Text(font="arial.ttf")
+    text.generate_text_pattern("A2g")
     
     #%% generate right and up arrow
     
-    # right arrow
-    resolution = 0.25e3
-    w1 = 1e3
-    w2 = 3e3
-    size = 20e3
-    frac = 0.6
+    # # right arrow
+    # resolution = 0.25e3
+    # w1 = 1e3
+    # w2 = 3e3
+    # size = 20e3
+    # frac = 0.6
     
     
-    points = np.array([[size / 10, size / 2 - w1],
-                        [size / 10, size / 2 + w1],
-                        [size * frac, size / 2 + w1],
-                        [size * frac, size / 2 + w2],
-                        [9 * size / 10, size / 2],
-                        [size * frac, size / 2 - w2],
-                        [size * frac, size / 2 - w1]])
-    points[:,0] += resolution / 2
-    points[:,1] += resolution / 2
+    # points = np.array([[size / 10, size / 2 - w1],
+    #                     [size / 10, size / 2 + w1],
+    #                     [size * frac, size / 2 + w1],
+    #                     [size * frac, size / 2 + w2],
+    #                     [9 * size / 10, size / 2],
+    #                     [size * frac, size / 2 - w2],
+    #                     [size * frac, size / 2 - w1]])
+    # points[:,0] += resolution / 2
+    # points[:,1] += resolution / 2
     
     
-    pattern_r = Pattern(size, size, resolution)
-    pattern_r.add_parametrized_shape(polygon, *points.flatten())
-    pattern_r.visualize()
+    # pattern_r = Pattern(size, size, resolution)
+    # pattern_r.add_parametrized_shape(polygon, *points.flatten())
+    # pattern_r.visualize()
     
-    pattern_u = Pattern(size, size, resolution)
-    pattern_u.add_parametrized_shape(polygon, *points[:,::-1].flatten())
-    pattern_u.visualize()
+    # pattern_u = Pattern(size, size, resolution)
+    # pattern_u.add_parametrized_shape(polygon, *points[:,::-1].flatten())
+    # pattern_u.visualize()

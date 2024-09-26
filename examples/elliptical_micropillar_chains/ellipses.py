@@ -7,16 +7,12 @@ import matplotlib.pyplot as plt
 
 resolution = 50
 
-lattice_const = 6000 # um
+lattice_const = 4350 # um
 center_line = 1500
-ellipticity = 0.4
+ellipticity = 0.48
 
 
-o = 1892
-# o = 2070
-
-
-r1 = 1400
+r1 = 1000
 r2 = r1 * (1 - ellipticity)
 
 #%% fit offset
@@ -51,15 +47,19 @@ def calc_overlap_difference(lattice_const, center_line, resolution, o, r1, r2, v
     # print(overlap_difference)
     return distance_intercell, distance_intracell#overlap_difference
 
-offset_ax = np.linspace(1718, 2091, 50)
+offset_ax = np.linspace(1250, 1400, 3)
 # overlap_difference = [calc_overlap_difference(lattice_const, center_line, resolution, o_, r1, r2, False) for o_ in offset_ax]
-o1o2 = np.array([calc_overlap_difference(lattice_const, center_line, resolution, o_, r1, r2, False) for o_ in offset_ax]).T
+o1o2 = np.array([calc_overlap_difference(lattice_const, center_line, resolution, o_, r1, r2, True) for o_ in offset_ax]).T
 
 plt.plot(offset_ax, o1o2[0] - o1o2[1], color="b", marker="x", linestyle="")
 plt.xlabel("pillar offset")
 plt.xlabel("overlap difference")
 plt.axhline(0, color="k")
 plt.show()
+
+
+
+o = 1280
 
 #%% plot nicely for talk
 fig, ax = plt.subplots()

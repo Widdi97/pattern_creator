@@ -3,6 +3,7 @@ JOB/W 'EBL', 3,3
 
 ; Pattern converted from file: C:/Users/simon/OneDrive/Desktop/Uni/Promotion/Code/pattern_creator/projects/etch_and_overgrow_kpz/ecp_layout/kpz_layout_only_chars.ctl
 
+; ============== top right
 PATH MINI 
   ARRAY (14120, 1, 0) / (13690, 1, 0) 
     ASSIGN P(1) -> ( (*,*), SHOT01) 
@@ -14,10 +15,37 @@ PATH MINI
   ARRAY (885, 40, 680) / (707, 50, -530)
   ;ARRAY (885, 2, 680) / (707, 2, -530)
     ASSIGN P(2) -> ( (*,*), SHOT02) 
+   SKIP (39-40,25)
+   SKIP (39-40,26)
+   SKIP (39-40,27)
+   SKIP (38-40,28)
+   SKIP (38-40,29)
+   SKIP (37-40,30)
+   SKIP (37-40,31)
+   SKIP (36-40,32)
+   SKIP (36-40,33)
+   SKIP (35-40,34)
+   SKIP (35-40,35)
+   SKIP (34-40,36)
+   SKIP (34-40,37)
+   SKIP (33-40,38)
+   SKIP (32-40,39)
+   SKIP (31-40,40)
+   SKIP (31-40,41)
+   SKIP (30-40,42)
+   SKIP (29-40,43)
+   SKIP (28-40,44)
+   SKIP (27-40,45)
+   SKIP (26-40,46)
+   SKIP (25-40,47)
+   SKIP (24-40,48)
+   SKIP (23-40,49)
+   SKIP (22-40,50)
   AEND
 PEND
 
 
+; ============== top left
 PATH MINI 
   ARRAY (-14490, 1, 0) / (15000, 1, 0) 
     ASSIGN P(3) -> ( (*,*), SHOT03) 
@@ -26,22 +54,41 @@ PEND
 
 
 PATH MINI 
-  ARRAY (-1030, 45, -600) / (793, 46, -580)
-  ;ARRAY (-1030, 2, -600) / (793, 2, -580)
-    ASSIGN P(4) -> ( (*,*), SHOT02) 
+  ;ARRAY (-1030, 45, -600) / (793, 46, -580)
+  ARRAY (-1030, 2, -600) / (793, 2, -580)
+    ASSIGN P(4) -> ( (*,*), SHOT04) 
   AEND
 PEND
 LAYER 1 
 
-P(1) 'numbers_top_right.v30'
-P(2) 'single_field_kpz.v30'
-P(3) 'numbers_top_left.v30'
-P(4) 'semenoff_V1.v30'
+
+; ============== bottom right
+PATH MINI 
+  ARRAY (14830, 1, 0) / (-14500, 1, 0) 
+    ASSIGN P(5) -> ( (*,*), SHOT03) 
+  AEND 
+PEND 
+
+PATH MINI 
+  ARRAY (733, 48, 600) / (-333, 50, 580)
+    ASSIGN P(6) -> ( (*,*), SHOT06)
+  AEND
+PEND
+LAYER 1 
+
+P(1) 'top_right_kpz_tight_binding/numbers_top_right.v30'
+P(2) 'top_right_kpz_tight_binding/single_field_kpz.v30'
+P(3) 'top_left_semenoff/numbers_top_left.v30'
+P(4) 'top_left_semenoff/semenoff_V1.v30'
+P(5) 'bottom_right_kpz_nfe/numbers_bottom_right.v30'
+P(6) 'bottom_right_kpz_nfe/single_field_kpz_nfe.v30'
 
 SHOT01: MODULAT ((0, 0)) 
 SHOT02: MODULAT ((0, 0)) 
 SHOT03: MODULAT ((0, 0)) 
 SHOT04: MODULAT ((0, 0)) 
+SHOT05: MODULAT ((0, 0)) 
+SHOT06: MODULAT ((0, 0)) 
 
 SHOT A, 4 
 
