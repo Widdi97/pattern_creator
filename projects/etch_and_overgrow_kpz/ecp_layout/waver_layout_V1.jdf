@@ -54,9 +54,38 @@ PEND
 
 
 PATH MINI 
-  ;ARRAY (-1030, 45, -600) / (793, 46, -580)
-  ARRAY (-1030, 2, -600) / (793, 2, -580)
+  ARRAY (-1030, 25, -1100) / (793, 45, -600)
+  ;ARRAY (-1030, 2, -1100) / (793, 2, -600)
     ASSIGN P(4) -> ( (*,*), SHOT04) 
+   SKIP (25,17)
+   SKIP (25,18)
+   SKIP (25,19)
+   SKIP (25,20)
+   SKIP (24-25,21)
+   SKIP (24-25,22)
+   SKIP (24-25,23)
+   SKIP (24-25,24)
+   SKIP (23-25,25)
+   SKIP (23-25,26)
+   SKIP (23-25,27)
+   SKIP (22-25,28)
+   SKIP (22-25,29)
+   SKIP (22-25,30)
+   SKIP (21-25,31)
+   SKIP (21-25,32)
+   SKIP (20-25,33)
+   SKIP (20-25,34)
+   SKIP (19-25,35)
+   SKIP (19-25,36)
+   SKIP (18-25,37)
+   SKIP (18-25,38)
+   SKIP (17-25,39)
+   SKIP (17-25,40)
+   SKIP (16-25,41)
+   SKIP (15-25,42)
+   SKIP (14-25,43)
+   SKIP (13-25,44)
+   SKIP (12-25,45)
   AEND
 PEND
 LAYER 1 
@@ -72,6 +101,45 @@ PEND
 PATH MINI 
   ARRAY (733, 48, 600) / (-333, 50, 580)
     ASSIGN P(6) -> ( (*,*), SHOT06)
+   SKIP (48,12)
+   SKIP (48,13)
+   SKIP (48,14)
+   SKIP (48,15)
+   SKIP (47-48,16)
+   SKIP (47-48,17)
+   SKIP (47-48,18)
+   SKIP (46-48,19)
+   SKIP (46-48,20)
+   SKIP (46-48,21)
+   SKIP (45-48,22)
+   SKIP (45-48,23)
+   SKIP (44-48,24)
+   SKIP (44-48,25)
+   SKIP (43-48,26)
+   SKIP (43-48,27)
+   SKIP (42-48,28)
+   SKIP (42-48,29)
+   SKIP (41-48,30)
+   SKIP (40-48,31)
+   SKIP (40-48,32)
+   SKIP (39-48,33)
+   SKIP (38-48,34)
+   SKIP (37-48,35)
+   SKIP (36-48,36)
+   SKIP (35-48,37)
+   SKIP (34-48,38)
+   SKIP (33-48,39)
+   SKIP (32-48,40)
+   SKIP (31-48,41)
+   SKIP (30-48,42)
+   SKIP (29-48,43)
+   SKIP (27-48,44)
+   SKIP (26-48,45)
+   SKIP (24-48,46)
+   SKIP (22-48,47)
+   SKIP (20-48,48)
+   SKIP (18-48,49)
+   SKIP (16-48,50)
   AEND
 PEND
 LAYER 1 
@@ -79,7 +147,7 @@ LAYER 1
 P(1) 'top_right_kpz_tight_binding/numbers_top_right.v30'
 P(2) 'top_right_kpz_tight_binding/single_field_kpz.v30'
 P(3) 'top_left_semenoff/numbers_top_left.v30'
-P(4) 'top_left_semenoff/semenoff_V1.v30'
+P(4) 'top_left_semenoff/KPZ_EnO_wafer_top_left_corner_V1.v30'
 P(5) 'bottom_right_kpz_nfe/numbers_bottom_right.v30'
 P(6) 'bottom_right_kpz_nfe/single_field_kpz_nfe.v30'
 
