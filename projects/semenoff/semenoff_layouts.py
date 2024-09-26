@@ -64,9 +64,9 @@ onsite_diff = [0.70, 0.8] #Percentage smaller to larger
 unit_cells_x = 6 
 unit_cells_y = 20
 x_in = 0
-y_in = 0.7
+y_in = 0.55
 offset = 3000
-latt_inc = (500*1e3 - offset )/4.3
+latt_inc = (500*1e3 - offset )/4.55
 increment = 16
 dwell_time = 100
 
