@@ -128,7 +128,7 @@ if __name__ == "__main__":
         file_name = f"HC_TOPO_EnO_d{diameter}_res_{resolution}_{spalten}x{zeilen}_SB.pat"
 
         # Threads erzeugen die Muster in den Speicher
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=2) as executor:
             futures = []
             for index, (overlap1, overlap2) in enumerate(zip(overlap1_list, overlap2_list)):
                 x_offset = start_x + x_abstand * (index % spalten)
