@@ -15,7 +15,7 @@ import gc  # Importiere Garbage Collector
 diameters = [1.7, 2.0]  # Liste der verschiedenen Durchmesser
 overlap1_list = [1.20, 1.00, 0.90, 0.80, 1.20, 1.10, 1.00, 0.90, 1.20, 1.10, 1.00, 0.90, 1.20, 1.10, 1.00, 0.90]
 overlap2_list = [1.20, 1.00, 0.90, 0.80, 1.00, 0.95, 0.90, 0.85, 0.95, 0.90, 0.85, 0.80, 0.90, 0.85, 0.80, 0.75]
-resolution = 50
+resolution = 25
 sizexum = 115  # aimed lattice size in um
 sizeyum = 90
 
