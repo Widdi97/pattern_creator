@@ -27,7 +27,7 @@ PATH MINI
 
 ; ============== bottom right
   ARRAY (0, 1, 0) / (0, 1, 0) 
-    ASSIGN P(5) -> ( (*,*), SHOT05) 
+    ;ASSIGN P(5) -> ( (*,*), SHOT05) 
   AEND 
 
   ARRAY (0, 48, 600) / (0, 50, 580)
@@ -39,8 +39,8 @@ PATH MINI
     ASSIGN P(7) -> ( (*,*), SHOT07) 
   AEND 
 
-  ARRAY (0, 48, 600) / (0, 50, 580)
-    ;ASSIGN P(8) -> ( (*,*), SHOT08)
+  ARRAY (0, 2, 1150) / (0, 2, 620)
+    ASSIGN P(8) -> ( (*,*), SHOT08)
   AEND
 
 
@@ -55,6 +55,7 @@ P(4) 'top_left_semenoff/KPZ_EnO_wafer_top_left_corner_V1.v30' (-27430, 27193)
 P(5) 'bottom_right_kpz_nfe/numbers_bottom_right.v30' (14830, -14500)
 P(6) 'bottom_right_kpz_nfe/single_field_kpz_nfe.v30' (733, -333)
 P(7) 'bottom_left_blueshift_topo/numbers_bottom_left.v30' (-14830, -14830)
+P(8) 'bottom_left_blueshift_topo/HC_TOPO_EnO_layout_singlefield.v30' (-27000, 0)
 
 SHOT01: MODULAT ((0, 0)) 
 SHOT02: MODULAT ((0, 0)) 
@@ -63,6 +64,7 @@ SHOT04: MODULAT ((0, 0))
 SHOT05: MODULAT ((0, 0)) 
 SHOT06: MODULAT ((0, 0)) 
 SHOT07: MODULAT ((0, 0)) 
+SHOT08: MODULAT ((0, 0)) 
 
 SHOT A, 4 
 
