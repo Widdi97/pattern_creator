@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from rectangulize import rectangulize, dtype
+from rectangulize import rectangulize, rectangulize_oli, dtype
 from raycasting import points_in_closed_curve
 import numba as nb
 import matplotlib.patches as patches
@@ -30,11 +30,15 @@ def polygon(t, *args):
 
 
 class Pattern:
-    def __init__(self, x_size, y_size, step_size, pattern_name="pattern_name", increment=1, dwell_time=100):
+    def __init__(self, x_size, y_size, step_size, pattern_name="pattern_name", increment=1, dwell_time=100, algo="obj_lvl_interval"):
         if type(step_size) == float or type(step_size) == int:
             step_size = np.array([step_size, step_size])
         self.step_size = step_size
-            
+        
+        if algo == "obj_lvl_interval":
+            self.rectangulize_func = rectangulize_oli
+        elif algo == "descending_largest":
+            self.rectangulize_func = rectangulize
         self.x_size = x_size
         self.y_size = y_size
         self.pattern_name = pattern_name
@@ -101,7 +105,7 @@ class Pattern:
         self.pat_file_string_updated = False
         
     def rectangulize(self):
-        rects = rectangulize(self.pattern)
+        rects = self.rectangulize_func(self.pattern)
         translated_rects = []
         for rect in rects:
             translated_rects.append(self.translate_coords(rect))
@@ -376,17 +380,17 @@ class Text:
 if __name__ == "__main__":
     #%% test pattern class
     
-    # pattern = Pattern(3e4, 2.5e4, np.array([300, 250]))
-    # pattern.add_parametrized_shape(circle, 8e3, 18e3, 3e3)
-    # pattern.add_parametrized_shape(ellipse, 8e3, 14e3, 0.15e4, 0.4e4, -40 / 180 * np.pi)
-    # pattern.add_parametrized_shape(ellipse, 5e3, 17e3, 0.1e4, 0.3e4, 90 / 180 * np.pi)
-    # pattern.add_parametrized_shape(ellipse, 17e3, 6e3, 1e3, 3e3, 0 / 180 * np.pi)
-    # pattern.add_parametrized_shape(ellipse, 14e3, 4e3, 1.2e3, 3e3, 90 / 180 * np.pi)
-    # pattern.add_parametrized_shape(ellipse, 22e3, 11e3, 2.2e3, 5e3, -50 / 180 * np.pi)
-    # pattern.add_parametrized_shape(ellipse, 1.5e4, 1.1e4, 0.4e4, 1e4, 90 / 180 * np.pi, boolean_operation="subtract")
-    # pattern.add_parametrized_shape(polygon,1.2e4, 1.17e4, 1.6e4, 1.27e4, 2.2e4, 1.64e4, 2.2e4, 2.1e4, 1.72e4,2.35e4)
-    # pattern.visualize()
-    # # print(pattern.export_pattern())
+    pattern = Pattern(3e4, 2.5e4, np.array([300, 250]))
+    pattern.add_parametrized_shape(circle, 8e3, 18e3, 3e3)
+    pattern.add_parametrized_shape(ellipse, 8e3, 14e3, 0.15e4, 0.4e4, -40 / 180 * np.pi)
+    pattern.add_parametrized_shape(ellipse, 5e3, 17e3, 0.1e4, 0.3e4, 90 / 180 * np.pi)
+    pattern.add_parametrized_shape(ellipse, 17e3, 6e3, 1e3, 3e3, 0 / 180 * np.pi)
+    pattern.add_parametrized_shape(ellipse, 14e3, 4e3, 1.2e3, 3e3, 90 / 180 * np.pi)
+    pattern.add_parametrized_shape(ellipse, 22e3, 11e3, 2.2e3, 5e3, -50 / 180 * np.pi)
+    pattern.add_parametrized_shape(ellipse, 1.5e4, 1.1e4, 0.4e4, 1e4, 90 / 180 * np.pi, boolean_operation="subtract")
+    pattern.add_parametrized_shape(polygon,1.2e4, 1.17e4, 1.6e4, 1.27e4, 2.2e4, 1.64e4, 2.2e4, 2.1e4, 1.72e4,2.35e4)
+    pattern.visualize()
+    # print(pattern.export_pattern())
     
     #%% test lattice class
     # # weird lattice
@@ -414,8 +418,8 @@ if __name__ == "__main__":
     
     #%% test text
     
-    text = Text(font="arial.ttf")
-    text.generate_text_pattern("A2g")
+    # text = Text(font="arial.ttf")
+    # text.generate_text_pattern("A2g")
     
     #%% generate right and up arrow
     

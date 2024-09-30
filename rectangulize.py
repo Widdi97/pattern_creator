@@ -113,12 +113,12 @@ def rectangulize_oli(pattern,debug = False,plot = False):
         if np.sum(pattern[k,:]) !=0:
             oli = find_object_level_interval(pattern[k,:],interval = [],index = 0)
             
-            intervals = []
+            # intervals = []
             
             for i in range(oli.shape[0]):
-                intervals.append([(k,oli[i][0],1,oli[i][1])])
+                ibr.append((k, oli[i][0], k+1, oli[i][1]))
     
-            ibr.append(intervals)
+            # ibr.append(intervals)
   
     return ibr
 
