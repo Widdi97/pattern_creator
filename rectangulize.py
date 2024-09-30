@@ -142,10 +142,10 @@ if __name__ == "__main__":
     
     #%% plot original
     
-    plt.pcolor(x, y, pattern)
-    plt.title("input")
-    plt.axis('equal')
-    plt.show()
+    # plt.pcolor(x, y, pattern)
+    # plt.title("input")
+    # plt.axis('equal')
+    # plt.show()
     
     #%% cut borders of original
     # reduced_pattern, borders  = reduce_to_subspace(pattern)
@@ -177,33 +177,36 @@ if __name__ == "__main__":
     
     #%% reduce pattern
     
-    import matplotlib.patches as patches
+    # import matplotlib.patches as patches
     
-    rectangles = rectangulize(pattern)
+    # rectangles = rectangulize(pattern)
     
     
-    fig, ax = plt.subplots()
-    ax.pcolor(x, y, pattern,cmap="Greys")
-    plt.axis('equal')
-    colors = plt.cm.get_cmap("prism", len(rectangles))
-    for idx, rec_coords in enumerate(rectangles):
+    # fig, ax = plt.subplots()
+    # ax.pcolor(x, y, pattern,cmap="Greys")
+    # plt.axis('equal')
+    # colors = plt.cm.get_cmap("prism", len(rectangles))
+    # for idx, rec_coords in enumerate(rectangles):
         
-        rect = patches.Rectangle([rec_coords[0] - 0.3, rec_coords[1] - 0.3], 
-                                 rec_coords[2] - rec_coords[0] + 0.6, 
-                                 rec_coords[3] - rec_coords[1] + 0.6, linewidth=3, 
-                                 edgecolor=colors(idx), facecolor='none', hatch="/")
-        ax.add_patch(rect)
+    #     rect = patches.Rectangle([rec_coords[0] - 0.3, rec_coords[1] - 0.3], 
+    #                               rec_coords[2] - rec_coords[0] + 0.6, 
+    #                               rec_coords[3] - rec_coords[1] + 0.6, linewidth=3, 
+    #                               edgecolor=colors(idx), facecolor='none', hatch="/")
+    #     ax.add_patch(rect)
         
-        # rec = rectangle(pattern.shape, *rec_coords)
-        # plt.pcolor(x, y, rec, alpha=0.5)
-    plt.title("found rectangles")
-    plt.show()
+    #     # rec = rectangle(pattern.shape, *rec_coords)
+    #     # plt.pcolor(x, y, rec, alpha=0.5)
+    # plt.title("found rectangles")
+    # plt.show()
     
     #%% profile
     # %load_ext snakeviz
     # %snakeviz rectangulize(pattern)
     
     
+    #%% stripe rectangulize
+    pattern = np.zeros(shape=(12,8), dtype=bool)
+    pattern[5:9,2:6] = True
     
     
     

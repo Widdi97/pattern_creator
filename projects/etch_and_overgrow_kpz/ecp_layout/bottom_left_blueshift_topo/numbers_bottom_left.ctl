@@ -13,9 +13,9 @@ stage
 
 sfile = numbers_xy
 
-for m = 1 to 50
+for m = 1 to 44
 x = 0
-for n = 1 to 28
+for n = 1 to 25
 stage
 
 ; ========= draw numbers

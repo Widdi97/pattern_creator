@@ -7,31 +7,32 @@ PATH MINI
 
 ; ============== top right
   ARRAY (0, 1, 0) / (0, 1, 0) 
-    ;ASSIGN P(1) -> ( (*,*), SHOT01) 
+    ASSIGN P(1) -> ( (*,*), SHOT01) 
   AEND 
 
-  ARRAY (0, 40, 680) / (0, 50, 530)
-  ;ARRAY (0, 2, 680) / (0, 2, 530)
-    ;ASSIGN P(2) -> ( (*,*), SHOT02) 
+ ARRAY (0, 40, 680) / (0, 50, 530)
+ ;ARRAY (0, 2, 680) / (0, 2, 530)
+    ASSIGN P(2) -> ( (*,*), SHOT02) 
   AEND
 
 ; ============== top left
   ARRAY (0, 1, 0) / (0, 1, 0) 
-    ;ASSIGN P(3) -> ( (*,*), SHOT03) 
+    ASSIGN P(3) -> ( (*,*), SHOT03) 
   AEND 
 
-  ARRAY (0, 25, 1100) / (0, 45, 600)
+  ARRAY (0, 25, 1100) / (0, 46, 600)
   ;ARRAY (0, 2, 1100) / (0, 2, 600)
-    ;ASSIGN P(4) -> ( (*,*), SHOT04) 
+    ASSIGN P(4) -> ( (*,*), SHOT04) 
   AEND
 
 ; ============== bottom right
   ARRAY (0, 1, 0) / (0, 1, 0) 
-    ;ASSIGN P(5) -> ( (*,*), SHOT05) 
+    ASSIGN P(5) -> ( (*,*), SHOT05) 
   AEND 
 
+  ;ARRAY (0, 1, 600) / (0, 1, 580)
   ARRAY (0, 48, 600) / (0, 50, 580)
-    ;ASSIGN P(6) -> ( (*,*), SHOT06)
+    ASSIGN P(6) -> ( (*,*), SHOT06)
   AEND
 
 ; ============== bottom left
@@ -39,23 +40,23 @@ PATH MINI
     ASSIGN P(7) -> ( (*,*), SHOT07) 
   AEND 
 
-  ARRAY (0, 2, 1150) / (0, 2, 620)
+  ;ARRAY (0, 1, 1150) / (0, 1, 620)
+  ARRAY (0, 25, 1150) / (0, 44, 620)
     ASSIGN P(8) -> ( (*,*), SHOT08)
   AEND
-
 
 ; ============== END
 PEND
 LAYER 1 
 
 P(1) 'top_right_kpz_tight_binding/numbers_top_right.v30' (14120, 13690)
-P(2) 'top_right_kpz_tight_binding/single_field_kpz.v30' (885, 26687)
-P(3) 'top_left_semenoff/numbers_top_left.v30' (-14490, 15000)
-P(4) 'top_left_semenoff/KPZ_EnO_wafer_top_left_corner_V1.v30' (-27430, 27193)
+P(2) 'top_right_kpz_tight_binding/single_field_kpz.v30' (885, 26677)
+P(3) 'top_left_semenoff/numbers_top_left.v30' (-14100, 14300)
+P(4) 'top_left_semenoff/KPZ_EnO_wafer_top_left_corner_V1.v30' (-27265, 27802)
 P(5) 'bottom_right_kpz_nfe/numbers_bottom_right.v30' (14830, -14500)
 P(6) 'bottom_right_kpz_nfe/single_field_kpz_nfe.v30' (733, -333)
-P(7) 'bottom_left_blueshift_topo/numbers_bottom_left.v30' (-14830, -14830)
-P(8) 'bottom_left_blueshift_topo/HC_TOPO_EnO_layout_singlefield.v30' (-27000, 0)
+P(7) 'bottom_left_blueshift_topo/numbers_bottom_left.v30' (-14730, -13730)
+P(8) 'bottom_left_blueshift_topo/HC_TOPO_EnO_layout_singlefield.v30' (-28273, -396)
 
 SHOT01: MODULAT ((0, 0)) 
 SHOT02: MODULAT ((0, 0)) 
