@@ -106,6 +106,12 @@ class Pattern:
         
     def rectangulize(self):
         rects = self.rectangulize_func(self.pattern)
+        
+        # fig,ax = plt.subplots(dpi = 300)
+        # ax.pcolormesh(np.arange(self.pattern.shape[1]),np.arange(self.pattern.shape[0]),self.pattern)
+        
+        # np.savetxt("ente.txt",self.pattern)
+        
         translated_rects = []
         for rect in rects:
             translated_rects.append(self.translate_coords(rect))

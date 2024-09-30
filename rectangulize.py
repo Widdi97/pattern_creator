@@ -104,8 +104,8 @@ def find_object_level_interval(line,interval = [],index = 0):
         index = first+end+index
         return find_object_level_interval(line[first+end:],interval = interval,index = index)
         
-def rectangulize_oli(pattern,debug = False,plot = False):
-
+def rectangulize_oli(pattern):
+    pattern = pattern.T
     ibr = []
 
     for k in range(pattern.shape[0]):
@@ -116,7 +116,9 @@ def rectangulize_oli(pattern,debug = False,plot = False):
             # intervals = []
             
             for i in range(oli.shape[0]):
-                ibr.append((k, oli[i][0], k+1, oli[i][1]))
+                # ibr.append((k,oli[i][0],k+1,oli[i][1]))
+                ibr.append((k,oli[i][0],k,oli[i][1]+oli[i][0]-1))
+
     
             # ibr.append(intervals)
   
