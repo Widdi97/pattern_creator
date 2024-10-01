@@ -42,12 +42,6 @@ draw(semenoff_v0.9_d2000_diff0.8_r)
 draw(semenoff_v0.9_d2000_diff0.8_edge_r)
 draw(semenoff_v0.9_d2000_diff0.8_marker)
 
-; #4
-;draw(semenoff_v0.9_d2400_diff0.8_l)
-;draw(semenoff_v0.9_d2400_diff0.8_edge_l)
-;draw(semenoff_v0.9_d2400_diff0.8_r)
-;draw(semenoff_v0.9_d2400_diff0.8_edge_r)
-;draw(semenoff_v0.9_d2400_diff0.8_marker)
 
 ; #5
 draw(semenoff_v1.0_d2000_diff0.7_l)
@@ -70,13 +64,6 @@ draw(semenoff_v1.0_d2000_diff0.8_r)
 draw(semenoff_v1.0_d2000_diff0.8_edge_r)
 draw(semenoff_v1.0_d2000_diff0.8_marker)
 
-; #8
-;draw(semenoff_v1.0_d2400_diff0.8_l)
-;draw(semenoff_v1.0_d2400_diff0.8_edge_l)
-;draw(semenoff_v1.0_d2400_diff0.8_r)
-;draw(semenoff_v1.0_d2400_diff0.8_edge_r)
-;draw(semenoff_v1.0_d2400_diff0.8_marker)
-
 ; #9
 draw(semenoff_v1.1_d2000_diff0.7_l)
 draw(semenoff_v1.1_d2000_diff0.7_edge_l)
@@ -98,12 +85,6 @@ draw(semenoff_v1.1_d2000_diff0.8_r)
 draw(semenoff_v1.1_d2000_diff0.8_edge_r)
 draw(semenoff_v1.1_d2000_diff0.8_marker)
 
-; #12
-;draw(semenoff_v1.1_d2400_diff0.8_l)
-;draw(semenoff_v1.1_d2400_diff0.8_edge_l)
-;draw(semenoff_v1.1_d2400_diff0.8_r)
-;draw(semenoff_v1.1_d2400_diff0.8_edge_r)
-;draw(semenoff_v1.1_d2400_diff0.8_marker)
 
 ; #13
 draw(semenoff_v0.9_d2000_diff0.7_full)
@@ -114,8 +95,6 @@ draw(semenoff_v1.0_d2000_diff0.7_full)
 ; #15
 draw(semenoff_v0.9_d2000_diff0.8_full)
 
-; #16
-;draw(semenoff_v1.0_d2000_diff0.8_full)
 
 
 #NEW FOR V3 Maple Leaf no 2.4µm 0.8 pillar difference
@@ -125,10 +104,10 @@ sfile = maple_leaf_2d0_var_res20_big_nom_diameter
 draw(dred_1um924_0v8_res15_big_use)
 
 ;#8
-draw(dred_1um924_1v0_res15_big_use)
+draw(dred_1um924_0v9_res15_big_use)
 
 ;#12
-draw(dred_1um924_0v9_res15_big_use)
+draw(dred_1um924_1v0_res15_big_use)
 
 ;#16
 draw(dred_1um924_1v1_res15_big_use)
@@ -169,6 +148,8 @@ draw(nbr_26)
 draw(nbr_27)
 draw(nbr_28)
 draw(nbr_29)
+draw(nbr_3)
+draw(nbr_0)
 
 
 
@@ -180,27 +161,35 @@ sfile = honey_adiabatic
 ; end pillar diameter: 2.6, 3.0 µm
 ; variable overlap v: 0.9, 1.0, 1.1, 1,2
 
+;#17
 draw(adiabaticHoney_v_1.2_ds1800_dl2600)
 draw(adiabaticHoney_v_1.2_ds1800_dl2600_marker)
 
-draw(adiabaticHoney_v_1.2_ds1800_dl3000)
-draw(adiabaticHoney_v_1.2_ds1800_dl3000_marker)
-
+;#18
 draw(adiabaticHoney_v_1.1_ds1800_dl2600)
 draw(adiabaticHoney_v_1.1_ds1800_dl2600_marker)
 
-draw(adiabaticHoney_v_1.1_ds1800_dl3000)
-draw(adiabaticHoney_v_1.1_ds1800_dl3000_marker)
-
+;#19
 draw(adiabaticHoney_v_1.0_ds1800_dl2600)
 draw(adiabaticHoney_v_1.0_ds1800_dl2600_marker)
 
-draw(adiabaticHoney_v_1.0_ds1800_dl3000)
-draw(adiabaticHoney_v_1.0_ds1800_dl3000_marker)
-
+;#20
 draw(adiabaticHoney_v_0.9_ds1800_dl2600)
 draw(adiabaticHoney_v_0.9_ds1800_dl2600_marker)
 
+;#21
+draw(adiabaticHoney_v_1.2_ds1800_dl3000)
+draw(adiabaticHoney_v_1.2_ds1800_dl3000_marker)
+
+;#22
+draw(adiabaticHoney_v_1.1_ds1800_dl3000)
+draw(adiabaticHoney_v_1.1_ds1800_dl3000_marker)
+
+;#23
+draw(adiabaticHoney_v_1.0_ds1800_dl3000)
+draw(adiabaticHoney_v_1.0_ds1800_dl3000_marker)
+
+;#24
 draw(adiabaticHoney_v_0.9_ds1800_dl3000)
 draw(adiabaticHoney_v_0.9_ds1800_dl3000_marker)
 
@@ -210,11 +199,22 @@ draw(adiabaticHoney_v_0.9_ds1800_dl3000_marker)
 ; end pillar diameter: 2.6, 3.0 µm
 ; variable overlap at the small pillar v: 1.1, 1.3, 1.5
 
+;#25
 draw(adiabaticHoney_lattice1.1_ds1800_dl2600)
+
+;#26
 draw(adiabaticHoney_lattice1.1_ds1800_dl3000)
+
+;#27
 draw(adiabaticHoney_lattice1.3_ds1800_dl2600)
+
+;#28
 draw(adiabaticHoney_lattice1.3_ds1800_dl3000)
+
+;#29
 draw(adiabaticHoney_lattice1.5_ds1800_dl2600)
+
+;#30
 draw(adiabaticHoney_lattice1.5_ds1800_dl3000)
 
 ; ========= Addiabatic change Chain v  constant ==========
@@ -227,14 +227,19 @@ draw(adiabaticChain1.2_ds1800_dl2600)
 draw(adiabaticChain1.2_ds1800_dl3000)
 draw(adiabaticChain1.1_ds1800_dl2600)
 draw(adiabaticChain1.1_ds1800_dl3000)
+
 draw(adiabaticChain1.0_ds1800_dl2600)
 draw(adiabaticChain1.0_ds1800_dl3000)
 draw(adiabaticChain0.9_ds1800_dl2600)
 draw(adiabaticChain0.9_ds1800_dl3000)
+
+
 draw(adiabaticChain1.2_ds2000_dl2600)
 draw(adiabaticChain1.2_ds2000_dl3000)
 draw(adiabaticChain1.1_ds2000_dl2600)
 draw(adiabaticChain1.1_ds2000_dl3000)
+
+
 draw(adiabaticChain1.0_ds2000_dl2600)
 draw(adiabaticChain1.0_ds2000_dl3000)
 draw(adiabaticChain0.9_ds2000_dl2600)
