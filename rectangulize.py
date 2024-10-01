@@ -124,6 +124,56 @@ def rectangulize_oli(pattern):
   
     return ibr
 
+def rectangulize_oli_horizontal_grouping(pattern):
+    pattern = pattern.T
+    ibr = []
+
+    for k in range(pattern.shape[0]):
+        line_rects = []
+        
+        if np.sum(pattern[k,:]) !=0:
+            oli = find_object_level_interval(pattern[k,:],interval = [],index = 0)
+            
+            # intervals = []
+            
+            for i in range(oli.shape[0]):
+                # ibr.append((k,oli[i][0],k+1,oli[i][1]))
+                rect = (k,oli[i][0],k,oli[i][1]+oli[i][0]-1)
+                line_rects.append(rect)
+
+    
+        ibr.append(line_rects)
+    
+    # iterate neighboring lines and group identical rectangles
+    for ii in range(pattern.shape[0] - 1):
+        line1_new = []
+        line2_new = []
+        line1 = ibr[ii]
+        line2 = ibr[ii+1]
+        rect2_partner_found = [False for _ in range(len(line2))]
+        for rect1 in line1:
+            rect1_partner_found = False
+            for r2idx, rect2 in enumerate(line2):
+                # check if rectangles can be grouped
+                if rect1[1] == rect2[1] and rect1[3] == rect2[3]:
+                    line2_new.append((rect1[0], rect1[1], rect2[2], rect2[3]))
+                    rect2_partner_found[r2idx] = True
+                    rect1_partner_found = True
+            if not rect1_partner_found:
+                line1_new.append(rect1)
+        for r2idx, rect2_partner_found in enumerate(rect2_partner_found):
+            if not rect2_partner_found:
+                line2_new.append(line2[r2idx])
+        ibr[ii] = line1_new
+        ibr[ii+1] = line2_new
+    
+    # delete empty lines
+    flat_ibr = []
+    for entry in ibr:
+        for rect in entry:
+            flat_ibr.append(rect)
+    return flat_ibr
+
    
 
 def accurate_rectangulize(pattern):
@@ -254,8 +304,11 @@ if __name__ == "__main__":
     pattern = np.zeros(shape=(12,8), dtype=bool)
     pattern[5:9,2:6] = True
     
+    plt.matshow(pattern)
     
     
+    print(rectangulize_oli(pattern))
+    print(rectangulize_oli_horizontal_grouping(pattern))
     
     
     

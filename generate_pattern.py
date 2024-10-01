@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from rectangulize import rectangulize, rectangulize_oli, dtype
+from rectangulize import rectangulize, rectangulize_oli, dtype, rectangulize_oli_horizontal_grouping
 from raycasting import points_in_closed_curve
 import numba as nb
 import matplotlib.patches as patches
@@ -36,7 +36,7 @@ class Pattern:
         self.step_size = step_size
         
         if algo == "obj_lvl_interval":
-            self.rectangulize_func = rectangulize_oli
+            self.rectangulize_func = rectangulize_oli_horizontal_grouping
         elif algo == "descending_largest":
             self.rectangulize_func = rectangulize
         self.x_size = x_size
