@@ -55,7 +55,8 @@ for vidx, v in enumerate(overlaps_tri):
         
         
         lattice = Lattice(a1_, a2_, x_size_, y_size_, pixel_res, [[circle, 0, 0, d_pillar / 2]],
-                          pattern_name=name, global_offsetx=a_ecp * (didx + 2), global_offsety= (2 - vidx) * a_ecp + 100000)
+                          pattern_name=name, global_offsetx=a_ecp * (didx + 2), global_offsety= (2 - vidx) * a_ecp + 100000,
+                          visualize_patterns=True)
         
         pat_str += lattice.pat_str + "\n"*3
         draw_strs += lattice.draw_latt_str + "\n"*5
