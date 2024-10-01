@@ -1,7 +1,7 @@
 
 JOB 'EBL', 2 
 
-; Pattern converted from file: C:\Users\simon\OneDrive\Desktop\Uni\Promotion\Code\pattern_creator\projects\etch_and_overgrow_kpz\ecp_layout\single_field_kpz.ctl
+; Pattern converted from file: C:\Users\simon\OneDrive\Desktop\Uni\Promotion\Code\pattern_creator\projects\etch_and_overgrow_kpz\ecp_layout\top_right_kpz_tight_binding\single_field_kpz.ctl
 
 PATH MINI 
   ARRAY (0, 1, 0) / (0, 1, 0) 
