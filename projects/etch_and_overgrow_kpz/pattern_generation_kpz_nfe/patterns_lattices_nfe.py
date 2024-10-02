@@ -41,6 +41,7 @@ for idx, p in enumerate(perturb_size_sq):
     pattern.rectangulize()
     pattern.pat_file_string_updated = False
     pattern.visualize()
+    pattern.verify_rectangulization()
     
     # plt.matshow(test)
     # plt.show()
@@ -79,6 +80,7 @@ for idx, p in enumerate(perturb_size_tri):
     pattern.rectangulize()
     pattern.pat_file_string_updated = False
     pattern.visualize()
+    pattern.verify_rectangulization()
     
     plt.matshow(test)
     plt.show()
