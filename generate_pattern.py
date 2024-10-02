@@ -374,6 +374,34 @@ class Lattice:
             draw_latt_str += f"draw({name})\n"
         self.pat_str = pat_str
         self.draw_latt_str = draw_latt_str
+        
+    def generate_finite_lattice(self, n1, n2):
+        i, j = self.patterns[1][1].pattern.shape
+        result = np.zeros(shape=(i * (n1 + 2), j * (n2 + 2)), dtype=float)
+        # add bulk
+        for ii in range(1, n1 + 1):
+            for jj in range(1, n2 + 1):
+                result[i*ii:i*(ii+1),j*jj:j*(jj+1)] += self.patterns[1][1].pattern.astype(float)
+        
+        #add left and right edge
+        for ii in range(1, n1 + 1):
+            result[i*ii:i*(ii+1),:j] += self.patterns[0][1].pattern.astype(float)
+            result[i*ii:i*(ii+1),-j:] += self.patterns[2][1].pattern.astype(float)
+        
+        #add upper and lower edge
+        for jj in range(1, n2 + 1):
+            result[:i,j*jj:j*(jj+1)] += self.patterns[1][0].pattern.astype(float)
+            result[-i:,j*jj:j*(jj+1)] += self.patterns[1][2].pattern.astype(float)
+        
+        #add corners
+        result[:i,:j] += self.patterns[0][0].pattern.astype(float)
+        result[-i:,:j] += self.patterns[0][2].pattern.astype(float)
+        result[-i:,-j:] += self.patterns[2][2].pattern.astype(float)
+        result[:i,-j:] += self.patterns[2][0].pattern.astype(float)
+        # plt.matshow(result)
+        self.finite_lattice = result
+        return result
+        
             
 class Text:
     def __init__(self, step_size=150, fontsize=10000, font="arial.ttf", increment=1, dwell_time=100):
@@ -418,17 +446,17 @@ class Text:
 if __name__ == "__main__":
     #%% test pattern class
     
-    pattern = Pattern(3e4, 2.5e4, np.array([300, 250]))
-    pattern.add_parametrized_shape(circle, 8e3, 18e3, 3e3)
-    pattern.add_parametrized_shape(ellipse, 8e3, 14e3, 0.15e4, 0.4e4, -40 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 5e3, 17e3, 0.1e4, 0.3e4, 90 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 17e3, 6e3, 1e3, 3e3, 0 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 14e3, 4e3, 1.2e3, 3e3, 90 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 22e3, 11e3, 2.2e3, 5e3, -50 / 180 * np.pi)
-    pattern.add_parametrized_shape(ellipse, 1.5e4, 1.1e4, 0.4e4, 1e4, 90 / 180 * np.pi, boolean_operation="subtract")
-    pattern.add_parametrized_shape(polygon,1.2e4, 1.17e4, 1.6e4, 1.27e4, 2.2e4, 1.64e4, 2.2e4, 2.1e4, 1.72e4,2.35e4)
-    pattern.visualize()
-    pattern.verify_rectangulization()
+    # pattern = Pattern(3e4, 2.5e4, np.array([300, 250]))
+    # pattern.add_parametrized_shape(circle, 8e3, 18e3, 3e3)
+    # pattern.add_parametrized_shape(ellipse, 8e3, 14e3, 0.15e4, 0.4e4, -40 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 5e3, 17e3, 0.1e4, 0.3e4, 90 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 17e3, 6e3, 1e3, 3e3, 0 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 14e3, 4e3, 1.2e3, 3e3, 90 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 22e3, 11e3, 2.2e3, 5e3, -50 / 180 * np.pi)
+    # pattern.add_parametrized_shape(ellipse, 1.5e4, 1.1e4, 0.4e4, 1e4, 90 / 180 * np.pi, boolean_operation="subtract")
+    # pattern.add_parametrized_shape(polygon,1.2e4, 1.17e4, 1.6e4, 1.27e4, 2.2e4, 1.64e4, 2.2e4, 2.1e4, 1.72e4,2.35e4)
+    # pattern.visualize()
+    # pattern.verify_rectangulization()
     # print(pattern.export_pattern())
     
     #%% test lattice class
@@ -442,18 +470,20 @@ if __name__ == "__main__":
     # print(lattice.pat_str)
     
     
-    # # kagome 
-    # a = 2000
-    # a1_ = a * np.array([1, 0])
-    # a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
+    # kagome 
+    a = 2000
+    a1_ = a * np.array([1, 0])
+    a2_ = a * np.array([np.cos(60 / 180 * np.pi), np.sin(60 / 180 * np.pi)])
     
-    # b1_ = np.array([0, 0])
-    # b2_ = a1_ / 2
-    # b3_ = a2_ / 2
-    # bs = np.array([b1_, b2_, b3_])
-    # x_size_ = 10 * a
-    # y_size_ = 8 * a
-    # lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.3 * a] for b in bs], bs)
+    b1_ = np.array([0, 0])
+    b2_ = a1_ / 2
+    b3_ = a2_ / 2
+    bs = np.array([b1_, b2_, b3_])
+    x_size_ = 10 * a
+    y_size_ = 8 * a
+    lattice = Lattice(a1_, a2_, x_size_, y_size_, 0.08 * a, [[circle, 0, 0, 0.3 * a] for b in bs], bs)
+    
+    lattice.generate_finite_lattice(4, 3)
     
     #%% test text
     
