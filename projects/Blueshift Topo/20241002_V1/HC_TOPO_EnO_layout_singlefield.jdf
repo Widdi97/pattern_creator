@@ -1,0 +1,24 @@
+
+JOB 'EBL', 2 
+
+; Pattern converted from file: C:\Users\sib16nk\Documents\GitHub\pattern_creator\projects\Blueshift Topo\20241002_V1\HC_TOPO_EnO_layout_singlefield.ctl
+
+PATH MINI 
+  ARRAY (0, 1, 0) / (0, 1, 0) 
+    ASSIGN P(1) -> ( (*,*), SHOT01) 
+  AEND 
+PEND 
+
+LAYER 1 
+
+P(1) 'HC_TOPO_EnO_layout_singlefield.v30'
+
+SHOT01: MODULAT ((0, 0), (1, 16), (2, 33), (3, 66), (4, 103)) 
+
+SHOT A, 4 
+
+RESIST 585
+
+STDCUR 2 
+
+END 
