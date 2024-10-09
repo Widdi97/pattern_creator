@@ -200,37 +200,36 @@ draw(adiabaticHoney_v_0.9_ds1800_dl3000_marker)
 ; variable overlap at the small pillar v: 1.1, 1.3, 1.5
 
 ;#25
-for i = 1 to 5
+for i = 1 to 4
 idraw(ad_lat_1.1_ds1800_dl2600_,i)
 next i
 
 
 ;#26
-for i = 1 to 5
+for i = 1 to 4
 idraw(ad_lat_1.1_ds1800_dl3000_,i)
 next i
 ;draw(adiabaticHoney_lattice1.1_ds1800_dl3000)
 
 
 ;#27
-for i = 1 to 5
+for i = 1 to 4
 idraw(ad_lat_1.3_ds1800_dl2600_,i)
 next i
 
 
 ;#28
-for i = 1 to 5
+for i = 1 to 4
 idraw(ad_lat_1.3_ds1800_dl3000_,i)
 next i
 
 ;#29
-for i = 1 to 5
+for i = 1 to 4
 idraw(ad_lat_1.5_ds1800_dl2600_,i)
 next i
 
 ;#30
-;draw(adiabaticHoney_lattice1.5_ds1800_dl3000)
-for i = 1 to 5
+for i = 1 to 4
 idraw(ad_lat_1.5_ds1800_dl3000_,i)
 next i
 
