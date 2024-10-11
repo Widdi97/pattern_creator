@@ -116,6 +116,9 @@ draw(square_v1.1_d2100_x_-1_y_1)
 draw(square_v1.1_d2100_x_-1_y_0)
 draw(square_v1.1_d2100_x_-1_y_-1)
 
++x = 260
+stage
+
 ; ====== TRI Lattice 1
 draw(triangular_v0.97_d1800_x_1_y_1)
 draw(triangular_v0.97_d1800_x_1_y_0)

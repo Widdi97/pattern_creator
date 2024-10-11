@@ -267,9 +267,9 @@ class Lattice:
                   [(self.x_size * self.e1 + self.y_size * self.e2)[1], (self.y_size * self.e2)[1]], linestyle=":", color="grey")
         plt.plot([(self.y_size * self.e2)[0], 0], [(self.y_size * self.e2)[1], 0], linestyle=":", color="grey")
         
-        # plot unit vectors
-        plt.plot([0, self.e1[0]], [0, self.e1[1]], color="r")
-        plt.plot([0, self.e2[0]], [0, self.e2[1]], color="r")
+        # # plot unit vectors
+        # plt.plot([0, self.e1[0]], [0, self.e1[1]], color="r")
+        # plt.plot([0, self.e2[0]], [0, self.e2[1]], color="r")
         
         lattice_vecs = []
         # iterate x direction (parallel to a1)
@@ -375,8 +375,9 @@ class Lattice:
         self.pat_str = pat_str
         self.draw_latt_str = draw_latt_str
         
-    def generate_finite_lattice(self, n1, n2):
+    def generate_finite_lattice(self, n1, n2, periodic=False):
         i, j = self.patterns[1][1].pattern.shape
+        
         result = np.zeros(shape=(i * (n1 + 2), j * (n2 + 2)), dtype=float)
         # add bulk
         for ii in range(1, n1 + 1):
@@ -398,8 +399,13 @@ class Lattice:
         result[-i:,:j] += self.patterns[0][2].pattern.astype(float)
         result[-i:,-j:] += self.patterns[2][2].pattern.astype(float)
         result[:i,-j:] += self.patterns[2][0].pattern.astype(float)
+        
+        if periodic:
+            result = result[i:-i,j:-j]
+        
         # plt.matshow(result)
-        self.finite_lattice = result
+        # plt.show()
+        
         return result
         
             
