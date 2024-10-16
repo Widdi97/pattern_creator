@@ -498,12 +498,12 @@ if __name__ == "__main__":
     
     #%% generate right and up arrow
     
-    # # right arrow
-    # resolution = 0.25e3
-    # w1 = 1e3
-    # w2 = 3e3
-    # size = 20e3
-    # frac = 0.6
+    # right arrow
+    resolution = 0.25e3
+    w1 = 1e3
+    w2 = 3e3
+    size = 20e3
+    frac = 0.6
     
     
     # points = np.array([[size / 10, size / 2 - w1],

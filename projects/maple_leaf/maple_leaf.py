@@ -11,7 +11,7 @@ import time
 
 nom_diameter = 2
 diameter = 1.924
-overlaps = np.array([0.8,0.85,0.9,0.95,1,1.05,1.1])
+overlaps = np.array([0.8])
 # overlaps = np.array([0.8,0.85])
 
 total_pattern_string = ""
@@ -121,12 +121,12 @@ for v in overlaps:
             shift_r = vec+l1*1e3
             shift_o =  vec+l2*1e3
             shift_u = vec+(l2-l1)*1e3
-            pattern.add_parametrized_shape(circle, *shift_r, diameter/2*1e3, boolean_operation = "subtract") 
-            pattern.add_parametrized_shape(circle, *shift_u, diameter/2*1e3, boolean_operation = "subtract") 
+            pattern.add_parametrized_shape(circle, *shift_r, diameter/2*1e3, boolean_operation = "add") 
+            pattern.add_parametrized_shape(circle, *shift_u, diameter/2*1e3, boolean_operation = "add") 
         
-            pattern.add_parametrized_shape(circle, *shift_o, diameter/2*1e3, boolean_operation = "subtract") 
+            pattern.add_parametrized_shape(circle, *shift_o, diameter/2*1e3, boolean_operation = "add") 
         
-            pattern.add_parametrized_shape(circle, *vec, diameter/2*1e3)      
+            pattern.add_parametrized_shape(circle, *vec, diameter/2*1e3,boolean_operation = "add")      
         # # generate .pat string
         # pattern_string = pattern.export_pattern(complete=False, export=False, offsetx=6000, offsety=10000)
         total_pattern_string+=pattern.generate_pattern_header()
@@ -165,6 +165,6 @@ for v in overlaps:
         end_time=time.time()
         duration = end_time - start_time
         print('\n' + f"this pattern took {duration:.4f} seconds and is {nlines} rectangles long" + '\n')
-with open("maple_leaf_2d0_var_res18_big_nom_diameter_V2" + '.txt', 'w') as f:
+with open("maple_leaf_2d0_var_res18_big_nom_diameter_V3" + '.txt', 'w') as f:
     f.write(total_pattern_string)
 
