@@ -1,7 +1,7 @@
 
 JOB 'EBL', 2 
 
-; Pattern converted from file: Z:/ECP/pattern_creator/examples/HC_TOPO_EnO/HC_TOPO_EnO_layout_singlefield.ctl
+; Pattern converted from file: Z:/ECP/pattern_creator/projects/Blueshift topo/HC_TOPO_EnO_layout_singlefield.ctl
 
 PATH MINI 
   ARRAY (0, 1, 0) / (0, 1, 0) 

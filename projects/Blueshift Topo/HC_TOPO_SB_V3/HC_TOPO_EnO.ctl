@@ -46,7 +46,7 @@ draw(overlap_series)
 ;Einzelne Hexagons 1.7um - 2um
 ; =====================
 
-sfile = hexagons_res15_peak
+sfile = hexagons_peak
 
 ; =====================
 
@@ -56,10 +56,10 @@ draw (hexagon_peak_2p5, 16, 80.00)
 
 
 ; =====================
-;Honeycomb TOPO d1.7
+;Honeycomb TOPO d1.7 links
 ; =====================
 
-sfile = HC_TOPO_EnO_d1.7_res_70_4x4_SB
+sfile = HC_TOPO_EnO_d17_1
 
 ; =====================
 
@@ -77,20 +77,6 @@ draw (VA1p0_VB1p0_3, 16, 70.00)
 draw (VA1p0_VB1p0_4, 16, 70.00)
 draw (VA1p0_VB1p0_5, 16, 70.00)
 
-;3
-draw (VA0p9_VB0p9_1, 16, 60.00)
-draw (VA0p9_VB0p9_2, 16, 60.00)
-draw (VA0p9_VB0p9_3, 16, 70.00)
-draw (VA0p9_VB0p9_4, 16, 70.00)
-draw (VA0p9_VB0p9_5, 16, 70.00)
-
-;4
-draw (VA0p8_VB0p8_1, 16, 60.00)
-draw (VA0p8_VB0p8_2, 16, 60.00)
-draw (VA0p8_VB0p8_3, 16, 70.00)
-draw (VA0p8_VB0p8_4, 16, 70.00)
-draw (VA0p8_VB0p8_5, 16, 70.00)
-
 ;5
 draw (VA1p2_VB1p0_1, 16, 60.00)
 draw (VA1p2_VB1p0_2, 16, 60.00)
@@ -104,20 +90,6 @@ draw (VA1p1_VB0p95_2, 16, 60.00)
 draw (VA1p1_VB0p95_3, 16, 70.00)
 draw (VA1p1_VB0p95_4, 16, 70.00)
 draw (VA1p1_VB0p95_5, 16, 70.00)
-
-;7
-draw (VA1p0_VB0p9_1, 16, 60.00)
-draw (VA1p0_VB0p9_2, 16, 60.00)
-draw (VA1p0_VB0p9_3, 16, 70.00)
-draw (VA1p0_VB0p9_4, 16, 70.00)
-draw (VA1p0_VB0p9_5, 16, 70.00)
-
-;8
-draw (VA0p9_VB0p85_1, 16, 60.00)
-draw (VA0p9_VB0p85_2, 16, 60.00)
-draw (VA0p9_VB0p85_3, 16, 70.00)
-draw (VA0p9_VB0p85_4, 16, 70.00)
-draw (VA0p9_VB0p85_5, 16, 70.00)
 
 ;9
 draw (VA1p2_VB0p95_1, 16, 60.00)
@@ -133,20 +105,6 @@ draw (VA1p1_VB0p9_3, 16, 70.00)
 draw (VA1p1_VB0p9_4, 16, 70.00)
 draw (VA1p1_VB0p9_5, 16, 70.00)
 
-;11
-draw (VA1p0_VB0p85_1, 16, 60.00)
-draw (VA1p0_VB0p85_2, 16, 60.00)
-draw (VA1p0_VB0p85_3, 16, 70.00)
-draw (VA1p0_VB0p85_4, 16, 70.00)
-draw (VA1p0_VB0p85_5, 16, 70.00)
-
-;12
-draw (VA0p9_VB0p8_1, 16, 60.00)
-draw (VA0p9_VB0p8_2, 16, 60.00)
-draw (VA0p9_VB0p8_3, 16, 70.00)
-draw (VA0p9_VB0p8_4, 16, 70.00)
-draw (VA0p9_VB0p8_5, 16, 70.00)
-
 ;13
 draw (VA1p2_VB0p9_1, 16, 60.00)
 draw (VA1p2_VB0p9_2, 16, 60.00)
@@ -160,6 +118,71 @@ draw (VA1p1_VB0p85_2, 16, 60.00)
 draw (VA1p1_VB0p85_3, 16, 70.00)
 draw (VA1p1_VB0p85_4, 16, 70.00)
 draw (VA1p1_VB0p85_5, 16, 70.00)
+
+; =====================
+;Label
+; =====================
+
+sfile = nbr_honey_1
+
+; =====================
+
+for (a,16,1)
+idraw(nbr_, a)
+next a
+
++x = 250
+stage
+
+; =====================
+;Honeycomb TOPO d1.7 rechts
+; =====================
+
+sfile = HC_TOPO_EnO_d17_2
+
+; =====================
+
+;3
+draw (VA0p9_VB0p9_1, 16, 60.00)
+draw (VA0p9_VB0p9_2, 16, 60.00)
+draw (VA0p9_VB0p9_3, 16, 70.00)
+draw (VA0p9_VB0p9_4, 16, 70.00)
+draw (VA0p9_VB0p9_5, 16, 70.00)
+
+;4
+draw (VA0p8_VB0p8_1, 16, 60.00)
+draw (VA0p8_VB0p8_2, 16, 60.00)
+draw (VA0p8_VB0p8_3, 16, 70.00)
+draw (VA0p8_VB0p8_4, 16, 70.00)
+draw (VA0p8_VB0p8_5, 16, 70.00)
+
+;7
+draw (VA1p0_VB0p9_1, 16, 60.00)
+draw (VA1p0_VB0p9_2, 16, 60.00)
+draw (VA1p0_VB0p9_3, 16, 70.00)
+draw (VA1p0_VB0p9_4, 16, 70.00)
+draw (VA1p0_VB0p9_5, 16, 70.00)
+
+;8
+draw (VA0p9_VB0p85_1, 16, 60.00)
+draw (VA0p9_VB0p85_2, 16, 60.00)
+draw (VA0p9_VB0p85_3, 16, 70.00)
+draw (VA0p9_VB0p85_4, 16, 70.00)
+draw (VA0p9_VB0p85_5, 16, 70.00)
+
+;11
+draw (VA1p0_VB0p85_1, 16, 60.00)
+draw (VA1p0_VB0p85_2, 16, 60.00)
+draw (VA1p0_VB0p85_3, 16, 70.00)
+draw (VA1p0_VB0p85_4, 16, 70.00)
+draw (VA1p0_VB0p85_5, 16, 70.00)
+
+;12
+draw (VA0p9_VB0p8_1, 16, 60.00)
+draw (VA0p9_VB0p8_2, 16, 60.00)
+draw (VA0p9_VB0p8_3, 16, 70.00)
+draw (VA0p9_VB0p8_4, 16, 70.00)
+draw (VA0p9_VB0p8_5, 16, 70.00)
 
 ;15
 draw (VA1p0_VB0p8_1, 16, 60.00)
@@ -175,19 +198,7 @@ draw (VA0p9_VB0p75_3, 16, 70.00)
 draw (VA0p9_VB0p75_4, 16, 70.00)
 draw (VA0p9_VB0p75_5, 16, 70.00)
 
-; =====================
-;Label
-; =====================
-
-sfile = numbers_honey_1
-
-; =====================
-
-for (a,16,1)
-idraw(nbr_, a)
-next a
-
-+x = 500
++x = 250
 stage
 
 ; =====================
@@ -212,7 +223,7 @@ draw(overlap_series)
 ;Einzelne Hexagons 1.7um - 2um
 ; =====================
 
-sfile = hexagons_res15_flat
+sfile = hexagons_flat
 
 ; =====================
 
@@ -222,137 +233,148 @@ draw (hexagon_flat_2p5, 16, 80.00)
 
 
 ; =====================
-;Honeycomb TOPO d2.0
+;Honeycomb TOPO d2.0 links
 ; =====================
 
-sfile = HC_TOPO_EnO_d2.0_res_60_4x4_SB
+sfile = HC_TOPO_EnO_d20_1
 
 ; =====================
 
-;1
+;17
 draw (VA1p2_VB1p2_1, 16, 60.00)
 draw (VA1p2_VB1p2_2, 16, 60.00)
 draw (VA1p2_VB1p2_3, 16, 70.00)
 draw (VA1p2_VB1p2_4, 16, 70.00)
 draw (VA1p2_VB1p2_5, 16, 70.00)
 
-;2
+;18
 draw (VA1p0_VB1p0_1, 16, 60.00)
 draw (VA1p0_VB1p0_2, 16, 60.00)
 draw (VA1p0_VB1p0_3, 16, 70.00)
 draw (VA1p0_VB1p0_4, 16, 70.00)
 draw (VA1p0_VB1p0_5, 16, 70.00)
 
-;3
-draw (VA0p9_VB0p9_1, 16, 60.00)
-draw (VA0p9_VB0p9_2, 16, 60.00)
-draw (VA0p9_VB0p9_3, 16, 70.00)
-draw (VA0p9_VB0p9_4, 16, 70.00)
-draw (VA0p9_VB0p9_5, 16, 70.00)
-
-;4
-draw (VA0p8_VB0p8_1, 16, 60.00)
-draw (VA0p8_VB0p8_2, 16, 60.00)
-draw (VA0p8_VB0p8_3, 16, 70.00)
-draw (VA0p8_VB0p8_4, 16, 70.00)
-draw (VA0p8_VB0p8_5, 16, 70.00)
-
-;5
+;21
 draw (VA1p2_VB1p0_1, 16, 60.00)
 draw (VA1p2_VB1p0_2, 16, 60.00)
 draw (VA1p2_VB1p0_3, 16, 70.00)
 draw (VA1p2_VB1p0_4, 16, 70.00)
 draw (VA1p2_VB1p0_5, 16, 70.00)
 
-;6
+;22
 draw (VA1p1_VB0p95_1, 16, 60.00)
 draw (VA1p1_VB0p95_2, 16, 60.00)
 draw (VA1p1_VB0p95_3, 16, 70.00)
 draw (VA1p1_VB0p95_4, 16, 70.00)
 draw (VA1p1_VB0p95_5, 16, 70.00)
 
-;7
-draw (VA1p0_VB0p9_1, 16, 60.00)
-draw (VA1p0_VB0p9_2, 16, 60.00)
-draw (VA1p0_VB0p9_3, 16, 70.00)
-draw (VA1p0_VB0p9_4, 16, 70.00)
-draw (VA1p0_VB0p9_5, 16, 70.00)
-
-;8
-draw (VA0p9_VB0p85_1, 16, 60.00)
-draw (VA0p9_VB0p85_2, 16, 60.00)
-draw (VA0p9_VB0p85_3, 16, 70.00)
-draw (VA0p9_VB0p85_4, 16, 70.00)
-draw (VA0p9_VB0p85_5, 16, 70.00)
-
-;9
+;25
 draw (VA1p2_VB0p95_1, 16, 60.00)
 draw (VA1p2_VB0p95_2, 16, 60.00)
 draw (VA1p2_VB0p95_3, 16, 70.00)
 draw (VA1p2_VB0p95_4, 16, 70.00)
 draw (VA1p2_VB0p95_5, 16, 70.00)
 
-;10
+;26
 draw (VA1p1_VB0p9_1, 16, 60.00)
 draw (VA1p1_VB0p9_2, 16, 60.00)
 draw (VA1p1_VB0p9_3, 16, 70.00)
 draw (VA1p1_VB0p9_4, 16, 70.00)
 draw (VA1p1_VB0p9_5, 16, 70.00)
 
-;11
-draw (VA1p0_VB0p85_1, 16, 60.00)
-draw (VA1p0_VB0p85_2, 16, 60.00)
-draw (VA1p0_VB0p85_3, 16, 70.00)
-draw (VA1p0_VB0p85_4, 16, 70.00)
-draw (VA1p0_VB0p85_5, 16, 70.00)
-
-;12
-draw (VA0p9_VB0p8_1, 16, 60.00)
-draw (VA0p9_VB0p8_2, 16, 60.00)
-draw (VA0p9_VB0p8_3, 16, 70.00)
-draw (VA0p9_VB0p8_4, 16, 70.00)
-draw (VA0p9_VB0p8_5, 16, 70.00)
-
-;13
+;29
 draw (VA1p2_VB0p9_1, 16, 60.00)
 draw (VA1p2_VB0p9_2, 16, 60.00)
 draw (VA1p2_VB0p9_3, 16, 70.00)
 draw (VA1p2_VB0p9_4, 16, 70.00)
 draw (VA1p2_VB0p9_5, 16, 70.00)
 
-;14
+;30
 draw (VA1p1_VB0p85_1, 16, 60.00)
 draw (VA1p1_VB0p85_2, 16, 60.00)
 draw (VA1p1_VB0p85_3, 16, 70.00)
 draw (VA1p1_VB0p85_4, 16, 70.00)
 draw (VA1p1_VB0p85_5, 16, 70.00)
 
-;15
-draw (VA1p0_VB0p8_1, 16, 60.00)
-draw (VA1p0_VB0p8_2, 16, 60.00)
-draw (VA1p0_VB0p8_3, 16, 70.00)
-draw (VA1p0_VB0p8_4, 16, 70.00)
-draw (VA1p0_VB0p8_5, 16, 70.00)
-
-;16
-draw (VA0p9_VB0p75_1, 16, 60.00)
-draw (VA0p9_VB0p75_2, 16, 60.00)
-draw (VA0p9_VB0p75_3, 16, 70.00)
-draw (VA0p9_VB0p75_4, 16, 70.00)
-draw (VA0p9_VB0p75_5, 16, 70.00)
-
 
 ; =====================
 ;Label
 ; =====================
 
-sfile = numbers_honey_17
+sfile = nbr_honey_17
 
 ; =====================
 
 for (a,16,1)
 idraw(nbr_, a)
 next a
+
++x = 250
+stage
+
+; =====================
+;Honeycomb TOPO d2.0 rechts
+; =====================
+
+sfile = HC_TOPO_EnO_d20_2
+
+; =====================
+
+;19
+draw (VA0p9_VB0p9_1, 16, 60.00)
+draw (VA0p9_VB0p9_2, 16, 60.00)
+draw (VA0p9_VB0p9_3, 16, 70.00)
+draw (VA0p9_VB0p9_4, 16, 70.00)
+draw (VA0p9_VB0p9_5, 16, 70.00)
+
+;20
+draw (VA0p8_VB0p8_1, 16, 60.00)
+draw (VA0p8_VB0p8_2, 16, 60.00)
+draw (VA0p8_VB0p8_3, 16, 70.00)
+draw (VA0p8_VB0p8_4, 16, 70.00)
+draw (VA0p8_VB0p8_5, 16, 70.00)
+
+;23
+draw (VA1p0_VB0p9_1, 16, 60.00)
+draw (VA1p0_VB0p9_2, 16, 60.00)
+draw (VA1p0_VB0p9_3, 16, 70.00)
+draw (VA1p0_VB0p9_4, 16, 70.00)
+draw (VA1p0_VB0p9_5, 16, 70.00)
+
+;24
+draw (VA0p9_VB0p85_1, 16, 60.00)
+draw (VA0p9_VB0p85_2, 16, 60.00)
+draw (VA0p9_VB0p85_3, 16, 70.00)
+draw (VA0p9_VB0p85_4, 16, 70.00)
+draw (VA0p9_VB0p85_5, 16, 70.00)
+
+;27
+draw (VA1p0_VB0p85_1, 16, 60.00)
+draw (VA1p0_VB0p85_2, 16, 60.00)
+draw (VA1p0_VB0p85_3, 16, 70.00)
+draw (VA1p0_VB0p85_4, 16, 70.00)
+draw (VA1p0_VB0p85_5, 16, 70.00)
+
+;28
+draw (VA0p9_VB0p8_1, 16, 60.00)
+draw (VA0p9_VB0p8_2, 16, 60.00)
+draw (VA0p9_VB0p8_3, 16, 70.00)
+draw (VA0p9_VB0p8_4, 16, 70.00)
+draw (VA0p9_VB0p8_5, 16, 70.00)
+
+;31
+draw (VA1p0_VB0p8_1, 16, 60.00)
+draw (VA1p0_VB0p8_2, 16, 60.00)
+draw (VA1p0_VB0p8_3, 16, 70.00)
+draw (VA1p0_VB0p8_4, 16, 70.00)
+draw (VA1p0_VB0p8_5, 16, 70.00)
+
+;32
+draw (VA0p9_VB0p75_1, 16, 60.00)
+draw (VA0p9_VB0p75_2, 16, 60.00)
+draw (VA0p9_VB0p75_3, 16, 70.00)
+draw (VA0p9_VB0p75_4, 16, 70.00)
+draw (VA0p9_VB0p75_5, 16, 70.00)
 
 
 ; =====================

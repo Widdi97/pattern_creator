@@ -37,18 +37,19 @@ def generate_nbr(index, num, scaling=1, custom_offset=[0, 0]):
     res += "END"
     return res
 
-start_nbr = 1
-start_x = -20000
+start_nbr = 17
+end_nbr = 32
+start_x = -15000
 start_y = 65000
 x_abstand = 125000  # Abstand zwischen den Spalten
 y_abstand = 110000  # Abstand zwischen den Zeilen
 spalten = 4
 
 all_nbrs = ""
-for index, jj in enumerate(range(start_nbr,18)):
-    x_offset = start_x + x_abstand * ((index-1)%spalten)
-    y_offset = start_y + y_abstand * ((index-1)//spalten)
-    string = generate_nbr(index, jj-1, scaling=0.45,custom_offset=[x_offset,y_offset])
+for index, jj in enumerate(range(start_nbr,end_nbr+1)):
+    x_offset = start_x + x_abstand * ((index)%spalten)
+    y_offset = start_y + y_abstand * ((index)//spalten)
+    string = generate_nbr(index+1, jj, scaling=0.45,custom_offset=[x_offset,y_offset])
     print(string)
     all_nbrs += string + "\n\n"
     with open(f"numbers_honey_{start_nbr}.pat", "w") as f:
