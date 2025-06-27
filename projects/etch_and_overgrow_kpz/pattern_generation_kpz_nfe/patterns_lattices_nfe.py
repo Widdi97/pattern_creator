@@ -88,7 +88,7 @@ for idx, p in enumerate(perturb_size_tri):
     pat_str += "I 16\nC 100\n"
     
     offset = ov + xy_shift(idx)
-    pat_str += pattern.export_pattern(offsetx=offset[0] + a_ecp * 2, offsety=offset[1]) + "END" + "\n"*3
+    pat_str += pattern.export_pattern(offsetx=offset[0], offsety=offset[1]) + "END" + "\n"*3
     all_str += pat_str
 
 

@@ -31,6 +31,8 @@ draw(square_perturb_0.716)
 draw(square_perturb_0.774)
 draw(square_perturb_0.832)
 draw(square_perturb_0.89)
++x = 260
+stage
 draw(triang_perturb_0.89)
 draw(triang_perturb_0.906)
 draw(triang_perturb_0.922)
