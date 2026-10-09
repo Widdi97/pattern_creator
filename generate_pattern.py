@@ -46,7 +46,14 @@ class Pattern:
         self.increment = increment
         self.dwell_time = dwell_time
         self.pattern_header = self.generate_pattern_header()
-        self.pat_shape = np.array([int(y_size / step_size[1]), int(x_size / step_size[0])])
+        counts = np.array([y_size / step_size[1], x_size / step_size[0]], dtype=float)
+        rounded_counts = np.rint(counts)
+        counts = np.where(
+            np.isclose(counts, rounded_counts, rtol=1e-12, atol=1e-9),
+            rounded_counts,
+            np.floor(counts),
+        )
+        self.pat_shape = counts.astype(int)
         self.x_ax = step_size[0] * np.arange(self.pat_shape[1])
         self.y_ax = step_size[1] * np.arange(self.pat_shape[0])
         self.XY_meshgrid = np.meshgrid(self.x_ax, self.y_ax)
@@ -203,7 +210,8 @@ class Lattice:
         
         
         self.find_x_y_aligned_unit_cell()
-        self.plot_lattice_vecs()
+        if self.visualize_patterns:
+            self.plot_lattice_vecs()
         self.generate_unit_cells()
         self.generate_patterns()
         

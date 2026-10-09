@@ -1,10 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from generate_pattern import circle
 
 # def trace_circle_right(y, x0, y0, r, R):
 #     t = np.arccos((y - y0) / r) / (2 * np.pi)
 #     return circle(t-0.25, x0, y0, R)
+
+def circle(t, x0, y0, r):
+    x = r * np.cos(2 * np.pi * t) + x0
+    y = r * np.sin(2 * np.pi * t) + y0
+    return x, y
 
 def trace_line_x(x0, y0, x1, y1, Y):
     m = (y1 - y0) / (x1 - x0)
