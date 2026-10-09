@@ -1,0 +1,22 @@
+﻿shc_field: 21 devices in one write field, chip 500 x 480 um, placeholder array 49 x 50 at 550 x 530 um
+    1 shc_field_f0_kek_set3_s000          73.0 x  78.3 um  cells  10x6  d  2070.78 a  2445.37 s     0.0 gap  374.6
+    2 shc_field_f0_kek_set3_s050          73.1 x  78.3 um  cells  10x6  d  2070.78 a  2445.37 s   70.36 gap  233.9
+    3 shc_field_f0_kek_set3_s080          73.2 x  78.3 um  cells  10x6  d  2070.78 a  2445.37 s  112.58 gap  149.4
+    4 shc_field_f0_kek_set3_s100          73.3 x  78.3 um  cells  10x6  d  2070.78 a  2445.37 s  140.72 gap   93.1
+    5 shc_field_f0_kek_set3_s120          73.3 x  78.3 um  cells  10x6  d  2070.78 a  2445.37 s  168.87 gap   36.8
+    6 shc_field_f0_kek_set3_ddm80         73.2 x  78.2 um  cells  10x6  d  1990.78 a  2445.37 s  140.72 gap  173.1
+    7 shc_field_f0_kek_set3_ddm40         73.2 x  78.3 um  cells  10x6  d  2030.78 a  2445.37 s  140.72 gap  133.1
+    8 shc_field_f0_kek_set3_ddp40         73.3 x  78.4 um  cells  10x6  d  2110.78 a  2445.37 s  140.72 gap   53.1
+    9 shc_field_f0_kek_set3_v1p151        78.6 x  76.4 um  cells  11x6  d  2070.78 a  2383.24 s  140.72 gap   31.0
+   10 shc_field_f0_kek_set3_v1p211        75.1 x  80.3 um  cells  10x6  d  2070.78 a  2507.49 s  140.72 gap  155.3
+   11 shc_field_f0_kek_set1_s000          74.3 x  72.4 um  cells  11x6  d  2019.39 a  2257.89 s     0.0 gap  238.5
+   12 shc_field_f0_kek_set1_s050          74.4 x  72.4 um  cells  11x6  d  2019.39 a  2257.89 s   51.53 gap  135.4
+   13 shc_field_f0_kek_set1_s080          74.4 x  72.4 um  cells  11x6  d  2019.39 a  2257.89 s   82.45 gap   73.6
+   14 shc_field_f0_kek_set1_s100          74.5 x  72.4 um  cells  11x6  d  2019.39 a  2257.89 s  103.06 gap   32.4
+   15 shc_field_f0_kek_set1_s120          78.5 x  72.4 um  cells  11x6  d  2019.39 a  2257.89 s  123.67 gap   -8.8
+   16 shc_field_f0_kek_set1_ddm80         74.4 x  72.3 um  cells  11x6  d  1939.39 a  2257.89 s  103.06 gap  112.4
+   17 shc_field_f0_kek_set1_ddm40         74.4 x  72.4 um  cells  11x6  d  1979.39 a  2257.89 s  103.06 gap   72.4
+   18 shc_field_f0_kek_set1_ddp40         78.6 x  72.5 um  cells  11x6  d  2059.39 a  2257.89 s  103.06 gap   -7.6
+   19 shc_field_f0_kek_set1_v1p088        83.1 x  81.9 um  cells  12x7  d  2019.39 a  2197.31 s  103.06 gap  -28.2
+   20 shc_field_f0_kek_set1_v1p148        76.4 x  74.3 um  cells  11x6  d  2019.39 a  2318.47 s  103.06 gap   93.0
+   21 shc_field_f0_ref_overlap_series_2024 119.8 x  50.3 um  cells        d          a          s         gap       

@@ -34,6 +34,35 @@ def points_in_closed_curve(x, y, curve, num_samples=100):
             is_inside = is_inside + isbigger - 2 * isbigger * is_inside
     return is_inside
 
+@nb.njit(cache=True)
+def _parity_rows(x, ys, xy_pts):
+    # Same crossing test and intersection formula as points_in_closed_curve, for all rows at once.
+    out = np.zeros((ys.size, x.size), dtype=np.bool_)
+    y_min = xy_pts[:, 1].min()
+    y_max = xy_pts[:, 1].max()
+    for r in range(ys.size):
+        y = ys[r]
+        if y < y_min or y > y_max:  # no segment can be crossed: row stays outside
+            continue
+        for ii in range(1, xy_pts.shape[0]):
+            x1, y1 = xy_pts[ii - 1, 0], xy_pts[ii - 1, 1]
+            x2, y2 = xy_pts[ii, 0], xy_pts[ii, 1]
+            if (y1 > y) != (y2 > y):
+                x_intersect = (x1 * y - x1 * y2 - x2 * y + x2 * y1) / (y1 - y2)
+                for c in range(x.size):
+                    if x[c] >= x_intersect:
+                        out[r, c] = not out[r, c]
+    return out
+
+
+def points_in_closed_curve_rows(x, ys, curve, num_samples=100):
+    """Boolean mask[len(ys), len(x)]; identical to stacking points_in_closed_curve(x, y, curve)
+    for every y in ys (cast to bool), but evaluated in one numba kernel."""
+    t_values = np.linspace(0, 1, num_samples)
+    xy_pts = np.ascontiguousarray(np.array(curve(t_values), dtype=np.float64).T)
+    return _parity_rows(np.asarray(x, dtype=np.float64), np.asarray(ys, dtype=np.float64), xy_pts)
+
+
 if __name__ == "__main__":
     @nb.njit
     def example_curve(t):

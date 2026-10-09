@@ -1,0 +1,22 @@
+﻿double-exposure check: 1748 structure instances, NO overlapping exposure
+shc_field_f0_kek_set3_s000                   structures   3  components   740  max cover 1  d_eq median   2070.8 nm  min   2058.2  max   2071.3
+shc_field_f0_kek_set3_s050                   structures   3  components   740  max cover 1  d_eq median   2070.8 nm  min   2058.3  max   2071.1
+shc_field_f0_kek_set3_s080                   structures   3  components   740  max cover 1  d_eq median   2070.7 nm  min   2057.9  max   2070.9
+shc_field_f0_kek_set3_s100                   structures   3  components   740  max cover 1  d_eq median   2070.9 nm  min   2058.4  max   2071.2
+shc_field_f0_kek_set3_s120                   structures   3  components   740  max cover 1  d_eq median   2070.9 nm  min   2057.7  max   2071.6
+shc_field_f0_kek_set3_ddm80                  structures   3  components   740  max cover 1  d_eq median   1991.0 nm  min   1978.0  max   1991.2
+shc_field_f0_kek_set3_ddm40                  structures   3  components   740  max cover 1  d_eq median   2030.8 nm  min   2018.2  max   2031.3
+shc_field_f0_kek_set3_ddp40                  structures   3  components   740  max cover 1  d_eq median   2110.7 nm  min   2098.0  max   2111.2
+shc_field_f0_kek_set3_v1p151                 structures   3  components   814  max cover 1  d_eq median   2070.5 nm  min   2063.9  max   2070.7
+shc_field_f0_kek_set3_v1p211                 structures   3  components   740  max cover 1  d_eq median   2071.3 nm  min   2059.7  max   2071.7
+shc_field_f0_kek_set1_s000                   structures   3  components   836  max cover 1  d_eq median   2020.4 nm  min   1415.7  max   2020.5
+shc_field_f0_kek_set1_s050                   structures   3  components   836  max cover 1  d_eq median   2020.4 nm  min   1415.6  max   2020.6
+shc_field_f0_kek_set1_s080                   structures   3  components   836  max cover 1  d_eq median   2020.2 nm  min   1415.7  max   2020.6
+shc_field_f0_kek_set1_s100                   structures   3  components   836  max cover 1  d_eq median   2020.5 nm  min   1415.7  max   2020.7
+shc_field_f0_kek_set1_s120                   structures   5  components   424  max cover 1  d_eq median   2857.1 nm  min   2005.1  max   2857.5
+shc_field_f0_kek_set1_ddm80                  structures   3  components   836  max cover 1  d_eq median   1940.2 nm  min   1359.0  max   1940.3
+shc_field_f0_kek_set1_ddm40                  structures   3  components   836  max cover 1  d_eq median   1980.1 nm  min   1387.4  max   1980.7
+shc_field_f0_kek_set1_ddp40                  structures   5  components   424  max cover 1  d_eq median   2913.2 nm  min   2045.0  max   2913.8
+shc_field_f0_kek_set1_v1p088                 structures   5  components   523  max cover 1  d_eq median   2855.5 nm  min   2842.4  max   2855.7
+shc_field_f0_kek_set1_v1p148                 structures   3  components   814  max cover 1  d_eq median   2019.6 nm  min   2006.9  max   2019.7
+shc_field_f0_ref_overlap_series_2024         structures   1  components    27  max cover 1  d_eq median   2282.4 nm  min   1799.0  max  56419.0

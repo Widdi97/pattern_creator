@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from rectangulize import rectangulize, rectangulize_oli, dtype, rectangulize_oli_horizontal_grouping
-from raycasting import points_in_closed_curve
+from raycasting import points_in_closed_curve, points_in_closed_curve_rows
 import numba as nb
 import matplotlib.patches as patches
 from PIL import Image, ImageDraw, ImageFont
@@ -97,11 +97,9 @@ class Pattern:
         
     def add_parametrized_shape(self, parametrization, *args, boolean_operation="add"):
         self.shapes.append([parametrization, args])
-        res = []
         parametrization_ = lambda t: parametrization(t, *args)
-        for y in self.y_ax:
-            res.append(points_in_closed_curve(self.x_ax, y, parametrization_))
-        res = np.array(res, dtype=bool)
+        # numba kernel over all rows; identical to stacking points_in_closed_curve per row
+        res = points_in_closed_curve_rows(self.x_ax, self.y_ax, parametrization_)
         allowed_types = ["add", "subtract"]
         if boolean_operation not in allowed_types:
             raise Exception(f"Boolean operation {boolean_operation} not allowed. only {allowed_types} are valid.")
