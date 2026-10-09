@@ -1,0 +1,19 @@
+﻿shc_field: 18 devices in one write field, chip 500 x 485 um, placeholder array 49 x 50 at 550 x 540 um
+    1 shc_field_f0_kek_v1p100_s000      74.2 x  72.4 um  cells  11x6  v    1.1 s    0.0 gap  205.0
+    2 shc_field_f0_kek_v1p133_s000      76.4 x  74.5 um  cells  11x6  v 1.1333 s    0.0 gap  273.3
+    3 shc_field_f0_kek_v1p167_s000      78.6 x  76.6 um  cells  11x6  v 1.1667 s    0.0 gap  341.7
+    4 shc_field_f0_kek_v1p200_s000      73.4 x  78.7 um  cells  10x6  v    1.2 s    0.0 gap  410.0
+    5 shc_field_f0_kek_v1p100_s080      74.4 x  72.4 um  cells  11x6  v    1.1 s   80.0 gap   45.0
+    6 shc_field_f0_kek_v1p133_s080      76.6 x  74.5 um  cells  11x6  v 1.1333 s   80.0 gap  113.3
+    7 shc_field_f0_kek_v1p167_s080      78.7 x  76.6 um  cells  11x6  v 1.1667 s   80.0 gap  181.7
+    8 shc_field_f0_kek_v1p200_s080      73.6 x  78.7 um  cells  10x6  v    1.2 s   80.0 gap  250.0
+    9 shc_field_f0_kek_v1p100_s110      78.5 x  72.4 um  cells  11x6  v    1.1 s  110.0 gap  -15.0
+   10 shc_field_f0_kek_v1p133_s110      76.6 x  74.5 um  cells  11x6  v 1.1333 s  110.0 gap   53.3
+   11 shc_field_f0_kek_v1p167_s110      78.8 x  76.6 um  cells  11x6  v 1.1667 s  110.0 gap  121.7
+   12 shc_field_f0_kek_v1p200_s110      73.6 x  78.7 um  cells  10x6  v    1.2 s  110.0 gap  190.0
+   13 shc_field_f0_kek_v1p100_s140      78.5 x  72.4 um  cells  11x6  v    1.1 s  140.0 gap  -75.0
+   14 shc_field_f0_kek_v1p133_s140      80.8 x  74.5 um  cells  11x6  v 1.1333 s  140.0 gap   -6.7
+   15 shc_field_f0_kek_v1p167_s140      78.9 x  76.6 um  cells  11x6  v 1.1667 s  140.0 gap   61.7
+   16 shc_field_f0_kek_v1p200_s140      73.7 x  78.7 um  cells  10x6  v    1.2 s  140.0 gap  130.0
+   17 shc_field_f0_ref_overlap_series_2024 119.8 x  50.3 um  cells        v        s        gap       
+      shc_field_f0_ref_arrows           15.8 x  45.9 um  cells        v        s        gap       

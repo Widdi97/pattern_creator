@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from rectangulize import rectangulize, rectangulize_oli, dtype, rectangulize_oli_horizontal_grouping
-from raycasting import points_in_closed_curve
+from raycasting import points_in_closed_curve, points_in_closed_curve_rows
 import numba as nb
 import matplotlib.patches as patches
 from PIL import Image, ImageDraw, ImageFont
@@ -46,7 +46,14 @@ class Pattern:
         self.increment = increment
         self.dwell_time = dwell_time
         self.pattern_header = self.generate_pattern_header()
-        self.pat_shape = np.array([int(y_size / step_size[1]), int(x_size / step_size[0])])
+        counts = np.array([y_size / step_size[1], x_size / step_size[0]], dtype=float)
+        rounded_counts = np.rint(counts)
+        counts = np.where(
+            np.isclose(counts, rounded_counts, rtol=1e-12, atol=1e-9),
+            rounded_counts,
+            np.floor(counts),
+        )
+        self.pat_shape = counts.astype(int)
         self.x_ax = step_size[0] * np.arange(self.pat_shape[1])
         self.y_ax = step_size[1] * np.arange(self.pat_shape[0])
         self.XY_meshgrid = np.meshgrid(self.x_ax, self.y_ax)
@@ -90,11 +97,9 @@ class Pattern:
         
     def add_parametrized_shape(self, parametrization, *args, boolean_operation="add"):
         self.shapes.append([parametrization, args])
-        res = []
         parametrization_ = lambda t: parametrization(t, *args)
-        for y in self.y_ax:
-            res.append(points_in_closed_curve(self.x_ax, y, parametrization_))
-        res = np.array(res, dtype=bool)
+        # numba kernel over all rows; identical to stacking points_in_closed_curve per row
+        res = points_in_closed_curve_rows(self.x_ax, self.y_ax, parametrization_)
         allowed_types = ["add", "subtract"]
         if boolean_operation not in allowed_types:
             raise Exception(f"Boolean operation {boolean_operation} not allowed. only {allowed_types} are valid.")
@@ -203,7 +208,8 @@ class Lattice:
         
         
         self.find_x_y_aligned_unit_cell()
-        self.plot_lattice_vecs()
+        if self.visualize_patterns:
+            self.plot_lattice_vecs()
         self.generate_unit_cells()
         self.generate_patterns()
         

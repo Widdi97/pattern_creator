@@ -7,12 +7,12 @@ import matplotlib.pyplot as plt
 
 resolution = 50
 
-lattice_const = 4350 # um
+lattice_const = 5700 # um
 center_line = 1500
-ellipticity = 0.48
+ellipticity = 0.342
 
 
-r1 = 1000
+r1 = 1250
 r2 = r1 * (1 - ellipticity)
 
 #%% fit offset
@@ -47,7 +47,7 @@ def calc_overlap_difference(lattice_const, center_line, resolution, o, r1, r2, v
     # print(overlap_difference)
     return distance_intercell, distance_intracell#overlap_difference
 
-offset_ax = np.linspace(1250, 1400, 3)
+offset_ax = np.linspace(1730, 1880, 3)
 # overlap_difference = [calc_overlap_difference(lattice_const, center_line, resolution, o_, r1, r2, False) for o_ in offset_ax]
 o1o2 = np.array([calc_overlap_difference(lattice_const, center_line, resolution, o_, r1, r2, True) for o_ in offset_ax]).T
 
@@ -59,7 +59,7 @@ plt.show()
 
 
 
-o = 1280
+o = 1810
 
 #%% plot nicely for talk
 fig, ax = plt.subplots()

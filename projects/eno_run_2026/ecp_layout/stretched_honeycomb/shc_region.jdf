@@ -1,0 +1,31 @@
+
+JOB 'EBL', 2 
+
+; Etch and overgrow 2026: shc_field arrayed 49 x 50, pitch 550 x 540 um
+; .v30 files are exported by ECP from the .ctl files of the same name
+
+PATH MINI 
+  ARRAY (0, 1, 0) / (0, 1, 0) 
+    ASSIGN P(1) -> ( (*,*), SHOT01) 
+  AEND 
+
+  ARRAY (0, 49, 550) / (0, 50, 540) 
+    ASSIGN P(2) -> ( (*,*), SHOT02) 
+  AEND 
+PEND 
+
+LAYER 1 
+
+P(1) 'shc_numbers.v30' (0, 0)
+P(2) 'shc_field.v30' (0, 0)
+
+SHOT01: MODULAT ((0, 0)) 
+SHOT02: MODULAT ((0, 0)) 
+
+SHOT A, 4 
+
+RESIST 1191
+
+STDCUR 2 
+
+END 
