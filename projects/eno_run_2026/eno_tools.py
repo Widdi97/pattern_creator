@@ -435,18 +435,19 @@ def safe_name(text):
     return "".join(c if (c.isalnum() or c in "_-") else "p" if c == "." else "_" for c in str(text))
 
 
-def write_chip(out_dir, chip, fields, header, current_pA=25000):
-    """Rasterise a packed chip; write <chip>.pat, <chip>.ctl, device CSV and previews.
+def write_chip(out_dir, chip, fields, header, current_pA=25000, numbers_box=RESERVED_NM, write_ctl=True):
+    """Rasterise a packed chip; write <chip>.pat, device CSV, previews and (optionally) <chip>.ctl.
 
     Coordinates in the pat file are absolute within each 500 um write field.
     The ctl moves the stage by FIELD_PITCH_UM per field (relative to the chip
-    origin) and draws every structure of that field.
+    origin) and draws every structure of that field. With write_ctl=False the
+    caller writes its own ctl (e.g. grid_ctl) from the returned structure names.
     """
     os.makedirs(out_dir, exist_ok=True)
     pat = [f"; {line}\n" for line in header] + ["\n"]
     ctl = [f"; {line}\n" for line in header]
     ctl += ["\n", f"current = {current_pA}\n", "origin = 0, 0\n", "\n", f"sfile = {chip}\n"]
-    rows, overview = [], []
+    rows, overview, field_names = [], [], []
     for k, devs in enumerate(fields):
         groups, lab_all, names = [], [], []
         for dev in devs:
@@ -472,7 +473,7 @@ def write_chip(out_dir, chip, fields, header, current_pA=25000):
                 lab_all.append(label_rects(dev["label"], *dev["label_pos"], LABEL_NM))
             x1, y1 = expanded[:, :2].min(0)
             x2, y2 = expanded[:, 2:].max(0)
-            rows.append({"chip": chip, "label": dev.get("label", ""), "field": k, "system": dev["system"],
+            rows.append({"chip": chip, "label": dev.get("label") or "", "field": k, "system": dev["system"],
                          "structure": base, "n_structures": len(parts), "x_centre_um": (x1 + x2) / 2e3,
                          "y_centre_um": (y1 + y2) / 2e3, "width_um": (x2 - x1) / 1e3,
                          "height_um": (y2 - y1) / 1e3, "n_rects_written": sum(len(p[1]) for p in parts),
@@ -485,11 +486,12 @@ def write_chip(out_dir, chip, fields, header, current_pA=25000):
         check_field(lab_all, lab_name)
         pat.append(structure(lab_name, lab_all))
         names.append(lab_name)
+        field_names.append(names)
         groups.append((lab_all, "tab:red"))
         frame = np.array([[0, 0, FIELD_NM, 800], [0, FIELD_NM - 800, FIELD_NM, FIELD_NM],
                           [0, 0, 800, FIELD_NM], [FIELD_NM - 800, 0, FIELD_NM, FIELD_NM]])
         if k == 0:
-            r = RESERVED_NM
+            r = numbers_box
             groups.append((np.array([[r[0], r[1], r[2], r[3]]]), "#cfe3ff"))
         preview(os.path.join(out_dir, f"{chip}_f{k}_preview.png"), groups + [(frame, "0.8")],
                 title=f"{chip}, write field {k} (grey frame = 500 um field, blue = chip numbers)")
@@ -500,8 +502,9 @@ def write_chip(out_dir, chip, fields, header, current_pA=25000):
     ctl += ["\n", "END\n"]
     with open(os.path.join(out_dir, f"{chip}.pat"), "w") as f:
         f.write("".join(pat))
-    with open(os.path.join(out_dir, f"{chip}.ctl"), "w") as f:
-        f.write("".join(ctl))
+    if write_ctl:
+        with open(os.path.join(out_dir, f"{chip}.ctl"), "w") as f:
+            f.write("".join(ctl))
     keys = []
     for r in rows:
         keys += [k_ for k_ in r if k_ not in keys]
@@ -512,59 +515,75 @@ def write_chip(out_dir, chip, fields, header, current_pA=25000):
     preview(os.path.join(out_dir, f"{chip}_overview.png"), overview, title=f"{chip} overview")
     width_um = (len(fields) - 1) * FIELD_PITCH_UM + FIELD_NM / 1000
     return {"chip": chip, "n_fields": len(fields), "width_um": width_um, "height_um": FIELD_NM / 1000,
-            "devices": rows}
+            "devices": rows, "structures": field_names}
 
 
-def numbers_ctl(path, title, nx, ny, pitch_x, pitch_y):
-    """Chip x/y labels from numbers_xy.pat (2024 EnO), same loop as the 2024 numbers ctl."""
+
+def grid_ctl(path, chip, structure_names, nx, ny, pitch_x, pitch_y, header=(), numbers_file="numbers_xy"):
+    """Exposure ctl: the chip field nx x ny times, each with its x/y index labels.
+
+    At every grid position: one stage move, all chip structures (sfile = chip),
+    then the labels nbr_x_<n> / nbr_y_<m> from numbers_file (2024 numbers_xy.pat
+    glyphs, labels 0..98). Large nx, ny make ECP slow to display; check small first.
+    """
     if nx > 98 or ny > 98:
         raise ValueError("numbers_xy.pat only contains labels 0..98")
     with open(path, "w") as f:
-        f.write(f"; Etch and overgrow 2026, chip labels: {title}\n"
-                "; numbers_xy.pat copied from the 2024 EnO layout (labels at x 20-52 um, y 13-60 um)\n"
-                f"; {nx} x {ny} chips, pitch {pitch_x} x {pitch_y} um; must match the jdf ARRAY\n\n"
-                "current = 25000\n\norigin = 0, 0\nx = 0\ny = 0\nstage\n\nsfile = numbers_xy\n\n"
-                f"for m = 1 to {ny}\nx = 0\nfor n = 1 to {nx}\nstage\n\n"
-                "idraw(nbr_x_, n)\nidraw(nbr_y_, m)\n\n"
-                f"+x = {pitch_x}\nnext n\n+y = {pitch_y}\nnext m\n\nEND\n")
-
-
-def grid_ctl(path, chip, structure_names, nx, ny, pitch_x, pitch_y, title=""):
-    """Preview/test ctl: the chip field nx x ny times with its x/y numbers (numbers_xy.pat).
-
-    Same loop as the numbers ctl, but every position also draws all chip
-    structures, so field layout and numbering can be checked together in ECP.
-    For production use the jdf ARRAY (chip.v30) plus the numbers ctl instead.
-    """
-    with open(path, "w") as f:
-        f.write(f"; Etch and overgrow 2026, TEST grid {nx} x {ny} of {chip} with field numbers {title}\n"
-                f"; pitch {pitch_x} x {pitch_y} um (same as the jdf ARRAY); keep nx, ny small (ECP gets slow)\n\n"
+        f.write("".join(f"; {line}\n" for line in header)
+                + f"; grid {nx} x {ny} fields, pitch {pitch_x} x {pitch_y} um, field x/y index labels from "
+                  f"{numbers_file}.pat\n\n"
                 "current = 25000\n\norigin = 0, 0\nx = 0\ny = 0\nstage\n\n"
                 f"for m = 1 to {ny}\nx = 0\nfor n = 1 to {nx}\nstage\n\n"
                 f"sfile = {chip}\n" + "".join(f"draw({s})\n" for s in structure_names)
-                + "\nsfile = numbers_xy\nidraw(nbr_x_, n)\nidraw(nbr_y_, m)\n\n"
+                + f"\nsfile = {numbers_file}\nidraw(nbr_x_, n)\nidraw(nbr_y_, m)\n\n"
                 f"+x = {pitch_x}\nnext n\n+y = {pitch_y}\nnext m\n\nEND\n")
 
 
-def region_jdf(path, chip, numbers, nx, ny, pitch_x, pitch_y, resist=1191):
-    """Job file in the 2024 single-quadrant style: numbers once, chip arrayed nx x ny.
+def dose_ranks(dwells_ns, current_pA, increment, unit_nm=1.0):
+    """ECP's JEOL export rule (reproduces the 2024 HC_TOPO and KPZ jobs exactly): every
+    distinct dwell time becomes a shot rank, ascending; rank 0 = shortest dwell.
+    RESIST = current * dwell_min / (increment * unit)^2 in uC/cm^2 (truncated),
+    MODULAT % = (dwell / dwell_min - 1) * 100 (truncated)."""
+    d = sorted(set(float(v) for v in dwells_ns))
+    step_cm = increment * unit_nm * 1e-7
+    resist = int(current_pA * 1e-12 * d[0] * 1e-9 / step_cm ** 2 * 1e6)
+    return resist, [(k, int((v / d[0] - 1) * 100 + 1e-9)) for k, v in enumerate(d)], d
 
-    RESIST / SHOT / STDCUR are copied from the 2024 EnO wafer jdf and must be
-    checked at the tool. Both .v30 files share the origin (0, 0).
+
+def pat_dwells(*paths):
+    """All dwell times (C lines) and increments (I lines) used in pat files."""
+    dwells, incs = set(), set()
+    for p in paths:
+        for line in open(p):
+            if line.startswith("C "):
+                dwells.add(float(line[2:]))
+            elif line.startswith("I "):
+                incs.add(int(line[2:]))
+    return dwells, incs
+
+
+def job_jdf(path, v30_name, dwells_ns, current_pA=25000, increment=16):
+    """Job file placing one .v30 once (the grid ctl already contains all fields).
+
+    RESIST and the MODULAT shot-rank table follow ECP's JEOL export rule
+    (dose_ranks) for the dwell times used in the pat files. SHOT / STDCUR /
+    CALPRM are copied from the 2024 EnO jobs and must be checked at the tool.
+    ECP's own export may write a jdf too: compare, they must agree.
+    Also writes the matching .sdf.
     """
+    resist, ranks, d = dose_ranks(dwells_ns, current_pA, increment)
+    modulat = ", ".join(f"({k}, {m})" for k, m in ranks)
     with open(path, "w") as f:
-        f.write(f"\nJOB 'EBL', 2 \n\n; Etch and overgrow 2026: {chip} arrayed {nx} x {ny}, pitch {pitch_x} x {pitch_y} um\n"
-                "; .v30 files are exported by ECP from the .ctl files of the same name\n\n"
+        f.write(f"\nJOB 'EBL', 2 \n\n; Etch and overgrow 2026: {v30_name}.v30 (exported by ECP, File -> Export -> JEOL)\n"
+                f"; shot ranks = dwell times {', '.join(f'{v:g}' for v in d)} ns at {current_pA} pA, I {increment}\n\n"
                 "PATH MINI \n"
-                "  ARRAY (0, 1, 0) / (0, 1, 0) \n    ASSIGN P(1) -> ( (*,*), SHOT01) \n  AEND \n\n"
-                f"  ARRAY (0, {nx}, {pitch_x}) / (0, {ny}, {pitch_y}) \n    ASSIGN P(2) -> ( (*,*), SHOT02) \n  AEND \n"
+                "  ARRAY (0, 1, 0) / (0, 1, 0) \n    ASSIGN P(1) -> ( (*,*), SHOT01) \n  AEND \n"
                 "PEND \n\nLAYER 1 \n\n"
-                f"P(1) '{numbers}.v30' (0, 0)\nP(2) '{chip}.v30' (0, 0)\n\n"
-                "SHOT01: MODULAT ((0, 0)) \nSHOT02: MODULAT ((0, 0)) \n\n"
+                f"P(1) '{v30_name}.v30' (0, 0)\n\n"
+                f"SHOT01: MODULAT ({modulat}) \n\n"
                 f"SHOT A, 4 \n\nRESIST {resist}\n\nSTDCUR 2 \n\nEND \n")
-    sdf = path[:-4] + ".sdf"
     name = os.path.splitext(os.path.basename(path))[0]
-    with open(sdf, "w") as f:
+    with open(path[:-4] + ".sdf", "w") as f:
         f.write(f"\nMAGAZIN 'TEP' \n\nMTRL STKR \n\n#5 \n%4A \n\nJDF '{name}', 1\nACC 100 \n"
                 "CALPRM 'TEP_60um_2nA' \nDEFMODE 2 \nOFFSET (0, 0) \n\nEND 5 \n")
 
@@ -589,5 +608,8 @@ def preview(path, groups, title="", xlim=None, ylim=None, dpi=200):
     fig.tight_layout()
     fig.savefig(path, dpi=dpi)
     plt.close(fig)
+
+
+
 
 

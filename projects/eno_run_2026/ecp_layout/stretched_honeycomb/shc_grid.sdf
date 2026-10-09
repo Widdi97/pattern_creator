@@ -6,7 +6,7 @@ MTRL STKR
 #5 
 %4A 
 
-JDF 'shc_region', 1
+JDF 'shc_grid', 1
 ACC 100 
 CALPRM 'TEP_60um_2nA' 
 DEFMODE 2 

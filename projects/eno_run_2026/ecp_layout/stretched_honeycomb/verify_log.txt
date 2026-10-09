@@ -1,0 +1,23 @@
+﻿== geometry vs gpe_v3_optimise.py construction
+   1 v1p100_s000    pillars 1118, matched 1118, centre error rms  1.1 / max  2.2 nm | d_eq  2049.4 (target 2050.0) | inter cc  2254.0 (GPE  2255.0) | intra cc  2255.6 (GPE  2255.0)
+   2 v1p133_s000    pillars 1032, matched 1032, centre error rms  0.8 / max  1.4 nm | d_eq  2049.1 (target 2050.0) | inter cc  2323.1 (GPE  2323.3) | intra cc  2323.5 (GPE  2323.3)
+   3 v1p167_s000    pillars 1032, matched 1032, centre error rms  1.8 / max  3.0 nm | d_eq  2049.7 (target 2050.0) | inter cc  2391.4 (GPE  2391.7) | intra cc  2391.8 (GPE  2391.7)
+   4 v1p200_s000    pillars 1032, matched 1032, centre error rms  1.4 / max  2.4 nm | d_eq  2049.2 (target 2050.0) | inter cc  2458.3 (GPE  2460.0) | intra cc  2461.8 (GPE  2460.0)
+   5 v1p100_s080    pillars 1118, matched 1118, centre error rms  1.0 / max  1.8 nm | d_eq  2049.9 (target 2050.0) | inter cc  2095.9 (GPE  2095.0) | intra cc  2335.1 (GPE  2335.0)
+   6 v1p133_s080    pillars 1032, matched 1032, centre error rms  1.3 / max  2.6 nm | d_eq  2049.4 (target 2050.0) | inter cc  2162.3 (GPE  2163.3) | intra cc  2403.8 (GPE  2403.3)
+   7 v1p167_s080    pillars 1032, matched 1032, centre error rms  2.2 / max  4.3 nm | d_eq  2049.5 (target 2050.0) | inter cc  2229.0 (GPE  2231.7) | intra cc  2472.3 (GPE  2471.7)
+   8 v1p200_s080    pillars 1032, matched 1032, centre error rms  1.2 / max  2.3 nm | d_eq  2050.0 (target 2050.0) | inter cc  2300.2 (GPE  2300.0) | intra cc  2539.8 (GPE  2540.0)
+   9 v1p100_s110    gap   -15.0 nm -> 566 merged dimers, area per dimer / (2 pi r^2) = 0.9990 (overlap lens removed)
+  10 v1p133_s110    pillars 1032, matched 1032, centre error rms  1.3 / max  2.4 nm | d_eq  2049.3 (target 2050.0) | inter cc  2103.5 (GPE  2103.3) | intra cc  2432.9 (GPE  2433.3)
+  11 v1p167_s110    pillars 1032, matched 1032, centre error rms  2.0 / max  3.6 nm | d_eq  2049.7 (target 2050.0) | inter cc  2172.1 (GPE  2171.7) | intra cc  2502.1 (GPE  2501.7)
+  12 v1p200_s110    pillars 1032, matched 1032, centre error rms  1.2 / max  2.3 nm | d_eq  2049.9 (target 2050.0) | inter cc  2240.9 (GPE  2240.0) | intra cc  2569.4 (GPE  2570.0)
+  13 v1p100_s140    gap   -75.0 nm -> 566 merged dimers, area per dimer / (2 pi r^2) = 0.9946 (overlap lens removed)
+  14 v1p133_s140    gap    -6.7 nm -> 523 merged dimers, area per dimer / (2 pi r^2) = 0.9992 (overlap lens removed)
+  15 v1p167_s140    pillars 1032, matched 1032, centre error rms  1.9 / max  3.5 nm | d_eq  2049.3 (target 2050.0) | inter cc  2110.9 (GPE  2111.7) | intra cc  2531.6 (GPE  2531.7)
+  16 v1p200_s140    pillars 1032, matched 1032, centre error rms  1.1 / max  2.1 nm | d_eq  2049.5 (target 2050.0) | inter cc  2180.2 (GPE  2180.0) | intra cc  2599.8 (GPE  2600.0)
+  worst centre deviation over all separated-pillar lattices: 4.3 nm
+== file consistency (shc_grid.ctl, shc_field.pat, numbers pat, shc_grid.jdf)
+  shc_grid.ctl: 59 draws per field, pat structures not drawn [], draws not in pat [], duplicate draws 0, ends with END True
+  empty structures in pat: []
+  grid 3 x 2 at 550 x 550 um; sfiles ['shc_field', 'numbers_shc']; number structures needed 5, missing []
+  shc_grid.jdf places: ['shc_grid.v30']

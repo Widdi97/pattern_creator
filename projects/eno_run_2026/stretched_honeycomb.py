@@ -1,10 +1,11 @@
-"""EnO run 2026: stretched honeycomb (Kekule) lattices for pump-blueshift-induced
+﻿"""EnO run 2026: stretched honeycomb (Kekule) lattices for pump-blueshift-induced
 edge states (tep_polariton_gpe_code/.../EnO_run_2026/adiabatic_topology_blueshift).
 
 One write field per chip, modelled on the 2024 KPZ tight-binding field
 (projects/etch_and_overgrow_kpz/pattern_generation_kzp_tb): periodic lattices
 written with ECP D-line repetition, all devices inside one field (one stage
-operation per chip), chip x/y numbers from numbers_xy.pat (separate ctl), and
+operation per field), field x/y index labels from numbers_xy.pat drawn by the same
+grid ctl (shc_grid.ctl: field + labels at every grid position), and
 the 2024 molecule overlap series including its 50 x 50 um planar mesa.
 
 Geometry convention (gpe_v3.py:80-90): a = d*v, a_latt = 3a; six pillars per
@@ -23,13 +24,12 @@ Lattices are built exactly like the 2024 KPZ tight-binding lattices
 the GPE basis [[circle, 0, 0, r]] x 6 at b_k = (a + s)(cos 60k, sin 60k), which
 finds the smallest rectangular unit cell (a_latt x sqrt(3) a_latt) and writes the
 bulk with D-line repetition plus edge and corner structures (its boundary
-definition), x_size = y_size = 80 um. Touching or overlapping pillars are one
+definition), x_size = y_size = 90 um. Touching or overlapping pillars are one
 union raster inside each cell. eno_tools.lattice_structures closes the top/right
 edge seams (int(A) repetition vs exact A) and trims <= 1 nm double-exposed
 slivers, so no area is exposed twice. Empty edge/corner structures are not written.
 """
 import os
-import shutil
 import sys
 
 import numpy as np
@@ -44,14 +44,14 @@ from generate_pattern import circle  # noqa: E402
 SYSTEM = "kek"
 CHIP = "shc_field"
 PIXEL = 25           # Lattice max_step_size (user: 25 nm is sufficient)
-LATTICE_NM = 80_000  # Lattice x_size = y_size (user: 80 x 80 um)
+LATTICE_NM = 90_000  # Lattice x_size = y_size (user: ~90 x 90 um, 4 x 4 in one write field)
 
 D_PILLAR = 2050.0                         # nm, all lattices (user)
 V_VALUES = np.linspace(1.1, 1.2, 4)       # x direction of the grid
 S_VALUES = (0.0, 80.0, 110.0, 140.0)      # nm, y direction of the grid
 
-REGION_UM = 27_000  # placeholder array for the jdf; copies are set manually at the tool
-STREET_UM = 50
+GRID_NX, GRID_NY = 3, 2  # field copies in shc_grid.ctl (user adjusts; keep small for ECP checks)
+STREET_UM = 50           # free space between neighbouring fields (pitch = 500 + 50 um)
 
 
 def exposed(points, rects):
@@ -100,34 +100,75 @@ def lattice(name, d, v, s):
                        "pump_apothem_sim_um": round(0.97 * 2.7 / 2 * a_latt / 1e3, 3)}}
 
 
-def grid_rows():
-    """One group per stretch row (each group starts a new row): x = v, y = s."""
-    rows = []
-    for s in S_VALUES:
-        rows.append((SYSTEM, [lattice(f"v{v:.3f}_s{int(s):03d}".replace(".", "p"), D_PILLAR, v, s)
-                              for v in V_VALUES]))
-    return rows
+# Explicit field arrangement (nm), like the fixed lattice grid of the 2024 KPZ field
+# (user sketch 2026-10-09): left column from the top: 2024 overlap dimers, 2024
+# 50 um mesa, chip x/y numbers + arrows; 4 x 4 lattice grid right of it
+# (columns = v, rows = s, top row s = 0).
+LEFT_X0 = 10_000
+GRID_X0, COL_PITCH = 75_000, 103_000
+GRID_TOP, ROW_PITCH = 490_000, 118_000
+NUMBERS_SHIFT = (-10_000, 230_000)  # numbers_xy.pat glyphs (x 20-52, y 0-60 um) -> x 10-42, y 230-290 um
 
 
-def overlap_series():
-    """2024 molecule overlap series + 50 x 50 um mesa, copied verbatim (translated only)."""
-    rects = read_pat(os.path.join(HERE, "inputs", "other_patterns_kpz_tb_2024.pat"), expand=False)["overlap_series"]
-    rects = rects - np.array([rects[:, 0].min(), rects[:, 1].min()] * 2)
-    return {"name": "overlap_series_2024", "structures": [("", rects, None)],
-            "params": {"note": "2024 KPZ field overlap_series: dimers d 1.8 / 2.1 um, v 0.4-1.3, "
-                               "plus 50 x 50 um planar mesa"}}
+def place(dev, x_left, y_top, label):
+    """Put the device bbox top-left at (x_left, y_top); its number label below it."""
+    bx1, by1, bx2, by2 = T.dev_bbox(dev)
+    dev = dict(dev, system=dev.get("system", SYSTEM), label=label,
+               pos=(int(round(x_left - bx1)), int(round(y_top - by2))),
+               label_pos=(x_left, y_top - (by2 - by1) - T.LABEL_GAP_NM - T.LABEL_NM))
+    return dev
 
 
-def direction_arrows():
-    """2024 KPZ arrow_right / arrow_up (verbatim rects), placed right of the chip
-    x/y index labels of numbers_xy.pat (nbr_x_: x 20-52 um, y 35-60 um; nbr_y_: y 0-25 um).
-    Fixed position in the reserved corner, no device number."""
+def reference_structures():
+    """2024 KPZ overlap series split into its dimer block and its 50 x 50 um mesa
+    (verbatim rects, translated only), plus arrow_right / arrow_up placed right of
+    the shifted field x / y index labels."""
     pat = read_pat(os.path.join(HERE, "inputs", "other_patterns_kpz_tb_2024.pat"), expand=False)
-    right = pat["arrow_right"] + np.array([19_875, 2_375] * 2)  # -> x 56.0-71.75 um, centred on nbr_x_
-    up = pat["arrow_up"] + np.array([16_875, 2_500] * 2)        # -> x 58.0-64.0 um, centred on nbr_y_
-    return {"name": "arrows", "system": "ref", "pos": (0, 0),
-            "structures": [("right", right, None), ("up", up, None)],
-            "params": {"note": "2024 arrow_right (next to field x index) and arrow_up (next to field y index)"}}
+    ov = pat["overlap_series"]
+    dimers = ov[ov[:, 2] <= 130_000]
+    mesa = ov[ov[:, 0] >= 140_000]
+    if len(dimers) + len(mesa) != len(ov):
+        raise RuntimeError("overlap_series split lost rectangles")
+    dimer_dev = {"name": "overlap_dimers_2024", "system": "ref", "structures": [("", dimers, None)],
+                 "params": {"note": "2024 KPZ overlap_series dimers: d 1.8 / 2.1 um, v 0.4-1.3"}}
+    mesa_dev = {"name": "mesa_50um_2024", "system": "ref", "structures": [("", mesa, None)],
+                "params": {"note": "2024 KPZ overlap_series 50 x 50 um planar mesa"}}
+    # nbr_x_: y 35-60 um, nbr_y_: y 0-25 um, both right-aligned at x 52 um (+ NUMBERS_SHIFT);
+    # arrows start 4 / 6 um right of the digits and are centred on them
+    nx_, ny_ = NUMBERS_SHIFT
+    right = pat["arrow_right"] + np.array([nx_ + 19_875, ny_ + 2_375] * 2)  # x 46.0-61.75 um
+    up = pat["arrow_up"] + np.array([nx_ + 16_875, ny_ + 2_500] * 2)        # x 48.0-54.0 um
+    arrows = {"name": "arrows", "system": "ref", "pos": (0, 0),
+              "structures": [("right", right, None), ("up", up, None)],
+              "params": {"note": "2024 arrow_right (next to field x index) and arrow_up (next to field y index)"}}
+    return dimer_dev, mesa_dev, arrows
+
+
+def shifted_numbers(src, dst, dx, dy):
+    """numbers_xy.pat (2024 chip x/y labels, 'P 0, x1, y1, x2, y2') shifted by (dx, dy) nm."""
+    out = []
+    for line in open(src):
+        if line.startswith("P 0,"):
+            c = [int(v) for v in line[2:].split(",")]
+            line = f"P 0, {c[1] + dx}, {c[2] + dy}, {c[3] + dx}, {c[4] + dy}\n"
+        out.append(line)
+    with open(dst, "w") as f:
+        f.write(f"; numbers_xy.pat of the 2024 EnO layout, shifted by ({dx}, {dy}) nm (stretched_honeycomb.py)\n")
+        f.write("".join(out))
+
+
+def field_layout():
+    devs, label = [], 1
+    for row, s in enumerate(S_VALUES):
+        for col, v in enumerate(V_VALUES):
+            dev = lattice(f"v{v:.3f}_s{int(s):03d}".replace(".", "p"), D_PILLAR, v, s)
+            devs.append(place(dev, GRID_X0 + col * COL_PITCH, GRID_TOP - row * ROW_PITCH, str(label)))
+            label += 1
+    dimers, mesa, arrows = reference_structures()
+    devs.append(place(dimers, LEFT_X0, GRID_TOP, None))  # no device numbers on references (user)
+    devs.append(place(mesa, LEFT_X0, GRID_TOP - 75_000, None))
+    devs.append(arrows)
+    return devs
 
 
 HEADER = [
@@ -143,26 +184,24 @@ HEADER = [
 
 if __name__ == "__main__":
     out = os.path.join(HERE, "ecp_layout", "stretched_honeycomb")
-    fields, height_nm = T.pack_compact(grid_rows() + [("ref", [overlap_series()])])
-    if len(fields) != 1:
-        raise RuntimeError("layout must fit into one write field (one stage operation per chip)")
-    arrows = direction_arrows()
-    r = np.concatenate([s[1] for s in arrows["structures"]])
-    if r[:, 2].max() > T.RESERVED_NM[2] or r[:, 3].max() > T.RESERVED_NM[3]:
-        raise RuntimeError("arrows leave the reserved number corner")
-    fields[0].append(arrows)
-    info = T.write_chip(out, CHIP, fields, HEADER)
-    shutil.copy(os.path.join(HERE, "inputs", "numbers_xy.pat"), os.path.join(out, "numbers_xy.pat"))
-    pitch_x = int(np.ceil((info["width_um"] + STREET_UM) / 10) * 10)
-    pitch_y = int(np.ceil((height_nm / 1000 + STREET_UM) / 10) * 10)
-    nx, ny = min(REGION_UM // pitch_x, 98), min(REGION_UM // pitch_y, 98)
-    T.numbers_ctl(os.path.join(out, "shc_numbers.ctl"), "stretched honeycomb region", nx, ny, pitch_x, pitch_y)
-    T.region_jdf(os.path.join(out, "shc_region.jdf"), CHIP, "shc_numbers", nx, ny, pitch_x, pitch_y)
-    names = [ln[5:-2] for ln in open(os.path.join(out, f"{CHIP}.ctl")) if ln.startswith("draw(")]
-    T.grid_ctl(os.path.join(out, "shc_grid_test.ctl"), CHIP, names, 3, 2, pitch_x, pitch_y)
-    print(f"{CHIP}: {len(info['devices'])} devices in one write field, chip {info['width_um']:.0f} x "
-          f"{height_nm / 1000:.0f} um, placeholder array {nx} x {ny} at {pitch_x} x {pitch_y} um")
+    info = T.write_chip(out, CHIP, [field_layout()], HEADER, write_ctl=False,
+                         numbers_box=(NUMBERS_SHIFT[0] + 20_000, NUMBERS_SHIFT[1],
+                                      NUMBERS_SHIFT[0] + 52_000, NUMBERS_SHIFT[1] + 60_000))
+    shifted_numbers(os.path.join(HERE, "inputs", "numbers_xy.pat"), os.path.join(out, "numbers_shc.pat"),
+                    *NUMBERS_SHIFT)
+    pitch = int(T.FIELD_NM / 1000 + STREET_UM)
+    T.grid_ctl(os.path.join(out, "shc_grid.ctl"), CHIP, info["structures"][0], GRID_NX, GRID_NY, pitch, pitch,
+               header=HEADER, numbers_file="numbers_shc")
+    dwells, incs = T.pat_dwells(os.path.join(out, f"{CHIP}.pat"), os.path.join(out, "numbers_shc.pat"))
+    if len(incs) != 1:
+        raise RuntimeError(f"mixed increments {incs}: RESIST/MODULAT rule needs one increment")
+    T.job_jdf(os.path.join(out, "shc_grid.jdf"), "shc_grid", dwells, increment=incs.pop())
+    print(f"{CHIP}: {len(info['devices'])} devices in one 500 um write field; shc_grid.ctl: "
+          f"{GRID_NX} x {GRID_NY} fields at {pitch} um pitch")
     for r in info["devices"]:
         print(f"  {r['label']:>3} {r['structure']:<32} {r['width_um']:5.1f} x {r['height_um']:5.1f} um  "
               f"cells {r.get('unit_cells', ''):>5}  v {r.get('v_a_over_d', ''):>6} s {r.get('s_nm', ''):>6} "
               f"gap {r.get('inter_gap_nm', ''):>6}")
+
+
+

@@ -1,0 +1,25 @@
+
+JOB 'EBL', 2 
+
+; Etch and overgrow 2026: shc_grid.v30 (exported by ECP, File -> Export -> JEOL)
+; shot ranks = dwell times 100, 122 ns at 25000 pA, I 16
+
+PATH MINI 
+  ARRAY (0, 1, 0) / (0, 1, 0) 
+    ASSIGN P(1) -> ( (*,*), SHOT01) 
+  AEND 
+PEND 
+
+LAYER 1 
+
+P(1) 'shc_grid.v30' (0, 0)
+
+SHOT01: MODULAT ((0, 0), (1, 22)) 
+
+SHOT A, 4 
+
+RESIST 976
+
+STDCUR 2 
+
+END 

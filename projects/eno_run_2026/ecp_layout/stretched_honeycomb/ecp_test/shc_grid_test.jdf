@@ -1,0 +1,30 @@
+
+JOB/W 'SHC_GRID_TEST', 3, 70M 
+
+; Pattern converted from file: C:/Users/siw60xm/Documents/Promotion/Code/pattern_creator/projects/eno_run_2026/ecp_layout/stretched_honeycomb/ecp_test/shc_grid_test.ctl
+; EBL-System: JBX 8100 FS 
+; Field size: 1000 µm
+; Clock: 125 MHz 
+
+PATH TEST01 
+  ARRAY (0, 1, 0) / (0, 1, 0) 
+    ASSIGN P(1) -> ( (*,*), SHOT01) 
+  AEND 
+PEND 
+
+LAYER 1 
+
+P(1) 'shc_grid_test.v30'
+
+SHOT01: MODULAT ((0, 0), (1, 121.00)) 
+
+EOS 3, 'TEP_table' 
+OBJAPT 6 
+RESTYP POSI, 'PMMA950(1000uC/cm2)' 
+RESIST 976.56, 9765.63, A
+
+SHOT A, 10
+
+STDCUR 25.00
+
+END 

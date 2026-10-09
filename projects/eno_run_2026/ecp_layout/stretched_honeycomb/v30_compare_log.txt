@@ -1,0 +1,9 @@
+﻿v30: 6 text blocks, ID says 6; decompacted rects 6388149 (ID record: 6388149)
+global offset v30 -> ctl coordinates: [250000 250000] nm (chip size (2100000, 1550000))
+field (x=1, y=1): v30 rects 1064688, expected 1064688, missing 0, extra 0, shot ranks {0: 1064684, 1: 4} -> IDENTICAL
+field (x=2, y=1): v30 rects 1064691, expected 1064691, missing 0, extra 0, shot ranks {0: 1064684, 1: 7} -> IDENTICAL
+field (x=3, y=1): v30 rects 1064691, expected 1064691, missing 0, extra 0, shot ranks {0: 1064684, 1: 7} -> IDENTICAL
+field (x=1, y=2): v30 rects 1064691, expected 1064691, missing 0, extra 0, shot ranks {0: 1064684, 1: 7} -> IDENTICAL
+field (x=2, y=2): v30 rects 1064694, expected 1064694, missing 0, extra 0, shot ranks {0: 1064684, 1: 10} -> IDENTICAL
+field (x=3, y=2): v30 rects 1064694, expected 1064694, missing 0, extra 0, shot ranks {0: 1064684, 1: 10} -> IDENTICAL
+RESULT: v30 geometry identical to ctl/pat
