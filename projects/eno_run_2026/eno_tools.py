@@ -230,7 +230,7 @@ def centre(shapes):
 
 # ------------------------------------------------------------- chip layout
 FIELD_PITCH_UM = 520                  # stage step between write fields of one chip
-RESERVED_NM = (0, 0, 70_000, 70_000)  # field 0 corner kept free for numbers_xy.pat
+RESERVED_NM = (0, 0, 80_000, 70_000)  # field 0 corner: numbers_xy.pat labels + direction arrows
 LABEL_NM = 8_000                      # device label height
 LABEL_GAP_NM = 3_000                  # gap between device and its label
 
@@ -468,10 +468,11 @@ def write_chip(out_dir, chip, fields, header, current_pA=25000):
                 expanded.append(full)
             expanded = np.concatenate(expanded)
             groups.append((expanded, "k"))
-            lab_all.append(label_rects(dev["label"], *dev["label_pos"], LABEL_NM))
+            if dev.get("label"):  # fixed markers (e.g. arrows) carry no device number
+                lab_all.append(label_rects(dev["label"], *dev["label_pos"], LABEL_NM))
             x1, y1 = expanded[:, :2].min(0)
             x2, y2 = expanded[:, 2:].max(0)
-            rows.append({"chip": chip, "label": dev["label"], "field": k, "system": dev["system"],
+            rows.append({"chip": chip, "label": dev.get("label", ""), "field": k, "system": dev["system"],
                          "structure": base, "n_structures": len(parts), "x_centre_um": (x1 + x2) / 2e3,
                          "y_centre_um": (y1 + y2) / 2e3, "width_um": (x2 - x1) / 1e3,
                          "height_um": (y2 - y1) / 1e3, "n_rects_written": sum(len(p[1]) for p in parts),
@@ -525,7 +526,24 @@ def numbers_ctl(path, title, nx, ny, pitch_x, pitch_y):
                 "current = 25000\n\norigin = 0, 0\nx = 0\ny = 0\nstage\n\nsfile = numbers_xy\n\n"
                 f"for m = 1 to {ny}\nx = 0\nfor n = 1 to {nx}\nstage\n\n"
                 "idraw(nbr_x_, n)\nidraw(nbr_y_, m)\n\n"
-                f"+x = {pitch_x}\nnext n\n+y = {pitch_y}\nnext m\n")
+                f"+x = {pitch_x}\nnext n\n+y = {pitch_y}\nnext m\n\nEND\n")
+
+
+def grid_ctl(path, chip, structure_names, nx, ny, pitch_x, pitch_y, title=""):
+    """Preview/test ctl: the chip field nx x ny times with its x/y numbers (numbers_xy.pat).
+
+    Same loop as the numbers ctl, but every position also draws all chip
+    structures, so field layout and numbering can be checked together in ECP.
+    For production use the jdf ARRAY (chip.v30) plus the numbers ctl instead.
+    """
+    with open(path, "w") as f:
+        f.write(f"; Etch and overgrow 2026, TEST grid {nx} x {ny} of {chip} with field numbers {title}\n"
+                f"; pitch {pitch_x} x {pitch_y} um (same as the jdf ARRAY); keep nx, ny small (ECP gets slow)\n\n"
+                "current = 25000\n\norigin = 0, 0\nx = 0\ny = 0\nstage\n\n"
+                f"for m = 1 to {ny}\nx = 0\nfor n = 1 to {nx}\nstage\n\n"
+                f"sfile = {chip}\n" + "".join(f"draw({s})\n" for s in structure_names)
+                + "\nsfile = numbers_xy\nidraw(nbr_x_, n)\nidraw(nbr_y_, m)\n\n"
+                f"+x = {pitch_x}\nnext n\n+y = {pitch_y}\nnext m\n\nEND\n")
 
 
 def region_jdf(path, chip, numbers, nx, ny, pitch_x, pitch_y, resist=1191):
