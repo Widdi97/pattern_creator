@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "scope": "Requested dimer-ratio increment changed from 0.10 to 0.05. Lattice geometry and placement, isolated pillars, the 36 um reference and their labels preserved.",
+  "expected_dimer_ratios": [
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0,
+    1.05,
+    1.1,
+    1.15,
+    1.2,
+    1.25,
+    1.3
+  ],
+  "dimer_diameter_nm": 1800,
+  "expected_diameters_nm": [
+    600,
+    1000,
+    1500,
+    2000,
+    3000,
+    4000,
+    6000
+  ],
+  "reference_diameter_nm": 36000,
+  "sets": {
+    "A": {
+      "previous_pat_sha256": "cdd06a31a33598e01371bdc8285d4c2c19e24129d9633ce95459f86eab058f04",
+      "updated_pat_sha256": "7a5d8f5ed96f080e5bf8cd536bc2e6136b2cfe7ec4244618228fe3d405e7ef24",
+      "lattice_and_label_blocks_identical": 80,
+      "reference_and_diameter_blocks_identical": 16,
+      "lattice_device_records_identical": true,
+      "pat_definitions": 118,
+      "ctl_unique_draws": 118,
+      "stage_positions": 1,
+      "calibration_rows": 19,
+      "calibration_csv_exact_requested_values": true,
+      "dimer_pat_bounds_exact_requested_dimensions": true,
+      "calibration_bbox_nm": [
+        210000,
+        200000,
+        289345,
+        296000
+      ],
+      "minimum_pairwise_calibration_bbox_clearance_nm": 1000.0,
+      "closest_bbox_pair": [
+        "A_cal_16",
+        "A_cal_16_label"
+      ],
+      "tile_boundary_clearance_nm": 1500,
+      "minimum_calibration_to_lattice_or_label_bbox_clearance_nm": 9001.0,
+      "closest_lattice_bbox_pair": [
+        "A_cal_23_label",
+        "A7"
+      ],
+      "calibration_gds_bboxes_match_pat": true,
+      "pat_gds_xor_area_nm2_from_generator": 0,
+      "gds_sha256": "8764d1be762fd5c66867b8800367cc6e32177a1156c48596727c5de060eb1201",
+      "ctl_sha256": "592ff2d3b72dbd356e8158489c338f8fe73b3948cb8b8d4192c6044121a86d69",
+      "calibration_csv_sha256": "180f57cf9ae52412d46bb0526445383f8afe052e9a4e2244b5ad240d3637827e",
+      "validation_report_sha256": "62bb8c05cd17fa205c1c1ed19a24e1a0efd0d1dbc7ba7bdc4072c4386b7a3a26"
+    },
+    "B": {
+      "previous_pat_sha256": "21966767049f00d83c45f2b254337c1ded38c4cef964ede748ca38a4dbfa2baf",
+      "updated_pat_sha256": "6743d800d12a43a3ebe76b72e0461d87c9d99d0ae3969caa8951c275678cd582",
+      "lattice_and_label_blocks_identical": 80,
+      "reference_and_diameter_blocks_identical": 16,
+      "lattice_device_records_identical": true,
+      "pat_definitions": 118,
+      "ctl_unique_draws": 118,
+      "stage_positions": 1,
+      "calibration_rows": 19,
+      "calibration_csv_exact_requested_values": true,
+      "dimer_pat_bounds_exact_requested_dimensions": true,
+      "calibration_bbox_nm": [
+        210000,
+        200000,
+        289345,
+        296000
+      ],
+      "minimum_pairwise_calibration_bbox_clearance_nm": 1000.0,
+      "closest_bbox_pair": [
+        "B_cal_16",
+        "B_cal_16_label"
+      ],
+      "tile_boundary_clearance_nm": 1500,
+      "minimum_calibration_to_lattice_or_label_bbox_clearance_nm": 8800.0,
+      "closest_lattice_bbox_pair": [
+        "B_cal_23_label",
+        "B7"
+      ],
+      "calibration_gds_bboxes_match_pat": true,
+      "pat_gds_xor_area_nm2_from_generator": 0,
+      "gds_sha256": "6760617e06ac8d75f7e34641493814ece236c11e7b5289f35e74de6d43dd799d",
+      "ctl_sha256": "1a329962b83d34848a0c5d0426b79c0b30dd982c673c9b83b4a13e7e4883fce3",
+      "calibration_csv_sha256": "5239d57a1edda453fcc367099aa747259ef0ffa5b55279916a6e17e8e233677e",
+      "validation_report_sha256": "f04f530aaf96cf5146f4d83195e25f192a3513571b1636c4cb607cbf3d809d3c"
+    },
+    "C": {
+      "previous_pat_sha256": "d3231c8c996d66796398861d7255dfa9f52261f8238309326cadee85e32c42ad",
+      "updated_pat_sha256": "f006ad1c0344375d2fb3c15db1cc85cb5eab7d1e15d86b76bd7ee52c77260d79",
+      "lattice_and_label_blocks_identical": 80,
+      "reference_and_diameter_blocks_identical": 16,
+      "lattice_device_records_identical": true,
+      "pat_definitions": 118,
+      "ctl_unique_draws": 118,
+      "stage_positions": 1,
+      "calibration_rows": 19,
+      "calibration_csv_exact_requested_values": true,
+      "dimer_pat_bounds_exact_requested_dimensions": true,
+      "calibration_bbox_nm": [
+        210000,
+        200000,
+        289345,
+        296000
+      ],
+      "minimum_pairwise_calibration_bbox_clearance_nm": 1000.0,
+      "closest_bbox_pair": [
+        "C_cal_16",
+        "C_cal_16_label"
+      ],
+      "tile_boundary_clearance_nm": 1500,
+      "minimum_calibration_to_lattice_or_label_bbox_clearance_nm": 9405.0,
+      "closest_lattice_bbox_pair": [
+        "C_cal_23_label",
+        "C7"
+      ],
+      "calibration_gds_bboxes_match_pat": true,
+      "pat_gds_xor_area_nm2_from_generator": 0,
+      "gds_sha256": "d44d8bb4cdc88159a2e93680072d8b25912860f59be7b41a907c331921e5dec7",
+      "ctl_sha256": "3fbb1159aab4da4f37751f96b92f99e4a0dc6ecc2aa137f981a6f44893630a54",
+      "calibration_csv_sha256": "3c1608b2f49ab4ee86e82450a7f1fb82b50c204f156f65a144ff01a295a87b83",
+      "validation_report_sha256": "25babd908eefc59288619f394c9bc2e01f2ebddd55f44ed432330d2f21e5362c"
+    }
+  },
+  "manifest_file_hashes_verified": 25,
+  "clearance_note": "Bounding-box separation is a conservative lower bound on physical geometry clearance. Overlap between the two constituent dimer circles is intentional and unioned before export.",
+  "readback_note": "Independent review checks the saved GDS calibration cell bounds against PAT rectangles. Full-field PAT/GDS XOR and area results are taken from the freshly generated validation reports; that expensive check was not duplicated.",
+  "v30_status": "Pending native ECP export; this revision does not fabricate V30 files."
+}

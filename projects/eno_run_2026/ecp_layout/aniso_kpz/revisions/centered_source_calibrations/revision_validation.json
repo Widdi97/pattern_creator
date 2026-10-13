@@ -1,0 +1,125 @@
+{
+  "A": {
+    "preserved_definitions": 80,
+    "added_definitions": 30,
+    "translations_nm": {
+      "A1": [
+        80900,
+        -9400
+      ],
+      "A2": [
+        60040,
+        -9020
+      ],
+      "A3": [
+        40540,
+        -9310
+      ],
+      "A4": [
+        -279785,
+        -118580
+      ],
+      "A5": [
+        280525,
+        51163
+      ],
+      "A6": [
+        -39155,
+        -58551
+      ],
+      "A7": [
+        -59296,
+        -59001
+      ],
+      "A8": [
+        -79460,
+        -59040
+      ]
+    },
+    "stage_positions": 1,
+    "previous_pat_sha256": "00b241ded30b63670125eef36c0eae0b7ee51dec94174e912c09f17357cc2f46",
+    "new_pat_sha256": "98898a713375ddf8555ee82f382deed4fb80fb917f5b20aa8b4f3f22e1572cae"
+  },
+  "B": {
+    "preserved_definitions": 80,
+    "added_definitions": 30,
+    "translations_nm": {
+      "B1": [
+        80900,
+        -9400
+      ],
+      "B2": [
+        60900,
+        -9310
+      ],
+      "B3": [
+        40540,
+        -9310
+      ],
+      "B4": [
+        -279567,
+        -118955
+      ],
+      "B5": [
+        280525,
+        51163
+      ],
+      "B6": [
+        -39155,
+        -58551
+      ],
+      "B7": [
+        -59400,
+        -58800
+      ],
+      "B8": [
+        -79190,
+        -59310
+      ]
+    },
+    "stage_positions": 1,
+    "previous_pat_sha256": "97d1241b16038f1de1fe9766b66008bace184f1e63fe714719afaa18db1ba7ae",
+    "new_pat_sha256": "2e8ef25a07c0baf0130e120c375e7f65a769b7c40fe0ef20aa9495e6b6601bab"
+  },
+  "C": {
+    "preserved_definitions": 80,
+    "added_definitions": 30,
+    "translations_nm": {
+      "C1": [
+        80040,
+        -8540
+      ],
+      "C2": [
+        60200,
+        -8540
+      ],
+      "C3": [
+        40200,
+        -9020
+      ],
+      "C4": [
+        -279835,
+        -119197
+      ],
+      "C5": [
+        280549,
+        50859
+      ],
+      "C6": [
+        -39589,
+        -58985
+      ],
+      "C7": [
+        -59690,
+        -59405
+      ],
+      "C8": [
+        -79800,
+        -58700
+      ]
+    },
+    "stage_positions": 1,
+    "previous_pat_sha256": "ca4badf6751119c951aa7290300249ff29c3d29c67a8a33505615ee89bc36308",
+    "new_pat_sha256": "65b5251bf9e5eff0d9213d75684b7f38b228f572a377c8ea130bceb6d9f2ed6e"
+  }
+}

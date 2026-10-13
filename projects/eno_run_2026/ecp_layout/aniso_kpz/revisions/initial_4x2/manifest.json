@@ -1,0 +1,46 @@
+{
+  "source_sha256": "488175b16fd591d965f3beb7c15a270313b535d95fb12c443077852b7237af3c",
+  "sets": [
+    "A",
+    "B",
+    "C"
+  ],
+  "current_pA": 25000,
+  "increment_nm": 16,
+  "dwell_ns": 100,
+  "geometry_max_raster_nm": 5,
+  "device_bbox_limit_nm": 90000,
+  "field_size_nm": 500000,
+  "field_copies_per_set": 1,
+  "finite_boundary": "Nx by Ny whole mesas; exterior rounded caps; midplane component partitions",
+  "geometry_validation_passed": true,
+  "v30_status": "pending native ECP export",
+  "files": {
+    "set_a.ctl": "bbd963e9f9f2fda4d7a1c43a4298c0d9ced562d2f34131ad6be5f8d040326251",
+    "set_a.gds": "a2fb2ed33089f965a312e73a05cc653ec8557bb97a9f1a203e851cbf175e76ea",
+    "set_a.pat": "00b241ded30b63670125eef36c0eae0b7ee51dec94174e912c09f17357cc2f46",
+    "set_a_devices.csv": "7c5f9e2ac630d7519f4b6a1c7033466dcf1c06f3d83999a647483d8c6158815d",
+    "set_a_preview.png": "e41b80b5458ef5d3c9a0d714827d6cff5e8324cd415d4a23131ff07f81f60844",
+    "set_a_validation.json": "6e6200f3506ebd63eabcdaf1426785797633f2a590dd1183c069450e9c1d9beb",
+    "set_b.ctl": "4c38439d9ea35a996ad99e2b53452ba470417edb1b99391ce90763421f9c23a7",
+    "set_b.gds": "fcbefdc349d61655052f3fa0ebeccd8a9e48dcd3b9357f4cfb21d5687c13cf70",
+    "set_b.pat": "97d1241b16038f1de1fe9766b66008bace184f1e63fe714719afaa18db1ba7ae",
+    "set_b_devices.csv": "23de8fabf09a20a02803a9012c504e0c18c7a759f5ccafcc4504cabf8702e296",
+    "set_b_preview.png": "cff4e00d7ec3a8b4282854bb2d3ab401a9679c81a5b863d543aad89259b7e269",
+    "set_b_validation.json": "60eb818acd13869440063c1ebc92cba105786d83d6a08a6d72f2185fead6767e",
+    "set_c.ctl": "1556df79e684852d01021849dfe65d66244d4fec0330736a870477183850f339",
+    "set_c.gds": "44f9f760c2052488cacb5d87c3a26c804a169537f0d17c2569872a6e5bc00c4a",
+    "set_c.pat": "ca4badf6751119c951aa7290300249ff29c3d29c67a8a33505615ee89bc36308",
+    "set_c_devices.csv": "7dafa3c31b62eda7c184fb2aee425570c586580e72946e774322055e21df36e5",
+    "set_c_preview.png": "f9240b2c2e4a8ed6346a6032eb93886138dba83c6c6372c71fe5e512eed2a03d",
+    "set_c_validation.json": "c22618e01ae7f0b816868fbbd26d08298ebb0b8dd58d433d6bcf42b3356b6982",
+    "geometry_catalog.json": "ce74b8776afcce8a7c596c1c2d613142f5706a481466131e45531f6f0ca25ea7"
+  },
+  "qualified_for_exposure": false,
+  "software_versions": {
+    "gdstk": "1.0.1",
+    "klayout": "0.30.10",
+    "numpy": "1.26.2"
+  },
+  "tests_passed": 11
+}

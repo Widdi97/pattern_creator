@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "scope": "Requested isolated-diameter and dimer-ratio calibration update; lattice geometry, labels, positions and repetitions preserved.",
+  "expected_diameters_nm": [
+    600,
+    1000,
+    1500,
+    2000,
+    3000,
+    4000,
+    6000
+  ],
+  "expected_dimer_ratios": [
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3
+  ],
+  "dimer_diameter_nm": 1800,
+  "reference_diameter_nm": 36000,
+  "sets": {
+    "A": {
+      "previous_pat_sha256": "98898a713375ddf8555ee82f382deed4fb80fb917f5b20aa8b4f3f22e1572cae",
+      "updated_pat_sha256": "cdd06a31a33598e01371bdc8285d4c2c19e24129d9633ce95459f86eab058f04",
+      "lattice_and_label_blocks_identical": 80,
+      "lattice_device_records_identical": true,
+      "pat_definitions": 108,
+      "ctl_unique_draws": 108,
+      "stage_positions": 1,
+      "calibration_rows": 14,
+      "calibration_csv_exact_requested_values": true,
+      "calibration_bbox_nm": [
+        210880,
+        215000,
+        289570,
+        296000
+      ],
+      "minimum_pairwise_calibration_bbox_clearance_nm": 1000.0,
+      "closest_bbox_pair": [
+        "A_cal_16",
+        "A_cal_16_label"
+      ],
+      "tile_boundary_clearance_nm": 5430,
+      "pat_gds_xor_area_nm2": 0,
+      "gds_sha256": "fce6390fa8a0b499f1ec77acfba771250903259d6f44bc887dae8f017038126c",
+      "ctl_sha256": "c1f8a9e38964b60e59ccbe96758b7188846605f5d6eed02ac3ad89945bb8ab19",
+      "calibration_csv_sha256": "a0b26b1f60e6ce896e33502937049d4b3cdc66cb67e82ab7e21538920729533a"
+    },
+    "B": {
+      "previous_pat_sha256": "2e8ef25a07c0baf0130e120c375e7f65a769b7c40fe0ef20aa9495e6b6601bab",
+      "updated_pat_sha256": "21966767049f00d83c45f2b254337c1ded38c4cef964ede748ca38a4dbfa2baf",
+      "lattice_and_label_blocks_identical": 80,
+      "lattice_device_records_identical": true,
+      "pat_definitions": 108,
+      "ctl_unique_draws": 108,
+      "stage_positions": 1,
+      "calibration_rows": 14,
+      "calibration_csv_exact_requested_values": true,
+      "calibration_bbox_nm": [
+        210880,
+        215000,
+        289570,
+        296000
+      ],
+      "minimum_pairwise_calibration_bbox_clearance_nm": 1000.0,
+      "closest_bbox_pair": [
+        "B_cal_16",
+        "B_cal_16_label"
+      ],
+      "tile_boundary_clearance_nm": 5430,
+      "pat_gds_xor_area_nm2": 0,
+      "gds_sha256": "07257aa0cca0165e3ead361056037e47c266226cc8c47b75e192fc3ebfbee8dd",
+      "ctl_sha256": "447980349eb9139c1f6ce45c3e6c28335cfa0d5b616b7aa2fc12bc020848cf86",
+      "calibration_csv_sha256": "7733663965ab53dc9e1c7658b812f82ef70e184b21eb355882dc55024a9b3f92"
+    },
+    "C": {
+      "previous_pat_sha256": "65b5251bf9e5eff0d9213d75684b7f38b228f572a377c8ea130bceb6d9f2ed6e",
+      "updated_pat_sha256": "d3231c8c996d66796398861d7255dfa9f52261f8238309326cadee85e32c42ad",
+      "lattice_and_label_blocks_identical": 80,
+      "lattice_device_records_identical": true,
+      "pat_definitions": 108,
+      "ctl_unique_draws": 108,
+      "stage_positions": 1,
+      "calibration_rows": 14,
+      "calibration_csv_exact_requested_values": true,
+      "calibration_bbox_nm": [
+        210880,
+        215000,
+        289570,
+        296000
+      ],
+      "minimum_pairwise_calibration_bbox_clearance_nm": 1000.0,
+      "closest_bbox_pair": [
+        "C_cal_16",
+        "C_cal_16_label"
+      ],
+      "tile_boundary_clearance_nm": 5430,
+      "pat_gds_xor_area_nm2": 0,
+      "gds_sha256": "33399566fe9ee486efcc05899c5413df7de04912cd97854504f5944e72635738",
+      "ctl_sha256": "72899d65f5d84908dcc28dc4a26ceb66e7dae30ca3d08d05363129f28267642e",
+      "calibration_csv_sha256": "685feba8ef92e4c34b6f3623d7a25a4c6f5b88ba172cc88cf8c941fb4a77b8bf"
+    }
+  },
+  "clearance_note": "Bounding-box separation is a conservative lower bound on physical geometry clearance; intra-dimer overlap is intentional and unioned before export.",
+  "device_csv_note": "All device-record fields and values are unchanged; regenerated CSV column ordering differs from the preceding revision.",
+  "v30_status": "Pending native ECP export; no V30 fabricated by this revision."
+}

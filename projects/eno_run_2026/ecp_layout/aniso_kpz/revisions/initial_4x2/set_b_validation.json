@@ -1,0 +1,1599 @@
+{
+  "set": "B",
+  "top_cell": "KPZ_SET_B",
+  "devices": [
+    {
+      "label": "B1",
+      "geometry_id": "r0900_ax2160_ay2160_e1000_phi000",
+      "nx": 41,
+      "ny": 41,
+      "ax_nm": 2160,
+      "ay_nm": 2160,
+      "major_semiaxis_nm": 900.0,
+      "minor_semiaxis_nm": 900.0,
+      "phi_deg": 0,
+      "source_gap_x_nm": 360.0000000000001,
+      "source_gap_y_nm": 360.0000000000001,
+      "components": 1681,
+      "xmin_nm": 25000,
+      "ymin_nm": 331800,
+      "xmax_nm": 113200,
+      "ymax_nm": 420000,
+      "written_gap_x_nm": 360,
+      "written_gap_y_nm": 360
+    },
+    {
+      "label": "B2",
+      "geometry_id": "r0900_ax2160_ay2340_e1000_phi000",
+      "nx": 41,
+      "ny": 38,
+      "ax_nm": 2160,
+      "ay_nm": 2340,
+      "major_semiaxis_nm": 900.0,
+      "minor_semiaxis_nm": 900.0,
+      "phi_deg": 0,
+      "source_gap_x_nm": 360.0000000000001,
+      "source_gap_y_nm": 540.0000000000002,
+      "components": 1558,
+      "xmin_nm": 145000,
+      "ymin_nm": 331620,
+      "xmax_nm": 233200,
+      "ymax_nm": 420000,
+      "written_gap_x_nm": 360,
+      "written_gap_y_nm": 540
+    },
+    {
+      "label": "B3",
+      "geometry_id": "r0900_ax1980_ay2340_e1000_phi000",
+      "nx": 45,
+      "ny": 38,
+      "ax_nm": 1980,
+      "ay_nm": 2340,
+      "major_semiaxis_nm": 900.0,
+      "minor_semiaxis_nm": 900.0,
+      "phi_deg": 0,
+      "source_gap_x_nm": 180.00000000000017,
+      "source_gap_y_nm": 540.0000000000002,
+      "components": 1710,
+      "xmin_nm": 265000,
+      "ymin_nm": 331620,
+      "xmax_nm": 353920,
+      "ymax_nm": 420000,
+      "written_gap_x_nm": 180,
+      "written_gap_y_nm": 540
+    },
+    {
+      "label": "B4",
+      "geometry_id": "r0900_ax1980_ay1620_e1250_phi000",
+      "nx": 45,
+      "ny": 55,
+      "ax_nm": 1980,
+      "ay_nm": 1620,
+      "major_semiaxis_nm": 1006.2305898749055,
+      "minor_semiaxis_nm": 804.9844718999243,
+      "phi_deg": 0,
+      "source_gap_x_nm": -32.46117974981089,
+      "source_gap_y_nm": 10.031056200151545,
+      "components": 55,
+      "xmin_nm": 385000,
+      "ymin_nm": 330910,
+      "xmax_nm": 474134,
+      "ymax_nm": 420000,
+      "written_gap_x_nm": 0,
+      "written_gap_y_nm": 10
+    },
+    {
+      "label": "B5",
+      "geometry_id": "r0900_ax1620_ay1980_e1500_phi090",
+      "nx": 55,
+      "ny": 45,
+      "ax_nm": 1620,
+      "ay_nm": 1980,
+      "major_semiaxis_nm": 1102.2703842524302,
+      "minor_semiaxis_nm": 734.8469228349536,
+      "phi_deg": 90,
+      "source_gap_x_nm": 150.30615433009297,
+      "source_gap_y_nm": -224.54076850486015,
+      "components": 55,
+      "xmin_nm": 25000,
+      "ymin_nm": 160674,
+      "xmax_nm": 113950,
+      "ymax_nm": 250000,
+      "written_gap_x_nm": 150,
+      "written_gap_y_nm": 0
+    },
+    {
+      "label": "B6",
+      "geometry_id": "r0900_ax1800_ay1800_e1125_phi000",
+      "nx": 49,
+      "ny": 50,
+      "ax_nm": 1800,
+      "ay_nm": 1800,
+      "major_semiaxis_nm": 954.594154601839,
+      "minor_semiaxis_nm": 848.5281374238572,
+      "phi_deg": 0,
+      "source_gap_x_nm": -109.18830920367806,
+      "source_gap_y_nm": 102.94372515228578,
+      "components": 50,
+      "xmin_nm": 145000,
+      "ymin_nm": 160102,
+      "xmax_nm": 233310,
+      "ymax_nm": 250000,
+      "written_gap_x_nm": 0,
+      "written_gap_y_nm": 100
+    },
+    {
+      "label": "B7",
+      "geometry_id": "r1500_ax3300_ay2700_e1000_phi000",
+      "nx": 27,
+      "ny": 33,
+      "ax_nm": 3300,
+      "ay_nm": 2700,
+      "major_semiaxis_nm": 1500.0,
+      "minor_semiaxis_nm": 1500.0,
+      "phi_deg": 0,
+      "source_gap_x_nm": 300.0000000000003,
+      "source_gap_y_nm": -299.99999999999983,
+      "components": 27,
+      "xmin_nm": 265000,
+      "ymin_nm": 160600,
+      "xmax_nm": 353800,
+      "ymax_nm": 250000,
+      "written_gap_x_nm": 300,
+      "written_gap_y_nm": 0
+    },
+    {
+      "label": "B8",
+      "geometry_id": "r0900_ax2340_ay2340_e1000_phi000",
+      "nx": 38,
+      "ny": 38,
+      "ax_nm": 2340,
+      "ay_nm": 2340,
+      "major_semiaxis_nm": 900.0,
+      "minor_semiaxis_nm": 900.0,
+      "phi_deg": 0,
+      "source_gap_x_nm": 540.0000000000002,
+      "source_gap_y_nm": 540.0000000000002,
+      "components": 1444,
+      "xmin_nm": 385000,
+      "ymin_nm": 161620,
+      "xmax_nm": 473380,
+      "ymax_nm": 250000,
+      "written_gap_x_nm": 540,
+      "written_gap_y_nm": 540
+    }
+  ],
+  "dbu_nm": 1,
+  "layer_datatype": [
+    1,
+    0
+  ],
+  "n_structures": 80,
+  "roles_per_device": 9,
+  "summed_pat_area_nm2": 40928091349,
+  "merged_gds_area_nm2": 40928091349,
+  "pat_gds_xor_area_nm2": 0,
+  "connectivity_matches_source": true,
+  "v30_status": "pending native ECP export",
+  "qualified_for_exposure": false,
+  "component_conversion": {
+    "scope": "independent PAT definition library; CTL/stage assembly not applied",
+    "input_scale_assumption": "1 PAT coordinate interpreted as 1 nm based on project Python nm convention; machine field calibration not inferred",
+    "unit_m": 1e-06,
+    "precision_m": 1e-09,
+    "layer": 1,
+    "circle_chord_tolerance_nm": 1.0,
+    "additional_grid_rounding_bound_nm": 0.7071067811865476,
+    "cells": [
+      {
+        "source_name": "B1_bulk",
+        "gds_cell": "B1_bulk",
+        "geometry_cell": "__PAT_MOTIF_0",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2160,
+          39,
+          39
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B1_left",
+        "gds_cell": "B1_left",
+        "geometry_cell": "__PAT_MOTIF_1",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2160,
+          1,
+          39
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B1_right",
+        "gds_cell": "B1_right",
+        "geometry_cell": "__PAT_MOTIF_2",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2160,
+          1,
+          39
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B1_bottom",
+        "gds_cell": "B1_bottom",
+        "geometry_cell": "__PAT_MOTIF_3",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2160,
+          39,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B1_top",
+        "gds_cell": "B1_top",
+        "geometry_cell": "__PAT_MOTIF_4",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2160,
+          39,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B1_bl",
+        "gds_cell": "B1_bl",
+        "geometry_cell": "B1_bl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B1_br",
+        "gds_cell": "B1_br",
+        "geometry_cell": "B1_br",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B1_tl",
+        "gds_cell": "B1_tl",
+        "geometry_cell": "B1_tl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B1_tr",
+        "gds_cell": "B1_tr",
+        "geometry_cell": "B1_tr",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B1_label",
+        "gds_cell": "B1_label",
+        "geometry_cell": "B1_label",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 2
+        },
+        "gds_polygon_count": 2
+      },
+      {
+        "source_name": "B2_bulk",
+        "gds_cell": "B2_bulk",
+        "geometry_cell": "__PAT_MOTIF_10",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2340,
+          39,
+          36
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B2_left",
+        "gds_cell": "B2_left",
+        "geometry_cell": "__PAT_MOTIF_11",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2340,
+          1,
+          36
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B2_right",
+        "gds_cell": "B2_right",
+        "geometry_cell": "__PAT_MOTIF_12",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2340,
+          1,
+          36
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B2_bottom",
+        "gds_cell": "B2_bottom",
+        "geometry_cell": "__PAT_MOTIF_13",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2340,
+          39,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B2_top",
+        "gds_cell": "B2_top",
+        "geometry_cell": "__PAT_MOTIF_14",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2160,
+          2340,
+          39,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B2_bl",
+        "gds_cell": "B2_bl",
+        "geometry_cell": "B2_bl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B2_br",
+        "gds_cell": "B2_br",
+        "geometry_cell": "B2_br",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B2_tl",
+        "gds_cell": "B2_tl",
+        "geometry_cell": "B2_tl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B2_tr",
+        "gds_cell": "B2_tr",
+        "geometry_cell": "B2_tr",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B2_label",
+        "gds_cell": "B2_label",
+        "geometry_cell": "B2_label",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 5
+        },
+        "gds_polygon_count": 5
+      },
+      {
+        "source_name": "B3_bulk",
+        "gds_cell": "B3_bulk",
+        "geometry_cell": "__PAT_MOTIF_20",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          2340,
+          43,
+          36
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B3_left",
+        "gds_cell": "B3_left",
+        "geometry_cell": "__PAT_MOTIF_21",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          2340,
+          1,
+          36
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B3_right",
+        "gds_cell": "B3_right",
+        "geometry_cell": "__PAT_MOTIF_22",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          2340,
+          1,
+          36
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B3_bottom",
+        "gds_cell": "B3_bottom",
+        "geometry_cell": "__PAT_MOTIF_23",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          2340,
+          43,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B3_top",
+        "gds_cell": "B3_top",
+        "geometry_cell": "__PAT_MOTIF_24",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          2340,
+          43,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B3_bl",
+        "gds_cell": "B3_bl",
+        "geometry_cell": "B3_bl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B3_br",
+        "gds_cell": "B3_br",
+        "geometry_cell": "B3_br",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B3_tl",
+        "gds_cell": "B3_tl",
+        "geometry_cell": "B3_tl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B3_tr",
+        "gds_cell": "B3_tr",
+        "geometry_cell": "B3_tr",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B3_label",
+        "gds_cell": "B3_label",
+        "geometry_cell": "B3_label",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 5
+        },
+        "gds_polygon_count": 5
+      },
+      {
+        "source_name": "B4_bulk",
+        "gds_cell": "B4_bulk",
+        "geometry_cell": "__PAT_MOTIF_30",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          1620,
+          43,
+          53
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 203
+        },
+        "gds_polygon_count": 203
+      },
+      {
+        "source_name": "B4_left",
+        "gds_cell": "B4_left",
+        "geometry_cell": "__PAT_MOTIF_31",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          1620,
+          1,
+          53
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 206
+        },
+        "gds_polygon_count": 206
+      },
+      {
+        "source_name": "B4_right",
+        "gds_cell": "B4_right",
+        "geometry_cell": "__PAT_MOTIF_32",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          1620,
+          1,
+          53
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 206
+        },
+        "gds_polygon_count": 206
+      },
+      {
+        "source_name": "B4_bottom",
+        "gds_cell": "B4_bottom",
+        "geometry_cell": "__PAT_MOTIF_33",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          1620,
+          43,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 203
+        },
+        "gds_polygon_count": 203
+      },
+      {
+        "source_name": "B4_top",
+        "gds_cell": "B4_top",
+        "geometry_cell": "__PAT_MOTIF_34",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1980,
+          1620,
+          43,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 203
+        },
+        "gds_polygon_count": 203
+      },
+      {
+        "source_name": "B4_bl",
+        "gds_cell": "B4_bl",
+        "geometry_cell": "B4_bl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 206
+        },
+        "gds_polygon_count": 206
+      },
+      {
+        "source_name": "B4_br",
+        "gds_cell": "B4_br",
+        "geometry_cell": "B4_br",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 206
+        },
+        "gds_polygon_count": 206
+      },
+      {
+        "source_name": "B4_tl",
+        "gds_cell": "B4_tl",
+        "geometry_cell": "B4_tl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 206
+        },
+        "gds_polygon_count": 206
+      },
+      {
+        "source_name": "B4_tr",
+        "gds_cell": "B4_tr",
+        "geometry_cell": "B4_tr",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 206
+        },
+        "gds_polygon_count": 206
+      },
+      {
+        "source_name": "B4_label",
+        "gds_cell": "B4_label",
+        "geometry_cell": "B4_label",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 4
+        },
+        "gds_polygon_count": 4
+      },
+      {
+        "source_name": "B5_bulk",
+        "gds_cell": "B5_bulk",
+        "geometry_cell": "__PAT_MOTIF_40",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1620,
+          1980,
+          53,
+          43
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 161
+        },
+        "gds_polygon_count": 161
+      },
+      {
+        "source_name": "B5_left",
+        "gds_cell": "B5_left",
+        "geometry_cell": "__PAT_MOTIF_41",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1620,
+          1980,
+          1,
+          43
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 161
+        },
+        "gds_polygon_count": 161
+      },
+      {
+        "source_name": "B5_right",
+        "gds_cell": "B5_right",
+        "geometry_cell": "__PAT_MOTIF_42",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1620,
+          1980,
+          1,
+          43
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 161
+        },
+        "gds_polygon_count": 161
+      },
+      {
+        "source_name": "B5_bottom",
+        "gds_cell": "B5_bottom",
+        "geometry_cell": "__PAT_MOTIF_43",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1620,
+          1980,
+          53,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B5_top",
+        "gds_cell": "B5_top",
+        "geometry_cell": "__PAT_MOTIF_44",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1620,
+          1980,
+          53,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B5_bl",
+        "gds_cell": "B5_bl",
+        "geometry_cell": "B5_bl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B5_br",
+        "gds_cell": "B5_br",
+        "geometry_cell": "B5_br",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B5_tl",
+        "gds_cell": "B5_tl",
+        "geometry_cell": "B5_tl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B5_tr",
+        "gds_cell": "B5_tr",
+        "geometry_cell": "B5_tr",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B5_label",
+        "gds_cell": "B5_label",
+        "geometry_cell": "B5_label",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 5
+        },
+        "gds_polygon_count": 5
+      },
+      {
+        "source_name": "B6_bulk",
+        "gds_cell": "B6_bulk",
+        "geometry_cell": "__PAT_MOTIF_50",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1800,
+          1800,
+          47,
+          48
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 189
+        },
+        "gds_polygon_count": 189
+      },
+      {
+        "source_name": "B6_left",
+        "gds_cell": "B6_left",
+        "geometry_cell": "__PAT_MOTIF_51",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1800,
+          1800,
+          1,
+          48
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 200
+        },
+        "gds_polygon_count": 200
+      },
+      {
+        "source_name": "B6_right",
+        "gds_cell": "B6_right",
+        "geometry_cell": "__PAT_MOTIF_52",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1800,
+          1800,
+          1,
+          48
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 200
+        },
+        "gds_polygon_count": 200
+      },
+      {
+        "source_name": "B6_bottom",
+        "gds_cell": "B6_bottom",
+        "geometry_cell": "__PAT_MOTIF_53",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1800,
+          1800,
+          47,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 245
+        },
+        "gds_polygon_count": 245
+      },
+      {
+        "source_name": "B6_top",
+        "gds_cell": "B6_top",
+        "geometry_cell": "__PAT_MOTIF_54",
+        "role_from_name": "unspecified",
+        "repetition": [
+          1800,
+          1800,
+          47,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 245
+        },
+        "gds_polygon_count": 245
+      },
+      {
+        "source_name": "B6_bl",
+        "gds_cell": "B6_bl",
+        "geometry_cell": "B6_bl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 256
+        },
+        "gds_polygon_count": 256
+      },
+      {
+        "source_name": "B6_br",
+        "gds_cell": "B6_br",
+        "geometry_cell": "B6_br",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 256
+        },
+        "gds_polygon_count": 256
+      },
+      {
+        "source_name": "B6_tl",
+        "gds_cell": "B6_tl",
+        "geometry_cell": "B6_tl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 256
+        },
+        "gds_polygon_count": 256
+      },
+      {
+        "source_name": "B6_tr",
+        "gds_cell": "B6_tr",
+        "geometry_cell": "B6_tr",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 256
+        },
+        "gds_polygon_count": 256
+      },
+      {
+        "source_name": "B6_label",
+        "gds_cell": "B6_label",
+        "geometry_cell": "B6_label",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 6
+        },
+        "gds_polygon_count": 6
+      },
+      {
+        "source_name": "B7_bulk",
+        "gds_cell": "B7_bulk",
+        "geometry_cell": "__PAT_MOTIF_60",
+        "role_from_name": "unspecified",
+        "repetition": [
+          3300,
+          2700,
+          25,
+          31
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 291
+        },
+        "gds_polygon_count": 291
+      },
+      {
+        "source_name": "B7_left",
+        "gds_cell": "B7_left",
+        "geometry_cell": "__PAT_MOTIF_61",
+        "role_from_name": "unspecified",
+        "repetition": [
+          3300,
+          2700,
+          1,
+          31
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 291
+        },
+        "gds_polygon_count": 291
+      },
+      {
+        "source_name": "B7_right",
+        "gds_cell": "B7_right",
+        "geometry_cell": "__PAT_MOTIF_62",
+        "role_from_name": "unspecified",
+        "repetition": [
+          3300,
+          2700,
+          1,
+          31
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 291
+        },
+        "gds_polygon_count": 291
+      },
+      {
+        "source_name": "B7_bottom",
+        "gds_cell": "B7_bottom",
+        "geometry_cell": "__PAT_MOTIF_63",
+        "role_from_name": "unspecified",
+        "repetition": [
+          3300,
+          2700,
+          25,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 351
+        },
+        "gds_polygon_count": 351
+      },
+      {
+        "source_name": "B7_top",
+        "gds_cell": "B7_top",
+        "geometry_cell": "__PAT_MOTIF_64",
+        "role_from_name": "unspecified",
+        "repetition": [
+          3300,
+          2700,
+          25,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 351
+        },
+        "gds_polygon_count": 351
+      },
+      {
+        "source_name": "B7_bl",
+        "gds_cell": "B7_bl",
+        "geometry_cell": "B7_bl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 351
+        },
+        "gds_polygon_count": 351
+      },
+      {
+        "source_name": "B7_br",
+        "gds_cell": "B7_br",
+        "geometry_cell": "B7_br",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 351
+        },
+        "gds_polygon_count": 351
+      },
+      {
+        "source_name": "B7_tl",
+        "gds_cell": "B7_tl",
+        "geometry_cell": "B7_tl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 351
+        },
+        "gds_polygon_count": 351
+      },
+      {
+        "source_name": "B7_tr",
+        "gds_cell": "B7_tr",
+        "geometry_cell": "B7_tr",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 351
+        },
+        "gds_polygon_count": 351
+      },
+      {
+        "source_name": "B7_label",
+        "gds_cell": "B7_label",
+        "geometry_cell": "B7_label",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 3
+        },
+        "gds_polygon_count": 3
+      },
+      {
+        "source_name": "B8_bulk",
+        "gds_cell": "B8_bulk",
+        "geometry_cell": "__PAT_MOTIF_70",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2340,
+          2340,
+          36,
+          36
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B8_left",
+        "gds_cell": "B8_left",
+        "geometry_cell": "__PAT_MOTIF_71",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2340,
+          2340,
+          1,
+          36
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B8_right",
+        "gds_cell": "B8_right",
+        "geometry_cell": "__PAT_MOTIF_72",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2340,
+          2340,
+          1,
+          36
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B8_bottom",
+        "gds_cell": "B8_bottom",
+        "geometry_cell": "__PAT_MOTIF_73",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2340,
+          2340,
+          36,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B8_top",
+        "gds_cell": "B8_top",
+        "geometry_cell": "__PAT_MOTIF_74",
+        "role_from_name": "unspecified",
+        "repetition": [
+          2340,
+          2340,
+          36,
+          1
+        ],
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B8_bl",
+        "gds_cell": "B8_bl",
+        "geometry_cell": "B8_bl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B8_br",
+        "gds_cell": "B8_br",
+        "geometry_cell": "B8_br",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B8_tl",
+        "gds_cell": "B8_tl",
+        "geometry_cell": "B8_tl",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B8_tr",
+        "gds_cell": "B8_tr",
+        "geometry_cell": "B8_tr",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 211
+        },
+        "gds_polygon_count": 211
+      },
+      {
+        "source_name": "B8_label",
+        "gds_cell": "B8_label",
+        "geometry_cell": "B8_label",
+        "role_from_name": "unspecified",
+        "repetition": null,
+        "metadata": {
+          "I": 16.0,
+          "C": 100.0
+        },
+        "geometry_counts": {
+          "RECT": 7
+        },
+        "gds_polygon_count": 7
+      }
+    ],
+    "validation": {
+      "reader": "KLayout",
+      "passed": true,
+      "cells": 120,
+      "polygon_coordinate_signatures_checked": 16309,
+      "references_checked": 40
+    },
+    "output_sha256": "a7dc342a0d97a1e788c9827efed7e535bb8ba535292c5df6c51cf5dc6714d39b",
+    "output_bytes": 1051782
+  }
+}

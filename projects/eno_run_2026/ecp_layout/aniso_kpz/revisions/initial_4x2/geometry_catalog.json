@@ -1,0 +1,1490 @@
+{
+  "source_path": "C:\\Users\\jod52fr\\Documents\\PostDoc\\CODING\\tep_polariton_gpe_code\\projects\\full_ab_initio\\EnO_run_2026\\anisotropic_kpz\\lattice_sets_results.txt",
+  "source_sha256": "488175b16fd591d965f3beb7c15a270313b535d95fb12c443077852b7237af3c",
+  "records": [
+    {
+      "geometry_id": "r0900_ax2160_ay2160_e1000_phi000",
+      "memberships": [
+        "A1",
+        "B1"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.9,
+      "minor_semiaxis_um": 0.9,
+      "major_diameter_um": 1.8,
+      "minor_diameter_um": 1.8,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        2.16,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.16
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -1.08,
+        1.08
+      ],
+      "cell_bounds_y_um": [
+        -1.08,
+        1.08
+      ],
+      "laboratory_halfwidth_x_um": 0.9,
+      "laboratory_halfwidth_y_um": 0.9,
+      "signed_axial_gap_x_um": 0.3600000000000001,
+      "signed_axial_gap_y_um": 0.3600000000000001,
+      "normalized_period_x": 1.2,
+      "normalized_period_y": 1.2,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 4.6656,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 29,
+          "ny": 29,
+          "dx_m": 7.448275862068966e-08,
+          "dy_m": 7.448275862068966e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.5456302021403091,
+          "edge_sigma_m": 1.4896551724137933e-07
+        },
+        "check": {
+          "nx": 44,
+          "ny": 44,
+          "dx_m": 4.909090909090912e-08,
+          "dy_m": 4.909090909090912e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.5455191115702479,
+          "edge_sigma_m": 9.818181818181824e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0800_ax1920_ay2080_e1000_phi000",
+      "memberships": [
+        "A2"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.8,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.8,
+      "minor_semiaxis_um": 0.8,
+      "major_diameter_um": 1.6,
+      "minor_diameter_um": 1.6,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        1.92,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.08
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0833333333333335,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.96,
+        0.96
+      ],
+      "cell_bounds_y_um": [
+        -1.04,
+        1.04
+      ],
+      "laboratory_halfwidth_x_um": 0.8,
+      "laboratory_halfwidth_y_um": 0.8,
+      "signed_axial_gap_x_um": 0.31999999999999984,
+      "signed_axial_gap_y_um": 0.48,
+      "normalized_period_x": 1.2,
+      "normalized_period_y": 1.3,
+      "isolated_ellipse_area_um2": 2.0106192982974678,
+      "cell_area_um2": 3.9936,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 26,
+          "ny": 28,
+          "dx_m": 7.38461538461539e-08,
+          "dy_m": 7.42857142857143e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.5036057692307693,
+          "edge_sigma_m": 1.476923076923078e-07
+        },
+        "check": {
+          "nx": 39,
+          "ny": 42,
+          "dx_m": 4.923076923076916e-08,
+          "dy_m": 4.9523809523809604e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.5033577533577533,
+          "edge_sigma_m": 9.846153846153832e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0900_ax1980_ay2340_e1000_phi000",
+      "memberships": [
+        "A3",
+        "B3"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.9,
+      "minor_semiaxis_um": 0.9,
+      "major_diameter_um": 1.8,
+      "minor_diameter_um": 1.8,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        1.9800000000000002,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.3400000000000003
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.1818181818181819,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.9900000000000001,
+        0.9900000000000001
+      ],
+      "cell_bounds_y_um": [
+        -1.1700000000000002,
+        1.1700000000000002
+      ],
+      "laboratory_halfwidth_x_um": 0.9,
+      "laboratory_halfwidth_y_um": 0.9,
+      "signed_axial_gap_x_um": 0.18000000000000016,
+      "signed_axial_gap_y_um": 0.5400000000000003,
+      "normalized_period_x": 1.1,
+      "normalized_period_y": 1.3,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 4.633200000000001,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 27,
+          "ny": 32,
+          "dx_m": 7.33333333333333e-08,
+          "dy_m": 7.312500000000004e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.5492621527777778,
+          "edge_sigma_m": 1.466666666666666e-07
+        },
+        "check": {
+          "nx": 40,
+          "ny": 47,
+          "dx_m": 4.949999999999991e-08,
+          "dy_m": 4.978723404255324e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.5491688829787233,
+          "edge_sigma_m": 9.899999999999981e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r1150_ax2300_ay2300_e1125_phi090",
+      "memberships": [
+        "A4"
+      ],
+      "family": "elliptical",
+      "area_equivalent_radius_um": 1.15,
+      "axis_ratio_major_over_minor": 1.125,
+      "major_semiaxis_um": 1.2197591975467943,
+      "minor_semiaxis_um": 1.0842303978193728,
+      "major_diameter_um": 2.4395183950935886,
+      "minor_diameter_um": 2.1684607956387456,
+      "rotation_deg_ccw": 90,
+      "lattice_a1_um": [
+        2.3,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.3
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -1.15,
+        1.15
+      ],
+      "cell_bounds_y_um": [
+        -1.15,
+        1.15
+      ],
+      "laboratory_halfwidth_x_um": 1.0842303978193728,
+      "laboratory_halfwidth_y_um": 1.2197591975467943,
+      "signed_axial_gap_x_um": 0.13153920436125421,
+      "signed_axial_gap_y_um": -0.13951839509358877,
+      "normalized_period_x": 1.0606601717798212,
+      "normalized_period_y": 0.9428090415820635,
+      "isolated_ellipse_area_um2": 4.1547562843725006,
+      "cell_area_um2": 5.289999999999999,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 31,
+          "ny": 31,
+          "dx_m": 7.419354838709677e-08,
+          "dy_m": 7.419354838709677e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7726326742976066,
+          "edge_sigma_m": 1.4838709677419353e-07
+        },
+        "check": {
+          "nx": 46,
+          "ny": 46,
+          "dx_m": 4.9999999999999945e-08,
+          "dy_m": 4.9999999999999945e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.7725070888468809,
+          "edge_sigma_m": 9.999999999999989e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0900_ax1620_ay1980_e1500_phi090",
+      "memberships": [
+        "A5",
+        "B5"
+      ],
+      "family": "elliptical",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.5,
+      "major_semiaxis_um": 1.1022703842524302,
+      "minor_semiaxis_um": 0.7348469228349536,
+      "major_diameter_um": 2.2045407685048604,
+      "minor_diameter_um": 1.4696938456699071,
+      "rotation_deg_ccw": 90,
+      "lattice_a1_um": [
+        1.62,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        1.9800000000000002
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.2222222222222223,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.81,
+        0.81
+      ],
+      "cell_bounds_y_um": [
+        -0.9900000000000001,
+        0.9900000000000001
+      ],
+      "laboratory_halfwidth_x_um": 0.7348469228349536,
+      "laboratory_halfwidth_y_um": 1.1022703842524302,
+      "signed_axial_gap_x_um": 0.15030615433009298,
+      "signed_axial_gap_y_um": -0.22454076850486016,
+      "normalized_period_x": 1.10227038425243,
+      "normalized_period_y": 0.8981462390204987,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 3.2076000000000007,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 22,
+          "ny": 27,
+          "dx_m": 7.363636363636358e-08,
+          "dy_m": 7.33333333333333e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7630471380471381,
+          "edge_sigma_m": 1.4727272727272715e-07
+        },
+        "check": {
+          "nx": 33,
+          "ny": 40,
+          "dx_m": 4.9090909090909016e-08,
+          "dy_m": 4.949999999999991e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.7628314393939394,
+          "edge_sigma_m": 9.818181818181803e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0900_ax1800_ay1800_e1125_phi000",
+      "memberships": [
+        "A6",
+        "B6"
+      ],
+      "family": "elliptical",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.125,
+      "major_semiaxis_um": 0.954594154601839,
+      "minor_semiaxis_um": 0.8485281374238571,
+      "major_diameter_um": 1.909188309203678,
+      "minor_diameter_um": 1.6970562748477143,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        1.8,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        1.8
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.9,
+        0.9
+      ],
+      "cell_bounds_y_um": [
+        -0.9,
+        0.9
+      ],
+      "laboratory_halfwidth_x_um": 0.954594154601839,
+      "laboratory_halfwidth_y_um": 0.8485281374238571,
+      "signed_axial_gap_x_um": -0.10918830920367806,
+      "signed_axial_gap_y_um": 0.10294372515228578,
+      "normalized_period_x": 0.9428090415820635,
+      "normalized_period_y": 1.0606601717798212,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 3.24,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 24,
+          "ny": 24,
+          "dx_m": 7.500000000000002e-08,
+          "dy_m": 7.500000000000002e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7724609375,
+          "edge_sigma_m": 1.5000000000000005e-07
+        },
+        "check": {
+          "nx": 36,
+          "ny": 36,
+          "dx_m": 5.000000000000005e-08,
+          "dy_m": 5.000000000000005e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.7726658950617284,
+          "edge_sigma_m": 1.000000000000001e-07
+        }
+      }
+    },
+    {
+      "geometry_id": "r1150_ax2530_ay2070_e1250_phi000",
+      "memberships": [
+        "A7"
+      ],
+      "family": "elliptical",
+      "area_equivalent_radius_um": 1.15,
+      "axis_ratio_major_over_minor": 1.25,
+      "major_semiaxis_um": 1.285739087062379,
+      "minor_semiaxis_um": 1.028591269649903,
+      "major_diameter_um": 2.571478174124758,
+      "minor_diameter_um": 2.057182539299806,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        2.53,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.07
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 0.8181818181818182,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -1.265,
+        1.265
+      ],
+      "cell_bounds_y_um": [
+        -1.035,
+        1.035
+      ],
+      "laboratory_halfwidth_x_um": 1.285739087062379,
+      "laboratory_halfwidth_y_um": 1.028591269649903,
+      "signed_axial_gap_x_um": -0.041478174124758294,
+      "signed_axial_gap_y_um": 0.012817460700193628,
+      "normalized_period_x": 0.9838699100999074,
+      "normalized_period_y": 1.0062305898749055,
+      "isolated_ellipse_area_um2": 4.1547562843725006,
+      "cell_area_um2": 5.237099999999999,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 34,
+          "ny": 28,
+          "dx_m": 7.44117647058823e-08,
+          "dy_m": 7.392857142857139e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7915572478991597,
+          "edge_sigma_m": 1.488235294117646e-07
+        },
+        "check": {
+          "nx": 51,
+          "ny": 42,
+          "dx_m": 4.9607843137254797e-08,
+          "dy_m": 4.928571428571433e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.7915499533146592,
+          "edge_sigma_m": 9.921568627450959e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0900_ax1980_ay1980_e1000_phi000",
+      "memberships": [
+        "A8"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.9,
+      "minor_semiaxis_um": 0.9,
+      "major_diameter_um": 1.8,
+      "minor_diameter_um": 1.8,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        1.9800000000000002,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        1.9800000000000002
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.9900000000000001,
+        0.9900000000000001
+      ],
+      "cell_bounds_y_um": [
+        -0.9900000000000001,
+        0.9900000000000001
+      ],
+      "laboratory_halfwidth_x_um": 0.9,
+      "laboratory_halfwidth_y_um": 0.9,
+      "signed_axial_gap_x_um": 0.18000000000000016,
+      "signed_axial_gap_y_um": 0.18000000000000016,
+      "normalized_period_x": 1.1,
+      "normalized_period_y": 1.1,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 3.9204000000000008,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 27,
+          "ny": 27,
+          "dx_m": 7.33333333333333e-08,
+          "dy_m": 7.33333333333333e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.6492626886145405,
+          "edge_sigma_m": 1.466666666666666e-07
+        },
+        "check": {
+          "nx": 40,
+          "ny": 40,
+          "dx_m": 4.949999999999991e-08,
+          "dy_m": 4.949999999999991e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.6487109375,
+          "edge_sigma_m": 9.899999999999981e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0900_ax2160_ay2340_e1000_phi000",
+      "memberships": [
+        "B2"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.9,
+      "minor_semiaxis_um": 0.9,
+      "major_diameter_um": 1.8,
+      "minor_diameter_um": 1.8,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        2.16,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.3400000000000003
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0833333333333335,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -1.08,
+        1.08
+      ],
+      "cell_bounds_y_um": [
+        -1.1700000000000002,
+        1.1700000000000002
+      ],
+      "laboratory_halfwidth_x_um": 0.9,
+      "laboratory_halfwidth_y_um": 0.9,
+      "signed_axial_gap_x_um": 0.3600000000000001,
+      "signed_axial_gap_y_um": 0.5400000000000003,
+      "normalized_period_x": 1.2,
+      "normalized_period_y": 1.3,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 5.054400000000001,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 29,
+          "ny": 32,
+          "dx_m": 7.448275862068966e-08,
+          "dy_m": 7.312500000000004e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.5031654094827587,
+          "edge_sigma_m": 1.4896551724137933e-07
+        },
+        "check": {
+          "nx": 44,
+          "ny": 47,
+          "dx_m": 4.909090909090912e-08,
+          "dy_m": 4.978723404255324e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.503384912959381,
+          "edge_sigma_m": 9.818181818181824e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0900_ax1980_ay1620_e1250_phi000",
+      "memberships": [
+        "B4"
+      ],
+      "family": "elliptical",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.25,
+      "major_semiaxis_um": 1.0062305898749055,
+      "minor_semiaxis_um": 0.8049844718999243,
+      "major_diameter_um": 2.012461179749811,
+      "minor_diameter_um": 1.6099689437998486,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        1.9800000000000002,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        1.62
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 0.8181818181818181,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.9900000000000001,
+        0.9900000000000001
+      ],
+      "cell_bounds_y_um": [
+        -0.81,
+        0.81
+      ],
+      "laboratory_halfwidth_x_um": 1.0062305898749055,
+      "laboratory_halfwidth_y_um": 0.8049844718999243,
+      "signed_axial_gap_x_um": -0.03246117974981089,
+      "signed_axial_gap_y_um": 0.010031056200151545,
+      "normalized_period_x": 0.9838699100999074,
+      "normalized_period_y": 1.0062305898749055,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 3.2076000000000007,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 27,
+          "ny": 22,
+          "dx_m": 7.33333333333333e-08,
+          "dy_m": 7.363636363636358e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7908249158249159,
+          "edge_sigma_m": 1.466666666666666e-07
+        },
+        "check": {
+          "nx": 40,
+          "ny": 33,
+          "dx_m": 4.949999999999991e-08,
+          "dy_m": 4.9090909090909016e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.7912878787878788,
+          "edge_sigma_m": 9.899999999999981e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r1500_ax3300_ay2700_e1000_phi000",
+      "memberships": [
+        "B7"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 1.5,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 1.5,
+      "minor_semiaxis_um": 1.5,
+      "major_diameter_um": 3.0,
+      "minor_diameter_um": 3.0,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        3.3000000000000003,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.7
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 0.8181818181818181,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -1.6500000000000001,
+        1.6500000000000001
+      ],
+      "cell_bounds_y_um": [
+        -1.35,
+        1.35
+      ],
+      "laboratory_halfwidth_x_um": 1.5,
+      "laboratory_halfwidth_y_um": 1.5,
+      "signed_axial_gap_x_um": 0.30000000000000027,
+      "signed_axial_gap_y_um": -0.2999999999999998,
+      "normalized_period_x": 1.1,
+      "normalized_period_y": 0.9,
+      "isolated_ellipse_area_um2": 7.0685834705770345,
+      "cell_area_um2": 8.910000000000002,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 44,
+          "ny": 36,
+          "dx_m": 7.499999999999992e-08,
+          "dy_m": 7.499999999999992e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7638888888888888,
+          "edge_sigma_m": 1.4999999999999983e-07
+        },
+        "check": {
+          "nx": 66,
+          "ny": 54,
+          "dx_m": 4.9999999999999945e-08,
+          "dy_m": 4.9999999999999945e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.7637135241301908,
+          "edge_sigma_m": 9.999999999999989e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0900_ax2340_ay2340_e1000_phi000",
+      "memberships": [
+        "B8"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.9,
+      "minor_semiaxis_um": 0.9,
+      "major_diameter_um": 1.8,
+      "minor_diameter_um": 1.8,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        2.3400000000000003,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.3400000000000003
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -1.1700000000000002,
+        1.1700000000000002
+      ],
+      "cell_bounds_y_um": [
+        -1.1700000000000002,
+        1.1700000000000002
+      ],
+      "laboratory_halfwidth_x_um": 0.9,
+      "laboratory_halfwidth_y_um": 0.9,
+      "signed_axial_gap_x_um": 0.5400000000000003,
+      "signed_axial_gap_y_um": 0.5400000000000003,
+      "normalized_period_x": 1.3,
+      "normalized_period_y": 1.3,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 5.475600000000002,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 32,
+          "ny": 32,
+          "dx_m": 7.312500000000004e-08,
+          "dy_m": 7.312500000000004e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.4647216796875,
+          "edge_sigma_m": 1.4625000000000008e-07
+        },
+        "check": {
+          "nx": 47,
+          "ny": 47,
+          "dx_m": 4.978723404255324e-08,
+          "dy_m": 4.978723404255324e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.46480307831598006,
+          "edge_sigma_m": 9.957446808510647e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0800_ax1920_ay1920_e1000_phi000",
+      "memberships": [
+        "C1"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.8,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.8,
+      "minor_semiaxis_um": 0.8,
+      "major_diameter_um": 1.6,
+      "minor_diameter_um": 1.6,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        1.92,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        1.92
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.96,
+        0.96
+      ],
+      "cell_bounds_y_um": [
+        -0.96,
+        0.96
+      ],
+      "laboratory_halfwidth_x_um": 0.8,
+      "laboratory_halfwidth_y_um": 0.8,
+      "signed_axial_gap_x_um": 0.31999999999999984,
+      "signed_axial_gap_y_um": 0.31999999999999984,
+      "normalized_period_x": 1.2,
+      "normalized_period_y": 1.2,
+      "isolated_ellipse_area_um2": 2.0106192982974678,
+      "cell_area_um2": 3.6864,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 26,
+          "ny": 26,
+          "dx_m": 7.38461538461539e-08,
+          "dy_m": 7.38461538461539e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.5455806213017751,
+          "edge_sigma_m": 1.476923076923078e-07
+        },
+        "check": {
+          "nx": 39,
+          "ny": 39,
+          "dx_m": 4.923076923076916e-08,
+          "dy_m": 4.923076923076916e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.5454470742932281,
+          "edge_sigma_m": 9.846153846153832e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0800_ax1760_ay1920_e1000_phi000",
+      "memberships": [
+        "C2"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.8,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.8,
+      "minor_semiaxis_um": 0.8,
+      "major_diameter_um": 1.6,
+      "minor_diameter_um": 1.6,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        1.7600000000000002,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        1.92
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0909090909090908,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.8800000000000001,
+        0.8800000000000001
+      ],
+      "cell_bounds_y_um": [
+        -0.96,
+        0.96
+      ],
+      "laboratory_halfwidth_x_um": 0.8,
+      "laboratory_halfwidth_y_um": 0.8,
+      "signed_axial_gap_x_um": 0.16000000000000014,
+      "signed_axial_gap_y_um": 0.31999999999999984,
+      "normalized_period_x": 1.1,
+      "normalized_period_y": 1.2,
+      "isolated_ellipse_area_um2": 2.0106192982974678,
+      "cell_area_um2": 3.3792000000000004,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 24,
+          "ny": 26,
+          "dx_m": 7.33333333333333e-08,
+          "dy_m": 7.38461538461539e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.594551282051282,
+          "edge_sigma_m": 1.466666666666666e-07
+        },
+        "check": {
+          "nx": 36,
+          "ny": 39,
+          "dx_m": 4.888888888888887e-08,
+          "dy_m": 4.923076923076916e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.5951299857549858,
+          "edge_sigma_m": 9.777777777777774e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0800_ax1760_ay2080_e1000_phi000",
+      "memberships": [
+        "C3"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.8,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.8,
+      "minor_semiaxis_um": 0.8,
+      "major_diameter_um": 1.6,
+      "minor_diameter_um": 1.6,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        1.7600000000000002,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.08
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.1818181818181817,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.8800000000000001,
+        0.8800000000000001
+      ],
+      "cell_bounds_y_um": [
+        -1.04,
+        1.04
+      ],
+      "laboratory_halfwidth_x_um": 0.8,
+      "laboratory_halfwidth_y_um": 0.8,
+      "signed_axial_gap_x_um": 0.16000000000000014,
+      "signed_axial_gap_y_um": 0.48,
+      "normalized_period_x": 1.1,
+      "normalized_period_y": 1.3,
+      "isolated_ellipse_area_um2": 2.0106192982974678,
+      "cell_area_um2": 3.6608000000000005,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 24,
+          "ny": 28,
+          "dx_m": 7.33333333333333e-08,
+          "dy_m": 7.42857142857143e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.5491071428571429,
+          "edge_sigma_m": 1.466666666666666e-07
+        },
+        "check": {
+          "nx": 36,
+          "ny": 42,
+          "dx_m": 4.888888888888887e-08,
+          "dy_m": 4.9523809523809604e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.5492724867724867,
+          "edge_sigma_m": 9.777777777777774e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0900_ax1800_ay1800_e1500_phi090",
+      "memberships": [
+        "C4"
+      ],
+      "family": "elliptical",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.5,
+      "major_semiaxis_um": 1.1022703842524302,
+      "minor_semiaxis_um": 0.7348469228349536,
+      "major_diameter_um": 2.2045407685048604,
+      "minor_diameter_um": 1.4696938456699071,
+      "rotation_deg_ccw": 90,
+      "lattice_a1_um": [
+        1.8,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        1.8
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.9,
+        0.9
+      ],
+      "cell_bounds_y_um": [
+        -0.9,
+        0.9
+      ],
+      "laboratory_halfwidth_x_um": 0.7348469228349536,
+      "laboratory_halfwidth_y_um": 1.1022703842524302,
+      "signed_axial_gap_x_um": 0.3303061543300929,
+      "signed_axial_gap_y_um": -0.4045407685048603,
+      "normalized_period_x": 1.224744871391589,
+      "normalized_period_y": 0.816496580927726,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 3.24,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 24,
+          "ny": 24,
+          "dx_m": 7.500000000000002e-08,
+          "dy_m": 7.500000000000002e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7134331597222222,
+          "edge_sigma_m": 1.5000000000000005e-07
+        },
+        "check": {
+          "nx": 36,
+          "ny": 36,
+          "dx_m": 5.000000000000005e-08,
+          "dy_m": 5.000000000000005e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.7133969907407407,
+          "edge_sigma_m": 1.000000000000001e-07
+        }
+      }
+    },
+    {
+      "geometry_id": "r1150_ax2070_ay2530_e1375_phi090",
+      "memberships": [
+        "C5"
+      ],
+      "family": "elliptical",
+      "area_equivalent_radius_um": 1.15,
+      "axis_ratio_major_over_minor": 1.375,
+      "major_semiaxis_um": 1.348494530949236,
+      "minor_semiaxis_um": 0.9807232952358079,
+      "major_diameter_um": 2.696989061898472,
+      "minor_diameter_um": 1.9614465904716158,
+      "rotation_deg_ccw": 90,
+      "lattice_a1_um": [
+        2.07,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.53
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.2222222222222223,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -1.035,
+        1.035
+      ],
+      "cell_bounds_y_um": [
+        -1.265,
+        1.265
+      ],
+      "laboratory_halfwidth_x_um": 0.9807232952358079,
+      "laboratory_halfwidth_y_um": 1.348494530949236,
+      "signed_axial_gap_x_um": 0.10855340952838399,
+      "signed_axial_gap_y_um": -0.16698906189847218,
+      "normalized_period_x": 1.0553435459602716,
+      "normalized_period_y": 0.9380831519646858,
+      "isolated_ellipse_area_um2": 4.1547562843725006,
+      "cell_area_um2": 5.237099999999999,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 28,
+          "ny": 34,
+          "dx_m": 7.392857142857139e-08,
+          "dy_m": 7.44117647058823e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7788209033613446,
+          "edge_sigma_m": 1.4785714285714277e-07
+        },
+        "check": {
+          "nx": 42,
+          "ny": 51,
+          "dx_m": 4.928571428571433e-08,
+          "dy_m": 4.9607843137254797e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.7788865546218487,
+          "edge_sigma_m": 9.857142857142866e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0900_ax1620_ay1980_e1125_phi090",
+      "memberships": [
+        "C6"
+      ],
+      "family": "elliptical",
+      "area_equivalent_radius_um": 0.9,
+      "axis_ratio_major_over_minor": 1.125,
+      "major_semiaxis_um": 0.954594154601839,
+      "minor_semiaxis_um": 0.8485281374238571,
+      "major_diameter_um": 1.909188309203678,
+      "minor_diameter_um": 1.6970562748477143,
+      "rotation_deg_ccw": 90,
+      "lattice_a1_um": [
+        1.62,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        1.9800000000000002
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.2222222222222223,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.81,
+        0.81
+      ],
+      "cell_bounds_y_um": [
+        -0.9900000000000001,
+        0.9900000000000001
+      ],
+      "laboratory_halfwidth_x_um": 0.8485281374238571,
+      "laboratory_halfwidth_y_um": 0.954594154601839,
+      "signed_axial_gap_x_um": -0.07705627484771416,
+      "signed_axial_gap_y_um": 0.0708116907963221,
+      "normalized_period_x": 0.954594154601839,
+      "normalized_period_y": 1.03708994574027,
+      "isolated_ellipse_area_um2": 2.5446900494077327,
+      "cell_area_um2": 3.2076000000000007,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 22,
+          "ny": 27,
+          "dx_m": 7.363636363636358e-08,
+          "dy_m": 7.33333333333333e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7843013468013468,
+          "edge_sigma_m": 1.4727272727272715e-07
+        },
+        "check": {
+          "nx": 33,
+          "ny": 40,
+          "dx_m": 4.9090909090909016e-08,
+          "dy_m": 4.949999999999991e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.784185606060606,
+          "edge_sigma_m": 9.818181818181803e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r1150_ax2070_ay2530_e1125_phi000",
+      "memberships": [
+        "C7"
+      ],
+      "family": "elliptical",
+      "area_equivalent_radius_um": 1.15,
+      "axis_ratio_major_over_minor": 1.125,
+      "major_semiaxis_um": 1.2197591975467943,
+      "minor_semiaxis_um": 1.0842303978193728,
+      "major_diameter_um": 2.4395183950935886,
+      "minor_diameter_um": 2.1684607956387456,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        2.07,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        2.53
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.2222222222222223,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -1.035,
+        1.035
+      ],
+      "cell_bounds_y_um": [
+        -1.265,
+        1.265
+      ],
+      "laboratory_halfwidth_x_um": 1.2197591975467943,
+      "laboratory_halfwidth_y_um": 1.0842303978193728,
+      "signed_axial_gap_x_um": -0.36951839509358875,
+      "signed_axial_gap_y_um": 0.3615392043612542,
+      "normalized_period_x": 0.8485281374238571,
+      "normalized_period_y": 1.1667261889578033,
+      "isolated_ellipse_area_um2": 4.1547562843725006,
+      "cell_area_um2": 5.237099999999999,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 28,
+          "ny": 34,
+          "dx_m": 7.392857142857139e-08,
+          "dy_m": 7.44117647058823e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.7385110294117647,
+          "edge_sigma_m": 1.4785714285714277e-07
+        },
+        "check": {
+          "nx": 42,
+          "ny": 51,
+          "dx_m": 4.928571428571433e-08,
+          "dy_m": 4.9607843137254797e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.7386496265172736,
+          "edge_sigma_m": 9.857142857142866e-08
+        }
+      }
+    },
+    {
+      "geometry_id": "r0800_ax1760_ay1760_e1000_phi000",
+      "memberships": [
+        "C8"
+      ],
+      "family": "circular",
+      "area_equivalent_radius_um": 0.8,
+      "axis_ratio_major_over_minor": 1.0,
+      "major_semiaxis_um": 0.8,
+      "minor_semiaxis_um": 0.8,
+      "major_diameter_um": 1.6,
+      "minor_diameter_um": 1.6,
+      "rotation_deg_ccw": 0,
+      "lattice_a1_um": [
+        1.7600000000000002,
+        0.0
+      ],
+      "lattice_a2_um": [
+        0.0,
+        1.7600000000000002
+      ],
+      "lattice_angle_deg": 90.0,
+      "cell_aspect_y_over_x": 1.0,
+      "basis_centers_um": [
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "basis_mesas_per_cell": 1,
+      "cell_bounds_x_um": [
+        -0.8800000000000001,
+        0.8800000000000001
+      ],
+      "cell_bounds_y_um": [
+        -0.8800000000000001,
+        0.8800000000000001
+      ],
+      "laboratory_halfwidth_x_um": 0.8,
+      "laboratory_halfwidth_y_um": 0.8,
+      "signed_axial_gap_x_um": 0.16000000000000014,
+      "signed_axial_gap_y_um": 0.16000000000000014,
+      "normalized_period_x": 1.1,
+      "normalized_period_y": 1.1,
+      "isolated_ellipse_area_um2": 2.0106192982974678,
+      "cell_area_um2": 3.097600000000001,
+      "periodic_axes": [
+        true,
+        true
+      ],
+      "footprint_combination": "Boolean union",
+      "finite_array_counts": null,
+      "physical_etch_height_nm": null,
+      "numerical_grids": {
+        "path": {
+          "nx": 24,
+          "ny": 24,
+          "dx_m": 7.33333333333333e-08,
+          "dy_m": 7.33333333333333e-08,
+          "requested_spacing_nm": 75.0,
+          "covered_cell_fraction": 0.6490885416666666,
+          "edge_sigma_m": 1.466666666666666e-07
+        },
+        "check": {
+          "nx": 36,
+          "ny": 36,
+          "dx_m": 4.888888888888887e-08,
+          "dy_m": 4.888888888888887e-08,
+          "requested_spacing_nm": 50.0,
+          "covered_cell_fraction": 0.6492573302469136,
+          "edge_sigma_m": 9.777777777777774e-08
+        }
+      }
+    }
+  ]
+}
