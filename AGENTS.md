@@ -87,8 +87,11 @@ optimised for different depths. Ask when unsure.
   ~10 nm) away from the bulk. `eno_tools.lattice_structures` moves those edges back and
   trims overlaps (`make_exposure_unique`); do not use `Lattice.pat_str` directly for
   non-integer lattice constants. Its corner structures are placed with an extra `+A_y`
-  offset in `generate_patterns`; in our lattices the corners were empty — if yours are
-  not, check them visually. Empty edge/corner structures are dropped (do not write
+  offset in `generate_patterns`; in the stretched-honeycomb lattices the corners were empty.
+  When they are not (e.g. overlapping-pillar honeycombs, `semenoff_lattice.py`), pass
+  `lattice_structures(..., fix_corner_offset=True)`: otherwise the top corners float one
+  cell above the lattice and the bottom ones are trimmed away inside the side edges
+  (missing quarter pillars). Empty edge/corner structures are dropped (do not write
   empty `D` blocks).
 - **Raster vs. small gaps.** Shapes are rasterised at pixel centres. Gaps below ~2 raster
   steps render inconsistently (some bonds merge, others not). Check pillar counts

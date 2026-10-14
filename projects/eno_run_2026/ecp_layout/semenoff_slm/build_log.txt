@@ -1,0 +1,20 @@
+﻿sem_field: 19 devices in one 500 um write field; sem_grid.ctl: 3 x 2 fields at 550 um pitch
+    1 sem_field_f0_sem_e0p000_v0p900    91.5 x  90.1 um  cells  32x18  eta    0.0 v    0.9 gap  -180.0 neck   784.6
+    2 sem_field_f0_sem_e0p000_v0p950    90.6 x  89.8 um  cells  30x17  eta    0.0 v   0.95 gap   -90.0 neck   562.0
+    3 sem_field_f0_sem_e0p000_v0p980    90.4 x  92.6 um  cells  29x17  eta    0.0 v   0.98 gap   -36.0 neck   358.2
+    4 sem_field_f0_sem_e0p000_v1p050    90.2 x  86.8 um  cells  27x15  eta    0.0 v   1.05 gap    90.0 neck     0.0
+    5 sem_field_f0_sem_e0p150_v0p900    91.7 x  90.1 um  cells  32x18  eta   0.15 v    0.9 gap  -180.0 neck   781.9
+    6 sem_field_f0_sem_e0p150_v0p950    90.8 x  89.1 um  cells  30x17  eta   0.15 v   0.95 gap   -90.0 neck   560.3
+    7 sem_field_f0_sem_e0p150_v0p980    90.5 x  91.9 um  cells  29x17  eta   0.15 v   0.98 gap   -36.0 neck   357.1
+    8 sem_field_f0_sem_e0p150_v1p050    90.3 x  87.0 um  cells  27x15  eta   0.15 v   1.05 gap    90.0 neck     0.0
+    9 sem_field_f0_sem_e0p220_v0p900    91.7 x  89.5 um  cells  32x18  eta   0.22 v    0.9 gap  -180.0 neck   778.7
+   10 sem_field_f0_sem_e0p220_v0p950    90.8 x  89.2 um  cells  30x17  eta   0.22 v   0.95 gap   -90.0 neck   558.3
+   11 sem_field_f0_sem_e0p220_v0p980    90.6 x  91.9 um  cells  29x17  eta   0.22 v   0.98 gap   -36.0 neck   355.9
+   12 sem_field_f0_sem_e0p220_v1p050    90.4 x  87.0 um  cells  27x15  eta   0.22 v   1.05 gap    90.0 neck     0.0
+   13 sem_field_f0_sem_e0p290_v0p900    91.8 x  89.5 um  cells  32x18  eta   0.29 v    0.9 gap  -180.0 neck   774.4
+   14 sem_field_f0_sem_e0p290_v0p950    90.9 x  89.2 um  cells  30x17  eta   0.29 v   0.95 gap   -90.0 neck   555.5
+   15 sem_field_f0_sem_e0p290_v0p980    90.6 x  92.0 um  cells  29x17  eta   0.29 v   0.98 gap   -36.0 neck   354.3
+   16 sem_field_f0_sem_e0p290_v1p050    90.4 x  87.1 um  cells  27x15  eta   0.29 v   1.05 gap    90.0 neck     0.0
+      sem_field_f0_ref_overlap_dimers_2024  49.9 x  50.1 um  cells         eta        v        gap         neck        
+      sem_field_f0_ref_mesa_50um_2024   50.0 x  50.0 um  cells         eta        v        gap         neck        
+      sem_field_f0_ref_arrows           15.8 x  45.9 um  cells         eta        v        gap         neck        

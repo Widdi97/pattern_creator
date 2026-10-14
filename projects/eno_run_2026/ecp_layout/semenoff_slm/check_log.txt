@@ -1,0 +1,25 @@
+﻿double-exposure check: 9485 structure instances, NO overlapping exposure
+sem_field_f0_sem_e0p000_v0p900               structures   9  components     1  max cover 1  d_eq median  85780.2 nm  min  85780.2  max  85780.2
+sem_field_f0_sem_e0p000_v0p950               structures   9  components     1  max cover 1  d_eq median  82324.8 nm  min  82324.8  max  82324.8
+sem_field_f0_sem_e0p000_v0p980               structures   9  components     1  max cover 1  d_eq median  81554.1 nm  min  81554.1  max  81554.1
+sem_field_f0_sem_e0p000_v1p050               structures   9  components  1678  max cover 1  d_eq median   1798.8 nm  min   1766.9  max   1801.9
+sem_field_f0_sem_e0p150_v0p900               structures   9  components     1  max cover 1  d_eq median  85996.2 nm  min  85996.2  max  85996.2
+sem_field_f0_sem_e0p150_v0p950               structures   9  components     1  max cover 1  d_eq median  82065.4 nm  min  82065.4  max  82065.4
+sem_field_f0_sem_e0p150_v0p980               structures   9  components    31  max cover 1  d_eq median   1350.2 nm  min   1345.8  max  80919.6
+sem_field_f0_sem_e0p150_v1p050               structures   9  components  1678  max cover 1  d_eq median   1920.3 nm  min   1636.6  max   1936.4
+sem_field_f0_sem_e0p220_v0p900               structures   9  components     1  max cover 1  d_eq median  85907.5 nm  min  85907.5  max  85907.5
+sem_field_f0_sem_e0p220_v0p950               structures   9  components     1  max cover 1  d_eq median  82414.9 nm  min  82414.9  max  82414.9
+sem_field_f0_sem_e0p220_v0p980               structures   9  components    31  max cover 1  d_eq median   1393.4 nm  min   1389.4  max  81237.9
+sem_field_f0_sem_e0p220_v1p050               structures   9  components  1678  max cover 1  d_eq median   1983.5 nm  min   1572.4  max   1999.5
+sem_field_f0_sem_e0p290_v0p900               structures   9  components     1  max cover 1  d_eq median  86323.9 nm  min  86323.9  max  86323.9
+sem_field_f0_sem_e0p290_v0p950               structures   9  components     1  max cover 1  d_eq median  82758.1 nm  min  82758.1  max  82758.1
+sem_field_f0_sem_e0p290_v0p980               structures   9  components    31  max cover 1  d_eq median   1437.3 nm  min   1433.4  max  81563.6
+sem_field_f0_sem_e0p290_v1p050               structures   9  components  1678  max cover 1  d_eq median   2047.1 nm  min   1509.7  max   2064.9
+sem_field_f0_ref_overlap_dimers_2024         structures   1  components    26  max cover 1  d_eq median   2239.0 nm  min   1797.5  max   2968.3
+sem_field_f0_ref_mesa_50um_2024              structures   1  components     1  max cover 1  d_eq median  56419.0 nm  min  56419.0  max  56419.0
+sem_field_f0_ref_arrows_right                structures   1  components     1  max cover 1  d_eq median   6955.8 nm  min   6955.8  max   6955.8
+sem_field_f0_ref_arrows_up                   structures   1  components     1  max cover 1  d_eq median   6955.8 nm  min   6955.8  max   6955.8
+chip + nbr_x_1 + nbr_y_1: 9487 instances, no overlapping exposure
+chip + nbr_x_8 + nbr_y_98: 9487 instances, no overlapping exposure
+chip + nbr_x_98 + nbr_y_8: 9487 instances, no overlapping exposure
+chip + nbr_x_49 + nbr_y_50: 9487 instances, no overlapping exposure

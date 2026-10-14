@@ -1,0 +1,30 @@
+﻿double-exposure check: 26 structure instances, NO overlapping exposure
+vwg_field_f0_wg_w1p000_l250                  structures   1  components     1  max cover 1  d_eq median  17841.2 nm  min  17841.2  max  17841.2
+vwg_field_f0_wg_w1p000_l350                  structures   1  components     1  max cover 1  d_eq median  21110.0 nm  min  21110.0  max  21110.0
+vwg_field_f0_wg_w1p000_l450                  structures   1  components     1  max cover 1  d_eq median  23936.5 nm  min  23936.5  max  23936.5
+vwg_field_f0_wg_w1p200_l250                  structures   1  components     1  max cover 1  d_eq median  19544.1 nm  min  19544.1  max  19544.1
+vwg_field_f0_wg_w1p200_l350                  structures   1  components     1  max cover 1  d_eq median  23124.9 nm  min  23124.9  max  23124.9
+vwg_field_f0_wg_w1p200_l450                  structures   1  components     1  max cover 1  d_eq median  26221.2 nm  min  26221.2  max  26221.2
+vwg_field_f0_wg_w1p400_l250                  structures   1  components     1  max cover 1  d_eq median  21110.0 nm  min  21110.0  max  21110.0
+vwg_field_f0_wg_w1p400_l350                  structures   1  components     1  max cover 1  d_eq median  24977.7 nm  min  24977.7  max  24977.7
+vwg_field_f0_wg_w1p400_l450                  structures   1  components     1  max cover 1  d_eq median  28322.1 nm  min  28322.1  max  28322.1
+vwg_field_f0_wg_w1p600_l250                  structures   1  components     1  max cover 1  d_eq median  22567.6 nm  min  22567.6  max  22567.6
+vwg_field_f0_wg_w1p600_l350                  structures   1  components     1  max cover 1  d_eq median  26702.3 nm  min  26702.3  max  26702.3
+vwg_field_f0_wg_w1p600_l450                  structures   1  components     1  max cover 1  d_eq median  30277.6 nm  min  30277.6  max  30277.6
+vwg_field_f0_wg_w1p800_l250                  structures   1  components     1  max cover 1  d_eq median  23936.5 nm  min  23936.5  max  23936.5
+vwg_field_f0_wg_w1p800_l350                  structures   1  components     1  max cover 1  d_eq median  28322.1 nm  min  28322.1  max  28322.1
+vwg_field_f0_wg_w1p800_l450                  structures   1  components     1  max cover 1  d_eq median  32114.2 nm  min  32114.2  max  32114.2
+vwg_field_f0_wg_w2p000_l250                  structures   1  components     1  max cover 1  d_eq median  25231.3 nm  min  25231.3  max  25231.3
+vwg_field_f0_wg_w2p000_l350                  structures   1  components     1  max cover 1  d_eq median  29854.1 nm  min  29854.1  max  29854.1
+vwg_field_f0_wg_w2p000_l450                  structures   1  components     1  max cover 1  d_eq median  33851.4 nm  min  33851.4  max  33851.4
+vwg_field_f0_wg_w3p000_l250                  structures   1  components     1  max cover 1  d_eq median  30901.9 nm  min  30901.9  max  30901.9
+vwg_field_f0_wg_w3p000_l350                  structures   1  components     1  max cover 1  d_eq median  36563.7 nm  min  36563.7  max  36563.7
+vwg_field_f0_wg_w3p000_l450                  structures   1  components     1  max cover 1  d_eq median  41459.3 nm  min  41459.3  max  41459.3
+vwg_field_f0_ref_overlap_dimers_2024         structures   1  components    26  max cover 1  d_eq median   2239.0 nm  min   1797.5  max   2968.3
+vwg_field_f0_ref_mesa_50um_2024              structures   1  components     1  max cover 1  d_eq median  56419.0 nm  min  56419.0  max  56419.0
+vwg_field_f0_ref_arrows_right                structures   1  components     1  max cover 1  d_eq median   6955.8 nm  min   6955.8  max   6955.8
+vwg_field_f0_ref_arrows_up                   structures   1  components     1  max cover 1  d_eq median   6955.8 nm  min   6955.8  max   6955.8
+chip + nbr_x_1 + nbr_y_1: 28 instances, no overlapping exposure
+chip + nbr_x_8 + nbr_y_98: 28 instances, no overlapping exposure
+chip + nbr_x_98 + nbr_y_8: 28 instances, no overlapping exposure
+chip + nbr_x_49 + nbr_y_50: 28 instances, no overlapping exposure

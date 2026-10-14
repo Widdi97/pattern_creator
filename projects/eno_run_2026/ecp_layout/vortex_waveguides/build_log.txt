@@ -1,0 +1,25 @@
+﻿vwg_field: 24 devices in one 500 um write field; vwg_grid.ctl: 3 x 2 fields at 550 um pitch
+    1 vwg_field_f0_wg_w1p000_l250            1.000 x 250.000 um  centre (  89.50,  365.00) um
+    2 vwg_field_f0_wg_w1p000_l350            1.000 x 350.000 um  centre ( 108.50,  315.00) um
+    3 vwg_field_f0_wg_w1p000_l450            1.000 x 450.000 um  centre ( 127.50,  265.00) um
+    4 vwg_field_f0_wg_w1p200_l250            1.200 x 250.000 um  centre ( 146.50,  365.00) um
+    5 vwg_field_f0_wg_w1p200_l350            1.200 x 350.000 um  centre ( 165.50,  315.00) um
+    6 vwg_field_f0_wg_w1p200_l450            1.200 x 450.000 um  centre ( 184.50,  265.00) um
+    7 vwg_field_f0_wg_w1p400_l250            1.400 x 250.000 um  centre ( 203.50,  365.00) um
+    8 vwg_field_f0_wg_w1p400_l350            1.400 x 350.000 um  centre ( 222.50,  315.00) um
+    9 vwg_field_f0_wg_w1p400_l450            1.400 x 450.000 um  centre ( 241.50,  265.00) um
+   10 vwg_field_f0_wg_w1p600_l250            1.600 x 250.000 um  centre ( 260.50,  365.00) um
+   11 vwg_field_f0_wg_w1p600_l350            1.600 x 350.000 um  centre ( 279.50,  315.00) um
+   12 vwg_field_f0_wg_w1p600_l450            1.600 x 450.000 um  centre ( 298.50,  265.00) um
+   13 vwg_field_f0_wg_w1p800_l250            1.800 x 250.000 um  centre ( 317.50,  365.00) um
+   14 vwg_field_f0_wg_w1p800_l350            1.800 x 350.000 um  centre ( 336.50,  315.00) um
+   15 vwg_field_f0_wg_w1p800_l450            1.800 x 450.000 um  centre ( 355.50,  265.00) um
+   16 vwg_field_f0_wg_w2p000_l250            2.000 x 250.000 um  centre ( 374.50,  365.00) um
+   17 vwg_field_f0_wg_w2p000_l350            2.000 x 350.000 um  centre ( 393.50,  315.00) um
+   18 vwg_field_f0_wg_w2p000_l450            2.000 x 450.000 um  centre ( 412.50,  265.00) um
+   19 vwg_field_f0_wg_w3p000_l250            3.000 x 250.000 um  centre ( 431.50,  365.00) um
+   20 vwg_field_f0_wg_w3p000_l350            3.000 x 350.000 um  centre ( 450.50,  315.00) um
+   21 vwg_field_f0_wg_w3p000_l450            3.000 x 450.000 um  centre ( 469.50,  265.00) um
+      vwg_field_f0_ref_overlap_dimers_2024  49.850 x  50.124 um  centre (  34.92,  464.94) um
+      vwg_field_f0_ref_mesa_50um_2024       50.000 x  50.000 um  centre (  35.00,  390.00) um
+      vwg_field_f0_ref_arrows               15.750 x  45.875 um  centre (  53.88,  257.56) um

@@ -1,0 +1,10 @@
+﻿semw_field: 9 devices; semw_grid.ctl 3 x 2 at 550 um
+    1 semw_field_f0_dw_chainLL_e0p290     90.9 x  90.5 um  chain LL eta  0.29 pillars  2136 rects 78411
+    2 semw_field_f0_dw_chainSS_e0p290     90.9 x  91.0 um  chain SS eta  0.29 pillars  2136 rects 79554
+    3 semw_field_f0_dw_dimerLL_e0p290     90.9 x  91.0 um  dimer LL eta  0.29 pillars  2136 rects 79006
+    4 semw_field_f0_dw_dimerSS_e0p290     90.9 x  90.5 um  dimer SS eta  0.29 pillars  2136 rects 78559
+    5 semw_field_f0_dw_chainLL_e0p220     90.8 x  90.5 um  chain LL eta  0.22 pillars  2136 rects 77427
+    6 semw_field_f0_dw_chainSS_e0p220     90.8 x  90.9 um  chain SS eta  0.22 pillars  2136 rects 78815
+    7 semw_field_f0_dw_dimerLL_e0p220     90.8 x  90.9 um  dimer LL eta  0.22 pillars  2136 rects 77885
+    8 semw_field_f0_dw_dimerSS_e0p220     90.8 x  90.5 um  dimer SS eta  0.22 pillars  2136 rects 77895
+      semw_field_f0_ref_arrows            15.8 x  45.9 um           eta       pillars       rects 42

@@ -1,0 +1,10 @@
+chip,label,field,system,structure,n_structures,x_centre_um,y_centre_um,width_um,height_um,n_rects_written,raster_nm,wall_left_x_um,wall_left_y_um,wall_right_x_um,wall_right_y_um,family,wall,d_mean_nm,eta_d,v_a_over_dmean,a_nn_nm,d_A_nm,d_B_nm,lattice_const_nm,gap_AB_nm,rows,pillars,wall_y_local_nm,note
+semw_field,1,0,dw,semw_field_f0_dw_chainLL_e0p290,1,120.4625,444.775,90.925,90.45,78411,25,76.03,443.488,166.03,443.488,chain,LL,1800.0,0.29,0.95,1710.0,2061.0,1539.0,2961.81,-90.0,35,2136,43177.5,
+semw_field,2,0,dw,semw_field_f0_dw_chainSS_e0p290,1,223.4625,444.5125,90.925,90.975,79554,25,179.03,443.228,269.03,443.228,chain,SS,1800.0,0.29,0.95,1710.0,2061.0,1539.0,2961.81,-90.0,35,2136,43177.5,
+semw_field,3,0,dw,semw_field_f0_dw_dimerLL_e0p290,1,326.4625,444.5125,90.925,90.975,79006,25,282.03,441.945,372.03,441.945,dimer,LL,1800.0,0.29,0.95,1710.0,2061.0,1539.0,2961.81,-90.0,35,2136,41895.0,
+semw_field,4,0,dw,semw_field_f0_dw_dimerSS_e0p290,1,429.4625,444.775,90.925,90.45,78559,25,385.03,442.205,475.03,442.205,dimer,SS,1800.0,0.29,0.95,1710.0,2061.0,1539.0,2961.81,-90.0,35,2136,41895.0,
+semw_field,5,0,dw,semw_field_f0_dw_chainLL_e0p220,1,120.425,326.7375,90.85,90.525,77427,25,75.999,325.457,165.999,325.457,chain,LL,1800.0,0.22,0.95,1710.0,1998.0,1602.0,2961.81,-90.0,35,2136,43177.5,
+semw_field,6,0,dw,semw_field_f0_dw_chainSS_e0p220,1,223.425,326.5375,90.85,90.925,78815,25,178.999,325.259,268.999,325.259,chain,SS,1800.0,0.22,0.95,1710.0,1998.0,1602.0,2961.81,-90.0,35,2136,43177.5,
+semw_field,7,0,dw,semw_field_f0_dw_dimerLL_e0p220,1,326.425,326.5375,90.85,90.925,77885,25,281.999,323.976,371.999,323.976,dimer,LL,1800.0,0.22,0.95,1710.0,1998.0,1602.0,2961.81,-90.0,35,2136,41895.0,
+semw_field,8,0,dw,semw_field_f0_dw_dimerSS_e0p220,1,429.425,326.7375,90.85,90.525,77895,25,384.999,324.174,474.999,324.174,dimer,SS,1800.0,0.22,0.95,1710.0,1998.0,1602.0,2961.81,-90.0,35,2136,41895.0,
+semw_field,,0,ref,semw_field_f0_ref_arrows,2,53.875,257.5625,15.75,45.875,42,25,,,,,,,,,,,,,,,,,,2024 arrow_right (next to field x index) and arrow_up (next to field y index)

@@ -1,4 +1,4 @@
-"""KLayout/GDS file of the stretched-honeycomb layout.
+"""KLayout/GDS file of the stretched-honeycomb layout (or of any layout written with eno_tools.grid_ctl).
 
 Uses pattern_creator_export (GDS_EXPORT.md): every structure of shc_field.pat and
 numbers_shc.pat becomes a verified GDS cell (exact PAT rectangles, D-line
@@ -9,7 +9,11 @@ script adds assembled top cells with klayout.db:
 and checks that the flattened field area equals the summed PAT rectangle area
 (no double exposure, nothing lost).
 
-usage: python make_gds.py <layout_dir>
+Other layouts: pass their grid ctl name. The field pat is the ctl's first sfile; the output is
+<field>.gds with top cells <FIELD> and <FIELD with FIELD -> GRID>_<nx>X<ny> (for shc_grid.ctl
+exactly the names above).
+
+usage: python make_gds.py <layout_dir> [grid_ctl, default shc_grid.ctl]
 """
 import os
 import re
@@ -27,7 +31,7 @@ from check_pat import read_pat  # noqa: E402
 
 if __name__ == "__main__":
     layout_dir = Path(sys.argv[1])
-    ctl = (layout_dir / "shc_grid.ctl").read_text()
+    ctl = (layout_dir / (sys.argv[2] if len(sys.argv) > 2 else "shc_grid.ctl")).read_text()
     draws = re.findall(r"^draw\((\S+)\)", ctl, flags=re.M)
     sfiles = re.findall(r"^sfile = (\S+)", ctl, flags=re.M)
     nx = int(re.search(r"for n = 1 to (\d+)", ctl).group(1))
@@ -36,8 +40,8 @@ if __name__ == "__main__":
     pitch_y = int(re.search(r"\+y = (\d+)", ctl).group(1))
     field_pat = layout_dir / f"{sfiles[0]}.pat"
     numbers_pat = layout_dir / f"{sfiles[1]}.pat"
-    out = layout_dir / "shc_field.gds"
-    library = out.with_name("shc_field_cells.gds")
+    out = layout_dir / f"{sfiles[0]}.gds"
+    library = out.with_name(f"{sfiles[0]}_cells.gds")
 
     defs = parse_pat(field_pat.read_text(encoding="utf-8")) + parse_pat(numbers_pat.read_text(encoding="utf-8"))
     report = export_pat(defs, library)
@@ -47,11 +51,11 @@ if __name__ == "__main__":
     ly = kdb.Layout()
     ly.read(str(library))
     dbu = ly.dbu  # um per database unit (0.001)
-    field = ly.create_cell("SHC_FIELD")
+    field = ly.create_cell(sfiles[0].upper())
     for name in draws:
         field.insert(kdb.CellInstArray(ly.cell(alias[name]).cell_index(), kdb.Trans()))
 
-    grid = ly.create_cell(f"SHC_GRID_{nx}X{ny}")
+    grid = ly.create_cell(f"{sfiles[0].upper().replace('FIELD', 'GRID')}_{nx}X{ny}")
     for j in range(ny):
         for i in range(nx):
             t = kdb.Trans(int(round(i * pitch_x / dbu)), int(round(j * pitch_y / dbu)))
@@ -70,5 +74,5 @@ if __name__ == "__main__":
         raise RuntimeError("merged GDS area differs from PAT area: overlap or lost geometry")
     ly.write(str(out))
     library.unlink()
-    print(f"wrote {out} ({out.stat().st_size / 1e6:.2f} MB); top cells SHC_FIELD, {grid.name} "
+    print(f"wrote {out} ({out.stat().st_size / 1e6:.2f} MB); top cells {field.name}, {grid.name} "
           f"({nx} x {ny} at {pitch_x} x {pitch_y} um)")

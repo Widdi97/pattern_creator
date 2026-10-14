@@ -1,0 +1,7 @@
+﻿== geometry vs GPE waveguide (one rect W x L per guide)
+  21 guides, 0 mismatches; widths [1000, 1200, 1400, 1600, 1800, 2000, 3000] nm, lengths [250000, 350000, 450000] nm; smallest etched gap to the right neighbour 16.000 um
+== file consistency (vwg_grid.ctl, vwg_field.pat, numbers pat, vwg_grid.jdf)
+  vwg_grid.ctl: 26 draws per field, pat structures not drawn [], draws not in pat [], duplicate draws 0, ends with END True
+  empty structures in pat: []
+  grid 3 x 2 at 550 x 550 um; sfiles ['vwg_field', 'numbers_vwg']; number structures needed 5, missing []
+  vwg_grid.jdf places: ['vwg_grid.v30']

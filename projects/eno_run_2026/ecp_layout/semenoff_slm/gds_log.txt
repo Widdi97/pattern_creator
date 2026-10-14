@@ -1,0 +1,3 @@
+﻿cell library: 347 PAT structures, KLayout validation {'reader': 'KLayout', 'passed': True, 'cells': 427, 'polygon_coordinate_signatures_checked': 12988, 'references_checked': 80}
+field area: PAT rect sum 85732.307 um^2, merged GDS 85732.307 um^2, difference 0 nm^2
+wrote C:\Users\siw60xm\Documents\Promotion\Code\pattern_creator\projects\eno_run_2026\ecp_layout\semenoff_slm\sem_field.gds (0.87 MB); top cells SEM_FIELD, SEM_GRID_3X2 (3 x 2 at 550 x 550 um)

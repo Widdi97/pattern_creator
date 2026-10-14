@@ -301,6 +301,8 @@ def make_exposure_unique(structs):
         cuts = []
         for src, dx, dy in shifts:
             other = rects if src == "self" else done[src][1]
+            if len(other) == 0:  # an earlier structure trimmed away completely (overlapping lattices) cuts nothing
+                continue
             ob = (other[:, 0].min() + dx, other[:, 1].min() + dy, other[:, 2].max() + dx, other[:, 3].max() + dy)
             if ob[0] >= box[2] or ob[2] <= box[0] or ob[1] >= box[3] or ob[3] <= box[1]:
                 continue
@@ -314,11 +316,17 @@ def make_exposure_unique(structs):
     return [(n, r, rep) for n, r, rep in done if len(r)]
 
 
-def lattice_structures(a1, a2, size_x, size_y, step, shapes_with_args, b_vecs):
+def lattice_structures(a1, a2, size_x, size_y, step, shapes_with_args, b_vecs, fix_corner_offset=False):
     """Lattice via pattern_creator's generate_pattern.Lattice (smallest rectangular
     unit cell found automatically, bulk + 4 edges + 4 corners as in the 2024 KPZ
     lattices), parsed into (suffix, rects, repeat) and made exposure-unique.
-    Empty edge/corner structures are dropped. Returns (structures, lattice)."""
+    Empty edge/corner structures are dropped. Returns (structures, lattice).
+
+    fix_corner_offset: generate_pattern.Lattice places the four corner structures one
+    unit cell (A_y) too high (AGENTS.md caveat). With True they are moved down by
+    round(A_y) before the exposure-unique trim, so the corners close the lattice instead
+    of floating above it (top) or being trimmed away inside the side edges (bottom). The
+    default False keeps the previous output bit-identical (stretched_honeycomb.py)."""
     import sys
     root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
     if root not in sys.path:
@@ -347,6 +355,8 @@ def lattice_structures(a1, a2, size_x, size_y, step, shapes_with_args, b_vecs):
     for suffix, rects, rep in structs:
         kx, ky = (int(v) for v in suffix.split("_")[1::2])
         shift = np.array([dx * (kx == 1), dy * (ky == 1)] * 2)
+        if fix_corner_offset and kx != 0 and ky != 0:
+            shift = shift - np.array([0, int(round(ay))] * 2)
         moved.append((suffix, rects + shift, rep))
     order = sorted(moved, key=lambda s: (s[0] != "x_0_y_0", s[0].count("_0") == 0))
     return make_exposure_unique(order), lat

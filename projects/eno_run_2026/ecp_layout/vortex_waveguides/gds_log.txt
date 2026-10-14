@@ -1,0 +1,3 @@
+﻿cell library: 224 PAT structures, KLayout validation {'reader': 'KLayout', 'passed': True, 'cells': 224, 'polygon_coordinate_signatures_checked': 4678, 'references_checked': 0}
+field area: PAT rect sum 15689.921 um^2, merged GDS 15689.921 um^2, difference 0 nm^2
+wrote ecp_layout\vortex_waveguides\vwg_field.gds (0.31 MB); top cells VWG_FIELD, VWG_GRID_3X2 (3 x 2 at 550 x 550 um)

@@ -1,0 +1,3 @@
+﻿cell library: 209 PAT structures, KLayout validation {'reader': 'KLayout', 'passed': True, 'cells': 209, 'polygon_coordinate_signatures_checked': 629447, 'references_checked': 0}
+field area: PAT rect sum 43525.200 um^2, merged GDS 43525.200 um^2, difference 0 nm^2
+wrote C:\Users\siw60xm\Documents\Promotion\Code\pattern_creator\projects\eno_run_2026\ecp_layout\semenoff_walls\semw_field.gds (40.30 MB); top cells SEMW_FIELD, SEMW_GRID_3X2 (3 x 2 at 550 x 550 um)

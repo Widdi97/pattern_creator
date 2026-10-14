@@ -1,0 +1,23 @@
+﻿== geometry vs GPE construction (model_definitions.py)
+   1 e0p000_v0p900    eta 0.000 v 0.900: XOR mismatch  0.84 % of GPE area | A: d_eq err   +0.2 nm, centroid   1.4 nm | B: d_eq err   +1.0 nm, centroid   1.9 nm
+   2 e0p000_v0p950    eta 0.000 v 0.950: XOR mismatch  0.93 % of GPE area | A: d_eq err   +0.6 nm, centroid   1.5 nm | B: d_eq err   -0.0 nm, centroid   0.3 nm
+   3 e0p000_v0p980    eta 0.000 v 0.980: XOR mismatch  1.07 % of GPE area | A: d_eq err   +0.1 nm, centroid   5.3 nm | B: d_eq err   +0.9 nm, centroid   1.6 nm
+   4 e0p000_v1p050    eta 0.000 v 1.050: XOR mismatch  1.37 % of GPE area | A: d_eq err   -3.6 nm, centroid   0.4 nm | B: d_eq err   -0.4 nm, centroid   0.9 nm
+   5 e0p150_v0p900    eta 0.150 v 0.900: XOR mismatch  0.81 % of GPE area | A: d_eq err   -1.4 nm, centroid   1.0 nm | B: d_eq err   +0.3 nm, centroid   1.4 nm
+   6 e0p150_v0p950    eta 0.150 v 0.950: XOR mismatch  0.95 % of GPE area | A: d_eq err   -0.1 nm, centroid   4.2 nm | B: d_eq err   -0.3 nm, centroid   3.9 nm
+   7 e0p150_v0p980    eta 0.150 v 0.980: XOR mismatch  1.08 % of GPE area | A: d_eq err   -0.4 nm, centroid   2.4 nm | B: d_eq err   -2.0 nm, centroid   5.6 nm
+   8 e0p150_v1p050    eta 0.150 v 1.050: XOR mismatch  1.32 % of GPE area | A: d_eq err   -0.2 nm, centroid   0.8 nm | B: d_eq err   +0.2 nm, centroid   1.4 nm
+   9 e0p220_v0p900    eta 0.220 v 0.900: XOR mismatch  0.81 % of GPE area | A: d_eq err   -0.2 nm, centroid   1.1 nm | B: d_eq err   -0.3 nm, centroid   0.5 nm
+  10 e0p220_v0p950    eta 0.220 v 0.950: XOR mismatch  0.95 % of GPE area | A: d_eq err   -0.1 nm, centroid   4.3 nm | B: d_eq err   +1.3 nm, centroid   3.6 nm
+  11 e0p220_v0p980    eta 0.220 v 0.980: XOR mismatch  1.07 % of GPE area | A: d_eq err   -0.1 nm, centroid   3.9 nm | B: d_eq err   -0.8 nm, centroid   6.6 nm
+  12 e0p220_v1p050    eta 0.220 v 1.050: XOR mismatch  1.34 % of GPE area | A: d_eq err   -1.1 nm, centroid   0.6 nm | B: d_eq err   -1.6 nm, centroid   0.5 nm
+  13 e0p290_v0p900    eta 0.290 v 0.900: XOR mismatch  0.79 % of GPE area | A: d_eq err   -1.3 nm, centroid   1.3 nm | B: d_eq err   -0.9 nm, centroid   0.4 nm
+  14 e0p290_v0p950    eta 0.290 v 0.950: XOR mismatch  0.95 % of GPE area | A: d_eq err   -1.5 nm, centroid   3.5 nm | B: d_eq err   -1.0 nm, centroid   0.3 nm
+  15 e0p290_v0p980    eta 0.290 v 0.980: XOR mismatch  1.08 % of GPE area | A: d_eq err   -1.4 nm, centroid   3.5 nm | B: d_eq err   -2.4 nm, centroid   2.6 nm
+  16 e0p290_v1p050    eta 0.290 v 1.050: XOR mismatch  1.34 % of GPE area | A: d_eq err   +1.3 nm, centroid   0.1 nm | B: d_eq err   -0.5 nm, centroid   3.9 nm
+  worst equivalent-diameter error: 3.6 nm
+== file consistency (sem_grid.ctl, sem_field.pat, numbers_sem.pat, sem_grid.jdf)
+  sem_grid.ctl: 149 draws per field, pat structures not drawn [], draws not in pat [], duplicate draws 0, ends with END True
+  empty structures in pat: []
+  grid 3 x 2 at 550 x 550 um; sfiles ['sem_field', 'numbers_sem']; number structures needed 5, missing []
+  sem_grid.jdf places: ['sem_grid.v30']

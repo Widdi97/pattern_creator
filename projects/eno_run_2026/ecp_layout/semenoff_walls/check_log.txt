@@ -1,0 +1,12 @@
+﻿double-exposure check: 11 structure instances, NO overlapping exposure
+semw_field_f0_dw_chainLL_e0p290              structures   1  components     1  max cover 1  d_eq median  83157.4 nm  min  83157.4  max  83157.4
+semw_field_f0_dw_chainSS_e0p290              structures   1  components     2  max cover 1  d_eq median  58884.3 nm  min  58058.1  max  59710.6
+semw_field_f0_dw_dimerLL_e0p290              structures   1  components     1  max cover 1  d_eq median  83559.8 nm  min  83559.8  max  83559.8
+semw_field_f0_dw_dimerSS_e0p290              structures   1  components     2  max cover 1  d_eq median  58612.5 nm  min  56924.5  max  60300.5
+semw_field_f0_dw_chainLL_e0p220              structures   1  components     1  max cover 1  d_eq median  82815.5 nm  min  82815.5  max  82815.5
+semw_field_f0_dw_chainSS_e0p220              structures   1  components     2  max cover 1  d_eq median  58619.3 nm  min  57796.4  max  59442.1
+semw_field_f0_dw_dimerLL_e0p220              structures   1  components     1  max cover 1  d_eq median  83119.3 nm  min  83119.3  max  83119.3
+semw_field_f0_dw_dimerSS_e0p220              structures   1  components     2  max cover 1  d_eq median  58407.1 nm  min  56727.5  max  60086.6
+semw_field_f0_ref_arrows_right               structures   1  components     1  max cover 1  d_eq median   6955.8 nm  min   6955.8  max   6955.8
+semw_field_f0_ref_arrows_up                  structures   1  components     1  max cover 1  d_eq median   6955.8 nm  min   6955.8  max   6955.8
+numbers (all nbr_x/nbr_y glyphs) bounding box (np.int64(10000), np.int64(230000), np.int64(42000), np.int64(290000)) nm; field structures overlapping that box: none -> no double exposure with any field index label (exact bbox test)
