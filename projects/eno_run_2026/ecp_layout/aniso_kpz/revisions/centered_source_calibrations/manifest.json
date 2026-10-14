@@ -1,0 +1,73 @@
+{
+  "source_sha256": "488175b16fd591d965f3beb7c15a270313b535d95fb12c443077852b7237af3c",
+  "sets": [
+    "A",
+    "B",
+    "C"
+  ],
+  "software_versions": {
+    "numpy": "1.26.2",
+    "gdstk": "1.0.1",
+    "klayout": "0.30.10"
+  },
+  "current_pA": 25000,
+  "increment_nm": 16,
+  "dwell_ns": 100,
+  "geometry_max_raster_nm": 5,
+  "device_bbox_limit_nm": 90000,
+  "field_size_nm": 500000,
+  "field_copies_per_set": 1,
+  "placement": "centred 3x3 ring, references in central tile",
+  "reference_diameter_nm": 36000,
+  "diameter_series_nm": [
+    1600,
+    1800,
+    2300,
+    3000
+  ],
+  "dimer_diameter_nm": 1800,
+  "dimer_a_over_d": [
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0,
+    1.1,
+    1.2,
+    1.3
+  ],
+  "finite_boundary": "Nx by Ny whole mesas; exterior rounded caps; midplane component partitions",
+  "geometry_validation_passed": true,
+  "v30_status": "pending native ECP export",
+  "files": {
+    "set_a.ctl": "3decbb18a2f086969d479c7e86b079b1eeece82d2e14a9275c7ec0508bb72dba",
+    "set_a.gds": "562f1e8717d9ac45f441236159ffdce30d5b6ba04cf14063cba11c4d823c413b",
+    "set_a.pat": "98898a713375ddf8555ee82f382deed4fb80fb917f5b20aa8b4f3f22e1572cae",
+    "set_a_calibration_preview.png": "0229cf8ee69d384920400c374353f0a213a5440d60a1adcd315144e0e1d770e5",
+    "set_a_calibrations.csv": "195a2cda7c0119873b0b20e6048dc93b73228ebb66eacd4f2714a4061ab4750e",
+    "set_a_devices.csv": "8c3612e6f3cecb0f49e4c59249fb75eaac657949392daf22f39574d247273379",
+    "set_a_preview.png": "d708b6e66cd77f9c7a09c3662fb3e588920d0d9212abeafa50e5f80bfc2f0b5b",
+    "set_a_validation.json": "00c8520f52765e631694e29dca21f652be72ebd87494192c9cee016dd2b8b6bd",
+    "set_b.ctl": "4fb94c85fe20082186bc2812dcd80e6600f9cd885fd5bd3b5b4e777aac57b4e6",
+    "set_b.gds": "a016bf4f3be527b09f369d327558cc210707663657b63e38582191318c30ae64",
+    "set_b.pat": "2e8ef25a07c0baf0130e120c375e7f65a769b7c40fe0ef20aa9495e6b6601bab",
+    "set_b_calibration_preview.png": "704328016a5ee0cfceb9bf561a9d6054c99306fc848fe6e3a1cb57ce0b843642",
+    "set_b_calibrations.csv": "b3a0a2fbe423db4514e59406c62acd65f404313bc7396516a2a0183d894f4350",
+    "set_b_devices.csv": "f65fbf407364b71c30a90292d64c2c5da1abed2597ea18166639147907483d67",
+    "set_b_preview.png": "b9fd3f5b2d5e8df88f33d48aa0dd7e8eeea8c88e27a6dc81c7de446104871861",
+    "set_b_validation.json": "b75e269db5321737839e534f276d56c040e2caaa97a8350471591738bb16b3c7",
+    "set_c.ctl": "a9e48bc2d78e03374b6dac1992b6eaf1d18384edcfdf7db003e0d322c2f9b475",
+    "set_c.gds": "ba9d324d93e4bd82b093fcd285b999141a7ee101d1b2585183e964bd889f2184",
+    "set_c.pat": "65b5251bf9e5eff0d9213d75684b7f38b228f572a377c8ea130bceb6d9f2ed6e",
+    "set_c_calibration_preview.png": "9c7535186e2b3ca80df3b2615fac2fbc345610d127acc3c735c6e04161d849cb",
+    "set_c_calibrations.csv": "686d79bba31518a51b6296181a6cbf01783d6f8d5bc26a46d67e6bc60d7ebdb6",
+    "set_c_devices.csv": "b7b25d1fd00b91820db47bb4f67ce16908d1e9c15517d45cfd0e2998d901b9cd",
+    "set_c_preview.png": "427baf3e68d7e343435b0b0680564b6b9c767e14e6bc1542028542d47d60b319",
+    "set_c_validation.json": "03b22616f5e19a46c64dee10d00a4b80d469722214fb9ca065670064641dddf0",
+    "geometry_catalog.json": "ce74b8776afcce8a7c596c1c2d613142f5706a481466131e45531f6f0ca25ea7"
+  },
+  "qualified_for_exposure": false,
+  "tests_passed": 15
+}

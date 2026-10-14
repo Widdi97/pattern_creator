@@ -1,0 +1,15 @@
+label,kind,diameter_nm,centre_distance_nm,a_over_d,signed_gap_nm,centre_x_nm,centre_y_nm,structure
+9,reference,36000,,,,250000,278000,A_cal_9
+10,diameter,600,,,,214000,245000,A_cal_10
+11,diameter,1000,,,,226000,245000,A_cal_11
+12,diameter,1500,,,,238000,245000,A_cal_12
+13,diameter,2000,,,,250000,245000,A_cal_13
+14,diameter,3000,,,,262000,245000,A_cal_14
+15,diameter,4000,,,,274000,245000,A_cal_15
+16,diameter,6000,,,,286000,245000,A_cal_16
+17,dimer,1800,1440,0.8,-360,212500,222000,A_cal_17
+18,dimer,1800,1620,0.9,-180,227500,222000,A_cal_18
+19,dimer,1800,1800,1.0,0,242500,222000,A_cal_19
+20,dimer,1800,1980,1.1,180,257500,222000,A_cal_20
+21,dimer,1800,2160,1.2,360,272500,222000,A_cal_21
+22,dimer,1800,2340,1.3,540,287500,222000,A_cal_22
